@@ -10,7 +10,7 @@
     "create-admin": "tsx scripts/create-admin.ts",
     "reset-password": "tsx scripts/reset-password.ts",
     "validate-content": "tsx scripts/validate-content.ts",
-    "test": "tsx scripts/test-engine.ts"
+    "test": "tsx scripts/test-engine.ts && tsx scripts/test-party.ts"
   },
   "dependencies": {
     "next": "^15.5.29",

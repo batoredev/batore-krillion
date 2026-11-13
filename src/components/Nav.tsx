@@ -4,6 +4,7 @@ import { usePathname } from "next/navigation";
 
 const LINKS = [
   { href: "/", label: "Play", icon: "🚀" },
+  { href: "/party", label: "Party", icon: "☄️" },
   { href: "/packs", label: "Packs", icon: "🧭" },
   { href: "/archive", label: "Archive", icon: "🗓️" },
   { href: "/leaderboard", label: "Board", icon: "🏆" },
@@ -28,9 +29,10 @@ export function Nav({ isAdmin }: { isAdmin: boolean }) {
 export function TabBar() {
   const path = usePathname();
   if (path.startsWith("/play/")) return null; // keep the game screen clear on phones
+  const tabs = LINKS.filter((l) => l.href !== "/archive" && l.href !== "/friends");
   return (
     <nav className="tabbar" aria-label="Main">
-      {LINKS.filter((l) => l.href !== "/archive").map((l) => (
+      {tabs.map((l) => (
         <Link key={l.href} href={l.href} className={isActive(path, l.href) ? "active" : ""}>
           <span aria-hidden="true">{l.icon}</span>
           <span>{l.label}</span>

@@ -28,6 +28,28 @@ A daily trivia game about rarity. Each set has 7 prompts ("Name an Indian sweet"
   - **Archive:** every past daily.
   - **Topic packs:** 11 topics × 10 sets.
 
+## Party mode: Hot Comet (multiplayer)
+
+Up to 10 players, at `/party`.
+
+- **Turns:** whoever holds the ☄️ comet must name a valid answer to the prompt that **nobody has used yet**. Doing so passes the comet to the next player.
+- **Feedback:** wrong answers and repeats are rejected, and the holder can keep trying. Everyone sees what the holder is typing, live.
+- **Hidden fuse:** a random 10–30 seconds, shared across the room and never sent to browsers. It keeps burning as the comet moves, so the next player inherits the time left. If less than 8 seconds remain at a pass, it's topped up to 8.
+- **Lives:** when the fuse runs out, the holder loses a life. After a 3-second break a new prompt and a new fuse start, with the next player holding the comet. At 0 lives you're out, and the last player standing wins.
+- **Rooms:** public (listed) or private (code only), joined by 4-letter code, invite link or **Quick play**.
+- **Host controls:**
+  - Lives: 1–5.
+  - Room size: 1v1, 3, 4–6 or 8–10.
+  - Topic: all, or one topic.
+  - Fuse speed: standard, frantic or relaxed.
+  - Start, and play again.
+- **Joining late:** people who join mid-game watch as spectators and join the next round.
+- **Results:** the standings show finishing place, answers given, rarest tier and rarity points.
+
+How it's built:
+- `src/party/engine.ts` holds the rules as a pure state machine. Time and randomness are passed in, so it's fully testable (`scripts/test-party.ts`).
+- `src/party/hub.ts` holds rooms **in memory** in the Node server, runs the fuse timers and streams state to browsers over Server-Sent Events (`/api/party/[code]/events`). Actions go to `POST /api/party/[code]/action`.
+
 ## Accounts
 
 There is **no public sign-up**. An admin creates every account, and every page needs a login.
@@ -66,7 +88,7 @@ npm start
 Data is stored in `data/db.json`, which is git-ignored. Set `KRIBATOV_DATA_DIR` to put it somewhere else.
 
 Other scripts:
-- `npm test`: engine tests (matching, tiers, set selection, IST dates).
+- `npm test`: engine tests (matching, tiers, set selection, IST dates) and party rules tests.
 - `npm run validate-content`: checks every prompt. Add `-- --warnings` to list answers close enough to be confused by typo matching.
 - `npm run typecheck`
 
@@ -106,7 +128,7 @@ supabase/      schema.sql for the move to Supabase
 scripts/       create-admin, reset-password, validate-content, test-engine
 ```
 
-## Moving to Supabase
+## Moving to Supabase + Cloudflare
 
 All storage goes through the `Store` interface in `src/lib/store/types.ts`. To move:
 
@@ -116,8 +138,17 @@ All storage goes through the `Store` interface in `src/lib/store/types.ts`. To m
 
 Accounts stay as Kribatov's own username/password, not Supabase Auth.
 
+For party mode on Cloudflare: Cloudflare Workers don't keep one long-lived process, so the in-memory `src/party/hub.ts` must be replaced. Two options:
+
+- **Cloudflare Durable Objects:** one object per room. It runs `engine.ts` unchanged, uses a Durable Object alarm for the fuse, and connects players with WebSockets.
+- **Supabase Realtime:** broadcast channels per room, with one authority applying actions and running the timer.
+
+Either way, the rules in `engine.ts` don't change.
+
 ## Known limitations
 
 - Answer lists are sent to the browser for the current set, so a technical player could read them. Scores are always recalculated on the server, but the answers themselves aren't secret. Moving matching to the server fixes this.
 - The JSON store is meant for a single server process. Use Supabase for anything bigger.
-- Not built yet: party (multiplayer) mode, and password reset by email.
+- Party rooms live in server memory: a restart ends running games. One server process only, until the hub is moved to Durable Objects or Supabase.
+- Party results aren't saved to player stats yet.
+- Not built yet: password reset by email.
