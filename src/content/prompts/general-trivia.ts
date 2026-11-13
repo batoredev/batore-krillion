@@ -1,0 +1,68 @@
+import { p } from "../types";
+const T = "general-trivia";
+export default [
+  p("gt-element", T, "Name a chemical element", {
+    ground: "Oxygen; Hydrogen; Carbon; Gold; Iron; Nitrogen; Helium",
+    decoy: "Silver; Copper",
+    orbit: "Sodium; Calcium; Potassium; Magnesium; Aluminium|aluminum; Zinc; Lead; Mercury; Uranium; Plutonium; Chlorine; Sulphur|sulfur; Phosphorus; Silicon; Neon; Argon; Lithium; Platinum; Tin; Nickel; Fluorine; Iodine; Titanium; Cobalt",
+    moonshot: "Chromium; Manganese; Tungsten; Radon; Radium; Krypton; Xenon; Arsenic; Boron; Beryllium; Bromine; Cadmium; Caesium|cesium; Barium; Strontium; Bismuth; Antimony; Palladium; Rhodium; Iridium; Osmium; Vanadium; Selenium; Germanium; Gallium; Indium; Thorium; Polonium; Francium; Zirconium",
+    deep: "Scandium; Yttrium; Lanthanum; Cerium; Praseodymium; Neodymium; Promethium; Samarium; Europium; Gadolinium; Terbium; Dysprosium; Holmium; Erbium; Thulium; Ytterbium; Lutetium; Hafnium; Tantalum; Rhenium; Technetium; Ruthenium; Niobium; Molybdenum; Rubidium; Thallium; Astatine; Actinium; Protactinium; Neptunium; Americium; Curium; Berkelium; Californium; Einsteinium; Fermium; Mendelevium; Nobelium; Lawrencium; Rutherfordium; Dubnium; Seaborgium; Bohrium; Hassium; Meitnerium; Darmstadtium; Roentgenium; Copernicium; Nihonium; Flerovium; Moscovium; Livermorium; Tennessine; Oganesson; Tellurium",
+    gem: "Ytterbium",
+  }),
+  p("gt-dog", T, "Name a dog breed", {
+    ground: "Labrador|labrador retriever|lab; German Shepherd|alsatian; Golden Retriever; Pug; Beagle; Husky|siberian husky",
+    decoy: "Dalmatian; Chihuahua",
+    orbit: "Bulldog|english bulldog; French Bulldog|frenchie; Poodle; Rottweiler; Doberman|dobermann|doberman pinscher; Boxer; Dachshund|sausage dog; Shih Tzu; Pomeranian; Great Dane; Corgi|pembroke welsh corgi; Border Collie; Cocker Spaniel; Yorkshire Terrier|yorkie; Maltese; Saint Bernard|st bernard; Chow Chow; Greyhound; Pit Bull|pitbull; Bull Terrier; Shiba Inu; Akita; Samoyed; Great Pyrenees; Lhasa Apso; Indie|indian pariah dog",
+    moonshot: "Bernese Mountain Dog; Newfoundland; Weimaraner; Vizsla; Whippet; Basset Hound; Bloodhound; Afghan Hound; Borzoi; Saluki; Rhodesian Ridgeback; Australian Shepherd; Shetland Sheepdog|sheltie; Bichon Frise; Cavalier King Charles Spaniel; Papillon; Schnauzer; Jack Russell Terrier|jack russell; West Highland Terrier|westie; Scottish Terrier|scottie; Alaskan Malamute|malamute; Irish Wolfhound; Mastiff; Cane Corso; Basenji; Rajapalayam; Mudhol Hound|caravan hound; Chippiparai",
+    deep: "Kombai; Kanni; Bakharwal; Gaddi Kutta; Himalayan Sheepdog; Rampur Greyhound; Pandikona; Jonangi; Tibetan Mastiff; Xoloitzcuintli|xolo; Komondor; Puli; Bergamasco; Lagotto Romagnolo; Kooikerhondje; Otterhound; Sloughi; Azawakh; Peruvian Inca Orchid; Catahoula; Leonberger; Dogue de Bordeaux; Kuvasz; Norwegian Lundehund; Thai Ridgeback; Mudi; Stabyhoun; Chinook",
+    gem: "Norwegian Lundehund|lundehund",
+  }),
+  p("gt-instrument", T, "Name a musical instrument", {
+    ground: "Guitar; Piano; Violin; Drums; Flute; Tabla",
+    decoy: "Harmonium; Triangle",
+    orbit: "Sitar; Veena; Sarod; Santoor; Shehnai; Mridangam; Dhol; Harmonica; Saxophone; Trumpet; Clarinet; Cello; Harp; Ukulele; Keyboard; Accordion; Trombone; Xylophone; Banjo; Bass guitar|bass; Tuba; Oboe; Bansuri; Bagpipes; Synthesizer",
+    moonshot: "Sarangi; Ghatam; Kanjira; Nadaswaram; Pakhawaj; Tanpura|tambura; Dilruba; Esraj; Rudra veena; Jal tarang; Chenda; Dholak; Ektara; Mandolin; Bassoon; French horn; Double bass|contrabass; Viola; Glockenspiel; Marimba; Timpani; Piccolo; Didgeridoo; Bongo|bongos; Conga; Cajon; Steel drum|steelpan; Kazoo; Theremin; Ocarina; Lute; Bouzouki",
+    deep: "Morsing|jaw harp; Thavil; Edakka; Pung; Damaru; Ravanahatha; Kamaicha; Algoza; Pepa; Tumbi; Chikara; Surbahar; Vichitra veena; Gottuvadhyam|chitravina; Mohan veena; Swarmandal; Hang|handpan; Erhu; Guzheng; Pipa; Shamisen; Koto; Shakuhachi; Kora; Mbira|kalimba; Balalaika; Hurdy-gurdy; Celesta; Sackbut; Crumhorn; Serpent; Ondes Martenot; Nyckelharpa",
+    gem: "Ravanahatha|ravanhatta",
+  }),
+  p("gt-bone", T, "Name a bone in the human body", {
+    ground: "Femur|thigh bone; Skull|cranium; Rib|ribs; Spine|backbone|vertebra|vertebrae; Pelvis|hip bone",
+    decoy: "Funny bone",
+    orbit: "Tibia|shin bone; Fibula; Humerus; Radius; Ulna; Patella|kneecap; Clavicle|collarbone; Scapula|shoulder blade; Sternum|breastbone; Mandible|jaw|jawbone; Coccyx|tailbone; Sacrum; Phalanges|phalanx; Metacarpals|metacarpal; Metatarsals|metatarsal",
+    moonshot: "Stapes|stirrup; Incus|anvil; Malleus|hammer; Hyoid; Maxilla; Zygomatic|cheekbone; Temporal bone; Parietal bone; Occipital bone; Frontal bone; Nasal bone; Atlas; Axis; Carpals|carpal; Tarsals|tarsal; Talus|ankle bone; Calcaneus|heel bone; Ilium; Ischium; Pubis",
+    deep: "Sphenoid; Ethmoid; Vomer; Lacrimal bone; Palatine bone; Inferior nasal concha; Scaphoid; Lunate; Triquetrum; Pisiform; Trapezium; Trapezoid; Capitate; Hamate; Navicular; Cuboid; Cuneiform|medial cuneiform; Sesamoid",
+    gem: "Pisiform",
+  }),
+  p("gt-greek-god", T, "Name a Greek god or goddess", {
+    ground: "Zeus; Poseidon; Hades; Athena|athene; Apollo; Aphrodite",
+    decoy: "Hercules|heracles",
+    orbit: "Hera; Ares; Artemis; Hermes; Hephaestus; Dionysus; Demeter; Hestia; Persephone; Eros; Nike; Gaia|gaea; Kronos|cronus; Uranus|ouranos; Helios; Selene; Eos; Pan",
+    moonshot: "Nemesis; Hecate; Hypnos; Thanatos; Nyx; Tyche; Iris; Hebe; Asclepius; Morpheus; Rhea; Themis; Mnemosyne; Prometheus; Atlas; Oceanus; Hyperion; Leto; Eris; Phobos; Deimos; Harmonia; Triton; Proteus",
+    deep: "Erebus; Chaos; Tartarus; Pontus; Aether; Hemera; Tethys; Coeus; Phoebe; Theia; Crius; Iapetus; Metis; Dione; Styx; Nereus; Thaumas; Phorcys; Ceto; Boreas; Zephyrus; Notus; Eurus; Peitho; Hymenaios; Priapus; Aristaeus; Momus; Oizys; Geras; Ananke",
+    gem: "Momus",
+  }),
+  p("gt-planet-moon", T, "Name a moon in our solar system", {
+    ground: "The Moon|moon|luna; Titan; Europa",
+    decoy: "Phobos",
+    orbit: "Ganymede; Callisto; Io; Phobos; Deimos; Enceladus; Triton; Charon",
+    moonshot: "Mimas; Rhea; Iapetus; Dione; Tethys; Hyperion; Phoebe; Miranda; Ariel; Umbriel; Titania; Oberon; Nereid; Amalthea",
+    deep: "Himalia; Elara; Pasiphae; Sinope; Lysithea; Carme; Ananke; Leda; Thebe; Adrastea; Metis; Janus; Epimetheus; Pandora; Prometheus; Atlas; Pan; Daphnis; Helene; Calypso; Telesto; Puck; Cordelia; Ophelia; Bianca; Cressida; Desdemona; Juliet; Portia; Rosalind; Belinda; Caliban; Sycorax; Proteus; Larissa; Galatea; Despina; Thalassa; Naiad; Nix; Hydra; Kerberos; Styx; Dysnomia; Hi'iaka; Namaka; Vanth",
+    gem: "Dysnomia",
+  }),
+  p("gt-language", T, "Name a programming language", {
+    ground: "Python; Java; JavaScript|js; C++|cpp|c plus plus; C",
+    decoy: "HTML; SQL",
+    orbit: "C#|c sharp|csharp; TypeScript|ts; Go|golang; Rust; Ruby; PHP; Swift; Kotlin; R; MATLAB; Perl; Scala; Dart; Bash|shell",
+    moonshot: "Haskell; Lua; Fortran; COBOL; Assembly|asm; Objective-C|objective c; Elixir; Erlang; Clojure; F#|f sharp; Julia; Groovy; Pascal; BASIC; Visual Basic|vb; Lisp; Prolog; Scheme; Zig; Solidity; PowerShell",
+    deep: "OCaml; Ada; Smalltalk; Simula; ALGOL; APL; Forth; Elm; Nim; Crystal; Racket; Haxe; Delphi; Logo; ABAP; Apex; Tcl; Whitespace; Malbolge; Befunge; COBOL-85; PL/I|pl1; Modula-2; Eiffel; Idris; Agda; Coq|rocq; Mojo; Carbon; Gleam; V",
+    gem: "Malbolge",
+  }),
+  p("gt-constellation", T, "Name a constellation", {
+    ground: "Orion; Ursa Major|great bear|big dipper|saptarishi|saptarishi mandal; Ursa Minor|little bear|little dipper",
+    decoy: "Cassiopeia",
+    orbit: "Cassiopeia; Scorpius|scorpio; Leo; Taurus; Gemini; Cancer; Virgo; Libra; Sagittarius; Capricornus|capricorn; Aquarius; Pisces; Aries; Andromeda; Pegasus; Cygnus; Draco; Lyra; Perseus; Crux|southern cross",
+    moonshot: "Canis Major; Canis Minor; Aquila; Hercules; Centaurus; Bootes; Corona Borealis; Cepheus; Auriga; Hydra; Lepus; Monoceros; Ophiuchus; Serpens; Delphinus; Sagitta; Vulpecula; Carina; Vela; Puppis; Eridanus; Cetus; Columba; Phoenix",
+    deep: "Camelopardalis; Lynx; Leo Minor; Coma Berenices; Corvus; Crater; Sextans; Antlia; Pyxis; Norma; Circinus; Triangulum Australe; Pavo; Indus; Grus; Tucana; Hydrus; Mensa; Chamaeleon; Musca; Apus; Octans; Volans; Dorado; Reticulum; Horologium; Caelum; Fornax; Sculptor; Microscopium; Telescopium; Corona Australis; Ara; Lupus; Scutum; Equuleus; Lacerta; Triangulum; Pictor",
+    gem: "Camelopardalis",
+  }),
+];

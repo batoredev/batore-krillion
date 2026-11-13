@@ -1,0 +1,68 @@
+import { p } from "../types";
+const T = "history";
+export default [
+  p("hist-roman-emperor", T, "Name a Roman emperor", {
+    ground: "Augustus|octavian; Julius Caesar|caesar; Nero; Caligula; Marcus Aurelius",
+    decoy: "Constantine|constantine the great",
+    orbit: "Tiberius; Claudius; Hadrian; Trajan; Commodus; Vespasian; Titus; Domitian; Diocletian; Caracalla; Septimius Severus; Nerva; Antoninus Pius; Galba; Otho; Vitellius; Elagabalus|heliogabalus; Romulus Augustulus; Theodosius|theodosius i; Justinian|justinian i",
+    moonshot: "Lucius Verus; Pertinax; Didius Julianus; Geta; Macrinus; Severus Alexander|alexander severus; Maximinus Thrax; Gordian III; Philip the Arab; Decius; Valerian; Gallienus; Aurelian; Probus; Carus; Maximian; Galerius; Licinius; Julian|julian the apostate; Valens; Valentinian; Gratian; Honorius; Arcadius",
+    deep: "Pupienus; Balbinus; Gordian I; Gordian II; Trebonianus Gallus; Aemilian; Claudius Gothicus; Quintillus; Tacitus; Florian; Carinus; Numerian; Constantius Chlorus; Severus II; Maxentius; Jovian; Magnus Maximus; Petronius Maximus; Avitus; Majorian; Anthemius; Olybrius; Glycerius; Julius Nepos",
+    gem: "Quintillus",
+  }),
+  p("hist-civilization", T, "Name an ancient civilisation", {
+    ground: "Egyptian|ancient egypt|egyptians; Roman|romans|ancient rome; Greek|greeks|ancient greece; Indus Valley|harappan; Maya|mayan|mayans; Aztec|aztecs",
+    decoy: "Atlantis",
+    orbit: "Mesopotamian|mesopotamia; Sumerian|sumer|sumerians; Babylonian|babylon; Inca|incas; Persian|persia|achaemenid; Chinese|ancient china; Phoenician|phoenicians; Assyrian|assyrians; Hittite|hittites; Celts|celtic; Vikings|norse; Carthage|carthaginian; Olmec|olmecs; Minoan|minoans; Mycenaean|mycenaeans; Etruscan|etruscans; Vedic",
+    moonshot: "Akkadian|akkad; Nubian|kush|kushite; Aksumite|aksum|axum; Khmer; Moche; Nazca; Zapotec; Toltec; Teotihuacan; Chavin; Norte Chico|caral; Elamite|elam; Scythian|scythians; Parthian|parthians; Hebrew|israelites; Hyksos; Shang|shang dynasty; Zhou; Mohenjo-daro; Mauryan|maurya",
+    deep: "Urartu; Mitanni; Kassites; Amorites; Hurrians; Luwians; Lydian|lydia; Phrygian|phrygia; Nabataean|nabataeans; Sabaean|saba|sheba; Dilmun; Magan; Jiroft; Elamites; Garamantes; Nok; Sanxingdui; Jomon; Bactria-Margiana|bmac|oxus civilization; Tiwanaku; Wari; Chachapoya; Mississippian|cahokia; Ancestral Puebloans|anasazi; Hohokam; Picts; Thracians; Dacians",
+    gem: "Garamantes",
+  }),
+  p("hist-ww2-battle", T, "Name a World War II battle or operation", {
+    ground: "D-Day|normandy|normandy landings; Pearl Harbor|pearl harbour; Stalingrad; Dunkirk; Battle of Britain; Midway",
+    decoy: "Hiroshima",
+    orbit: "Battle of the Bulge|ardennes; Iwo Jima; Okinawa; El Alamein|alamein; Kursk; Leningrad|siege of leningrad; Moscow|battle of moscow; Berlin|battle of berlin; Operation Barbarossa|barbarossa; Guadalcanal; Market Garden|arnhem|operation market garden; Monte Cassino|cassino; Anzio; Battle of the Atlantic; Kohima; Imphal; Overlord|operation overlord",
+    moonshot: "Coral Sea; Leyte Gulf; Philippine Sea; Tobruk; Crete; Sicily|operation husky|husky; Salerno; Bastogne; Hurtgen Forest|hurtgen; Remagen; Saipan; Tarawa; Peleliu; Kharkov; Operation Bagration|bagration; Warsaw Uprising; Singapore|fall of singapore; Malaya; Bataan; Corregidor; Burma",
+    deep: "Kasserine Pass|kasserine; Gazala; Mareth; Keren; Narvik; Westerplatte; Bzura; Sedan; Rzhev; Demyansk; Kiev 1941; Vyazma; Seelow Heights|seelow; Halbe; Admin Box|ngakyedauk; Meiktila; Sittang; Savo Island; Santa Cruz; Truk|hailstone; Kwajalein; Biak; Angaussi; Dieppe|operation jubilee; St Nazaire|chariot; Taranto; Cape Matapan|matapan; River Plate",
+    gem: "Admin Box|ngakyedauk",
+  }),
+  p("hist-us-president", T, "Name a US president", {
+    ground: "Abraham Lincoln|lincoln; George Washington|washington; Barack Obama|obama; Donald Trump|trump; John F. Kennedy|kennedy|jfk; Joe Biden|biden",
+    decoy: "Franklin D. Roosevelt|fdr|franklin roosevelt; Theodore Roosevelt|teddy roosevelt",
+    orbit: "Thomas Jefferson|jefferson; Ronald Reagan|reagan; Richard Nixon|nixon; Bill Clinton|clinton; George W. Bush|george w bush|w bush; George H. W. Bush|george hw bush|bush senior; Jimmy Carter|carter; Dwight D. Eisenhower|eisenhower|ike; Harry S. Truman|truman; Lyndon B. Johnson|lbj; Gerald Ford|ford; Woodrow Wilson|wilson; John Adams; Andrew Jackson|jackson; James Madison|madison; James Monroe|monroe",
+    moonshot: "Ulysses S. Grant|grant; John Quincy Adams; Herbert Hoover|hoover; Calvin Coolidge|coolidge; Warren G. Harding|harding; William McKinley|mckinley; William Howard Taft|taft; Grover Cleveland|cleveland; James K. Polk|polk; Andrew Johnson",
+    deep: "Martin Van Buren|van buren; William Henry Harrison; John Tyler|tyler; Zachary Taylor; Millard Fillmore|fillmore; Franklin Pierce|pierce; James Buchanan|buchanan; Rutherford B. Hayes|hayes; James A. Garfield|garfield; Chester A. Arthur|chester arthur; Benjamin Harrison",
+    gem: "Millard Fillmore|fillmore",
+  }),
+  p("hist-explorer", T, "Name a famous explorer", {
+    ground: "Christopher Columbus|columbus; Vasco da Gama|vasco de gama; Marco Polo; Ferdinand Magellan|magellan; James Cook|captain cook",
+    decoy: "Neil Armstrong|armstrong",
+    orbit: "Amerigo Vespucci|vespucci; Ibn Battuta; Roald Amundsen|amundsen; Robert Falcon Scott|scott of the antarctic; Ernest Shackleton|shackleton; Edmund Hillary|hillary; Tenzing Norgay|tenzing; Hernan Cortes|cortes; Francisco Pizarro|pizarro; Leif Erikson|leif ericson; Zheng He; David Livingstone|livingstone; Francis Drake|drake; Walter Raleigh|raleigh; Jacques Cousteau|cousteau; Bartolomeu Dias|bartholomew diaz",
+    moonshot: "John Cabot|cabot; Henry Hudson|hudson; Jacques Cartier|cartier; Samuel de Champlain|champlain; Abel Tasman|tasman; Lewis and Clark|meriwether lewis|william clark; Robert Peary|peary; Matthew Henson|henson; Henry Morton Stanley|stanley; Richard Burton; John Hanning Speke|speke; Mungo Park; Hernando de Soto|de soto; Vitus Bering|bering; Xuanzang|hiuen tsang; Fa Xian|faxian; Alexander von Humboldt|humboldt; Yuri Gagarin|gagarin",
+    deep: "Pedro Alvares Cabral|cabral; Juan Ponce de Leon|ponce de leon; Vasco Nunez de Balboa|balboa; Francisco de Orellana|orellana; Willem Barentsz|barents; Fridtjof Nansen|nansen; Douglas Mawson|mawson; Burke and Wills; Ludwig Leichhardt; John McDouall Stuart; Gertrude Bell; Isabella Bird; Freya Stark; Ahmad ibn Majid; Nain Singh|pundit nain singh; Kishen Singh; Sacagawea; Pytheas; Hanno the Navigator|hanno; Erik the Red; Thor Heyerdahl|heyerdahl",
+    gem: "Nain Singh Rawat|nain singh rawat",
+  }),
+  p("hist-british-monarch", T, "Name a British or English monarch", {
+    ground: "Queen Elizabeth II|elizabeth ii|elizabeth 2; Queen Victoria|victoria; Henry VIII|henry 8; King Charles III|charles iii|charles 3",
+    decoy: "Elizabeth I|elizabeth 1; King Arthur",
+    orbit: "George III|george 3; George V|george 5; George VI|george 6; Edward VII|edward 7; Edward VIII|edward 8; William the Conqueror|william i; Richard the Lionheart|richard i; Richard III|richard 3; Henry V|henry 5; Henry VII|henry 7; Mary I|bloody mary; James I|james 1; Charles I|charles 1; Charles II|charles 2; Anne|queen anne; Alfred the Great|alfred",
+    moonshot: "William III|william of orange; Mary II; William IV|william 4; George I|george 1; George II|george 2; George IV|george 4; James II|james 2; Edward VI|edward 6; Edward I|longshanks; Edward II; Edward III; King John|john; Henry II; Henry III; Henry IV; Henry VI; Richard II; Stephen; Matilda|empress matilda; William II|william rufus; Edward IV; Edward V; Cnut|canute",
+    deep: "Lady Jane Grey|jane grey; Henry I; Harold II|harold godwinson; Edgar the Peaceful; Aethelred the Unready|ethelred; Edmund Ironside; Harold Harefoot; Harthacnut; Edward the Confessor; Edward the Martyr; Athelstan; Edmund I; Eadred; Eadwig; Sweyn Forkbeard; Edgar Atheling|edgar aetheling",
+    gem: "Edgar Atheling|edgar aetheling",
+  }),
+  p("hist-pharaoh", T, "Name an ancient Egyptian pharaoh", {
+    ground: "Tutankhamun|king tut|tutankhamen; Cleopatra; Ramesses II|ramses|ramses ii|ramesses the great",
+    decoy: "Nefertiti",
+    orbit: "Khufu|cheops; Akhenaten|akhenaton; Hatshepsut; Thutmose III|thutmose; Khafre|chephren; Menkaure|mycerinus; Djoser|zoser; Seti I|seti; Amenhotep III|amenhotep; Narmer|menes; Ptolemy|ptolemy i",
+    moonshot: "Sneferu; Ramesses III; Merneptah; Ahmose I|ahmose; Thutmose I; Amenhotep II; Horemheb; Ay; Smenkhkare; Senusret|sesostris; Amenemhat; Mentuhotep II|mentuhotep; Pepi II; Unas; Userkaf; Psamtik|psammetichus; Taharqa; Nectanebo",
+    deep: "Hor-Aha|aha; Den; Djet; Khasekhemwy; Peribsen; Sekhemkhet; Huni; Djedefre; Shepseskaf; Sahure; Neferirkare; Nyuserre; Teti; Merenre; Sobekneferu; Kamose; Seqenenre Tao; Siamun; Shoshenq I|shishak; Piye|piankhi; Apries; Amasis II|ahmose ii; Ptolemy XV|caesarion",
+    gem: "Sobekneferu",
+  }),
+  p("hist-empire", T, "Name an empire from history", {
+    ground: "Roman Empire|roman; British Empire|british; Mughal Empire|mughal; Ottoman Empire|ottoman; Mongol Empire|mongol",
+    decoy: "Galactic Empire",
+    orbit: "Persian Empire|persian|achaemenid empire; Byzantine Empire|byzantine|eastern roman; Holy Roman Empire; Maurya Empire|mauryan; Gupta Empire|gupta; Aztec Empire|aztec; Inca Empire|inca; Russian Empire|tsarist russia; Spanish Empire|spanish; French Empire|napoleonic empire; Qing Empire|qing; Han Empire|han dynasty; Maratha Empire|maratha; Japanese Empire|empire of japan; Austro-Hungarian Empire|austria-hungary; German Empire|second reich; Macedonian Empire|alexander's empire; Carthaginian Empire",
+    moonshot: "Vijayanagara Empire|vijayanagara; Chola Empire|chola; Sasanian Empire|sassanid; Seleucid Empire|seleucid; Abbasid Caliphate|abbasid; Umayyad Caliphate|umayyad; Rashidun Caliphate; Fatimid Caliphate; Safavid Empire|safavid; Timurid Empire|timurid; Mali Empire; Songhai Empire|songhai; Ghana Empire; Khmer Empire|khmer; Portuguese Empire; Dutch Empire; Babylonian Empire|neo-babylonian; Assyrian Empire|neo-assyrian; Akkadian Empire|akkadian; Parthian Empire|parthian; Kushan Empire|kushan; Sikh Empire",
+    deep: "Ethiopian Empire|abyssinia; Kanem-Bornu; Benin Empire; Oyo Empire; Ashanti Empire|asante; Majapahit; Srivijaya; Durrani Empire; Ghaznavid; Ghurid; Delhi Sultanate; Seljuk Empire|seljuk; Khwarazmian Empire|khwarazm; Golden Horde; Chagatai Khanate; Ilkhanate; Yuan; Tibetan Empire; Gokturk Khaganate|gokturks; Xiongnu; Hunnic Empire|huns; Latin Empire; Trebizond|empire of trebizond; Nicaean Empire; Angevin Empire; Wari Empire; Tiwanaku",
+    gem: "Empire of Trebizond|trebizond",
+  }),
+];

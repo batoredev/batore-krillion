@@ -1,0 +1,68 @@
+import { p } from "../types";
+const T = "automobiles";
+export default [
+  p("auto-brand", T, "Name a car brand", {
+    ground: "Toyota; Ford; BMW; Mercedes-Benz|mercedes|benz; Honda; Hyundai; Tesla; Audi; Volkswagen|vw; Ferrari",
+    decoy: "Lamborghini|lambo; Porsche; Rolls-Royce|rolls royce; Bugatti",
+    orbit: "Maruti Suzuki|maruti; Suzuki; Tata Motors|tata; Mahindra; Kia; Nissan; Chevrolet|chevy; Jeep; Volvo; Mazda; Subaru; Lexus; Jaguar; Land Rover; Range Rover; Skoda; Renault; Peugeot; Fiat; Mitsubishi; Bentley; Aston Martin; Maserati; McLaren; MG|morris garages; Mini; Dodge; Cadillac; Buick; GMC",
+    moonshot: "Citroen; Alfa Romeo; Lotus; Infiniti; Acura; Lincoln; Chrysler; Ram; Genesis; Seat|cupra; Dacia; Opel; Vauxhall; BYD; Geely; Polestar; Rivian; Lucid; Pagani; Koenigsegg; Isuzu; Daihatsu; Smart; Hindustan Motors|hindustan; Premier; Force Motors",
+    deep: "Lancia; Saab; Pontiac; Oldsmobile; Plymouth; Hummer; Saturn; Mercury; DeLorean; Rimac; Spyker; Morgan; TVR; Noble; Hispano-Suiza; Lada; Proton; Perodua; Holden; Chery; Great Wall|haval; NIO; Xpeng; Li Auto; Zotye; Tatra; Trabant; Studebaker; Packard; Duesenberg; Vector; Hennessey; SSC; Zenvo; W Motors; Wuling; Hongqi; VinFast; Togg",
+    gem: "Reva",
+  }),
+  p("auto-india-model", T, "Name a car model sold in India", {
+    ground: "Swift; Alto; Creta; Nexon; Scorpio; Fortuner; Innova|innova crysta; City; Baleno; Thar",
+    decoy: "Nano|tata nano; Ambassador",
+    orbit: "Wagon R|wagonr; Dzire|swift dzire; Brezza|vitara brezza; Ertiga; Ciaz; Celerio; Ignis; Venue; i20; i10|grand i10; Verna; Seltos; Sonet; Punch; Tiago; Tigor; Harrier; Safari; XUV700|xuv 700; XUV300|xuv 3xo; Bolero; Kwid; Duster; Kiger; Amaze; Elevate; Polo; Virtus; Taigun; Kushaq; Slavia; Hector; Glanza; Hyryder; Grand Vitara; Fronx; Jimny",
+    moonshot: "Alcazar; Exter; Aura; Carens; Altroz; Triber; Magnite; XUV400; Marazzo; Kylaq; Astor; Comet; Windsor; Invicto; Ameo; Rapid; Octavia; Superb; Camry; Corolla Altis; Etios; Eon; Santro; Zen; Esteem; Gypsy; Omni; Indica; Sumo; Qualis; Kona; Tucson; Compass; Meridian; Gloster; Tiguan",
+    deep: "Maruti 800|800; Indigo; Sierra; Estate; Aria; Hexa; Zest; Bolt; Quanto; Xylo; Logan|verito; Lodgy; Pulse; Micra; Sunny; Terrano; Kicks; Fluence; Sail; Beat; Cruze; Spark; Enjoy; Tavera; Optra; Aveo; Captiva; Figo; Fiesta; Ikon; EcoSport; Endeavour; Linea; Punto; Palio; Sumo Grande; Contessa; Padmini; Matiz",
+    gem: "Premier Rio",
+  }),
+  p("auto-motorcycle-brand", T, "Name a motorcycle or scooter brand", {
+    ground: "Hero; Bajaj; Royal Enfield|enfield; Honda; Yamaha; TVS; Harley-Davidson|harley davidson|harley",
+    decoy: "Ducati; Kawasaki",
+    orbit: "Suzuki; KTM; BMW Motorrad|bmw; Triumph; Jawa; Ola Electric|ola; Ather; Vespa; Aprilia; Benelli; Hero Honda; Yezdi; Husqvarna; Indian Motorcycle|indian; Revolt; Ultraviolette",
+    moonshot: "MV Agusta; Moto Guzzi; Piaggio; Hyosung; Norton; BSA; Kinetic; LML; Rajdoot; Ideal Jawa; Simple Energy; Okinawa; Ampere; Bounce; Tork; Zontes; Keeway; CFMoto; Brixton",
+    deep: "Bimota; Buell; Matchless; Velocette; Laverda; Cagiva; Gilera; Moto Morini; Zero Motorcycles|zero; Energica; Lambretta; Bridgestone|bridgestone motorcycles; Victory; Excelsior; Crocker; Ural; Dnepr; Hesketh; Confederate; Brough Superior; Escorts; Enfield India",
+    gem: "Vincent|vincent hrd",
+  }),
+  p("auto-f1-team", T, "Name a Formula 1 team (past or present)", {
+    ground: "Ferrari|scuderia ferrari; Mercedes; Red Bull|red bull racing; McLaren",
+    decoy: "Williams",
+    orbit: "Aston Martin; Alpine; Haas; Sauber; Racing Bulls|rb|visa cash app rb; AlphaTauri|alpha tauri; Toro Rosso; Renault; Lotus; Force India; Racing Point; Alfa Romeo; Audi; Cadillac",
+    moonshot: "Brawn GP|brawn; Jordan; Benetton; Tyrrell; Brabham; BAR|british american racing; Jaguar; Toyota; Honda; BMW Sauber; Minardi; Ligier; March; Arrows; Stewart; Caterham; Marussia; Manor; Virgin; HRT|hispania",
+    deep: "Spyker; Midland; Super Aguri; Prost; Footwork; Larrousse; Simtek; Pacific; Forti; Andrea Moda; Lola; Coloni; Onyx; Osella; Zakspeed; Toleman; Hesketh; Shadow; Wolf; Surtees; Ensign; Vanwall; Maserati; Cooper; BRM; Matra; Eagle",
+    gem: "Rial",
+  }),
+  p("auto-body-style", T, "Name a car body style", {
+    ground: "Sedan|saloon; Hatchback; SUV; Convertible|cabriolet; Coupe; Pickup truck|pickup",
+    decoy: "Limousine|limo",
+    orbit: "Minivan|mpv|people carrier; Station wagon|estate|wagon; Crossover|cuv; Compact SUV|sub compact suv; Roadster; Van; Jeep|off roader; Sports car; Muscle car; Microcar|city car",
+    moonshot: "Fastback; Liftback; Targa; Shooting brake; Notchback; Spyder|spider; Panel van; Ute; Kei car; Speedster; Hardtop",
+    deep: "Landau; Phaeton; Brougham; Barchetta; Berlinetta; Coupe utility; Cab forward; Town car; Sedanca; Tourer; Gran turismo|gt; Hot rod; Woodie",
+    gem: "Torpedo",
+  }),
+  p("auto-engine-part", T, "Name a part of a car engine", {
+    ground: "Piston; Spark plug; Cylinder; Crankshaft; Valve; Camshaft",
+    decoy: "Carburetor|carburettor",
+    orbit: "Cylinder head; Engine block|block; Timing belt|cambelt; Timing chain; Connecting rod|con rod; Oil pump; Fuel injector|injector; Radiator; Water pump; Alternator; Starter motor|starter; Gasket|head gasket; Turbocharger|turbo; Intake manifold; Exhaust manifold; Throttle body; Air filter; Oil filter; Flywheel; Sump|oil pan",
+    moonshot: "Rocker arm; Pushrod; Lifter|tappet; Piston ring; Wrist pin|gudgeon pin; Crankcase; Supercharger; Intercooler; Thermostat; Distributor; Ignition coil; Glow plug; Fuel pump; Valve cover|rocker cover; Harmonic balancer; Serpentine belt",
+    deep: "Valve spring; Valve seat; Camshaft lobe; Bearing shell|main bearing; Oil gallery; Timing gear; Balance shaft; Wastegate; Blow-off valve; PCV valve; EGR valve; Idle air control valve; Knock sensor; MAP sensor; Mass airflow sensor|maf sensor; Crankshaft position sensor; Cam follower; Freeze plug|core plug; Dipstick",
+    gem: "Hydraulic lash adjuster|lash adjuster",
+  }),
+  p("auto-supercar", T, "Name a supercar or sports car model", {
+    ground: "Lamborghini Aventador|aventador; Porsche 911|911; Ferrari LaFerrari|laferrari; Bugatti Chiron|chiron; Lamborghini Huracan|huracan; Ford Mustang|mustang",
+    decoy: "Bugatti Veyron|veyron; McLaren F1",
+    orbit: "Ferrari F40|f40; Ferrari Enzo|enzo; Ferrari 458|458 italia; Ferrari SF90|sf90; Ferrari 488|488; Ferrari Roma; Lamborghini Urus|urus; Lamborghini Countach|countach; Lamborghini Murcielago|murcielago; Lamborghini Gallardo|gallardo; Lamborghini Revuelto|revuelto; McLaren P1|p1; McLaren 720S|720s; McLaren Senna|senna; Audi R8|r8; Nissan GT-R|gtr|gt-r; Chevrolet Corvette|corvette; Dodge Viper|viper; Dodge Challenger|challenger; Chevrolet Camaro|camaro; Porsche Carrera GT|carrera gt; Porsche 918 Spyder|918; Mercedes-AMG GT|amg gt; Toyota Supra|supra; Mazda MX-5|miata|mx5",
+    moonshot: "Pagani Zonda|zonda; Pagani Huayra|huayra; Koenigsegg Agera|agera; Koenigsegg Jesko|jesko; Koenigsegg Regera|regera; Ford GT; Mercedes SLS AMG|sls; Mercedes SLR McLaren|slr; Honda NSX|nsx; Acura NSX; Lexus LFA|lfa; Aston Martin DB5|db5; Aston Martin Valkyrie|valkyrie; Aston Martin Vantage|vantage; Jaguar F-Type|f type; Jaguar E-Type|e type; Lotus Evora|evora; Lotus Elise|elise; Rimac Nevera|nevera; Bugatti Divo|divo; Ferrari Testarossa|testarossa; Lamborghini Miura|miura; Porsche Cayman|cayman; BMW i8|i8; BMW M3|m3; Toyota GR86|gr86; Subaru BRZ|brz",
+    deep: "Lamborghini Diablo|diablo; Lamborghini Reventon|reventon; Lamborghini Sian|sian; Ferrari F50|f50; Ferrari 250 GTO|250 gto; Ferrari Daytona|daytona; Ferrari Monza; McLaren Speedtail|speedtail; McLaren Elva|elva; Koenigsegg CCX|ccx; Koenigsegg One:1|one 1; Bugatti EB110|eb110; Bugatti Bolide|bolide; Jaguar XJ220|xj220; Vector W8|w8; SSC Tuatara|tuatara; Hennessey Venom|venom; Saleen S7|s7; Mosler MT900; Noble M600; Ascari A10; Gumpert Apollo|apollo; Spyker C8|c8; Lotus Evija|evija; DeLorean DMC-12|dmc 12|delorean; Toyota 2000GT|2000gt; Mazda RX-7|rx7; Nissan Skyline|skyline",
+    gem: "DC Avanti|avanti",
+  }),
+  p("auto-f1-champion", T, "Name a Formula 1 World Drivers' Champion", {
+    ground: "Lewis Hamilton|hamilton; Michael Schumacher|schumacher; Max Verstappen|verstappen; Ayrton Senna|senna",
+    decoy: "Fernando Alonso|alonso; Sebastian Vettel|vettel",
+    orbit: "Kimi Raikkonen|raikkonen; Nico Rosberg|rosberg; Jenson Button|button; Alain Prost|prost; Niki Lauda|lauda; Lando Norris|norris; Mika Hakkinen|hakkinen; Nigel Mansell|mansell; Damon Hill; Jacques Villeneuve; Juan Manuel Fangio|fangio; Jackie Stewart",
+    moonshot: "Nelson Piquet|piquet; Jim Clark; Graham Hill; Emerson Fittipaldi|fittipaldi; James Hunt; Jack Brabham|brabham; Mario Andretti|andretti; Keke Rosberg; Alberto Ascari|ascari; Jody Scheckter|scheckter; Alan Jones",
+    deep: "Giuseppe Farina|nino farina|farina; Mike Hawthorn|hawthorn; Phil Hill; John Surtees|surtees; Denny Hulme|hulme",
+    gem: "Jochen Rindt|rindt",
+  }),
+];

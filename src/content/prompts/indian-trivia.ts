@@ -1,0 +1,68 @@
+import { p } from "../types";
+const T = "indian-trivia";
+export default [
+  p("it-cricketer", T, "Name an Indian Test cricketer", {
+    ground: "Sachin Tendulkar|sachin; Virat Kohli|kohli; MS Dhoni|dhoni|mahendra singh dhoni; Rohit Sharma; Kapil Dev; Sunil Gavaskar|gavaskar",
+    decoy: "Rahul Dravid|dravid",
+    orbit: "Sourav Ganguly|ganguly|dada; Anil Kumble|kumble; VVS Laxman|laxman; Virender Sehwag|sehwag; Yuvraj Singh|yuvraj; Harbhajan Singh|harbhajan|bhajji; Zaheer Khan; Jasprit Bumrah|bumrah; Ravindra Jadeja|jadeja; Ravichandran Ashwin|ashwin; Shubman Gill; Rishabh Pant; KL Rahul; Cheteshwar Pujara|pujara; Ajinkya Rahane|rahane; Mohammed Shami|shami; Mohammad Siraj|siraj; Gautam Gambhir|gambhir; Mohammad Azharuddin|azhar|azharuddin; Javagal Srinath|srinath; Ravi Shastri; Yashasvi Jaiswal|jaiswal",
+    moonshot: "Bishan Singh Bedi|bishan bedi; Erapalli Prasanna|prasanna; B. S. Chandrasekhar|chandrasekhar; Srinivas Venkataraghavan|venkat; Gundappa Viswanath|gr viswanath; Dilip Vengsarkar|vengsarkar; Mohinder Amarnath; Lala Amarnath; Kris Srikkanth|srikkanth; Ishant Sharma; Umesh Yadav; Irfan Pathan; Murali Vijay; Wriddhiman Saha|saha; Axar Pattar|axar patel; Kuldeep Yadav; Venkatesh Prasad; Navjot Singh Sidhu|sidhu; Sanjay Manjrekar; Vijay Manjrekar; Mansur Ali Khan Pataudi|tiger pataudi|pataudi; Ajit Wadekar|wadekar; Polly Umrigar|umrigar; Vinoo Mankad|mankad; Syed Kirmani|kirmani; Farokh Engineer; Nayan Mongia; Dinesh Karthik; Parthiv Patel; Sarfaraz Khan; Dhruv Jurel; Nitish Kumar Reddy; Akash Deep",
+    deep: "C. K. Nayudu|ck nayudu; Vijay Merchant; Vijay Hazare; Mushtaq Ali|syed mushtaq ali; Amar Singh; Mohammad Nissar; Lall Singh; Subhash Gupte; Ghulam Ahmed; Chandu Borde; Salim Durani; Dilip Sardesai; Eknath Solkar; Abid Ali; Karsan Ghavri; Roger Binny; Madan Lal; Kirti Azad; Chetan Sharma; Narendra Hirwani|hirwani; Maninder Singh; Raman Lamba; Sadagoppan Ramesh; Hemang Badani; Deep Dasgupta; Ajay Ratra; Laxmipathy Balaji|l balaji; Pragyan Ojha; Amit Mishra; Abhinav Mukund; Karun Nair; Hanuma Vihari; Shardul Thakur; Washington Sundar; Sai Sudharsan",
+    gem: "Narendra Hirwani|hirwani",
+  }),
+  p("it-dance", T, "Name an Indian classical or folk dance", {
+    ground: "Bharatanatyam|bharatnatyam; Kathak; Kathakali; Odissi; Kuchipudi; Bhangra",
+    decoy: "Garba",
+    orbit: "Manipuri; Mohiniyattam|mohiniattam; Sattriya|sattriya nritya; Chhau|chau; Dandiya|dandiya raas; Ghoomar; Lavani; Bihu; Giddha; Yakshagana; Kalbelia; Theyyam; Koli; Tamasha; Rouf; Kummi; Karagattam; Dollu Kunitha; Kolattam; Bhavai; Raas Leela|rasleela",
+    moonshot: "Thiruvathirai|thiruvathira kali; Oppana; Margam Kali; Ottan Thullal; Koodiyattam|kutiyattam; Puli Kali|pulikali; Kolkali; Padayani; Mayilattam; Oyilattam; Therukoothu; Perini Sivatandavam|perini; Burrakatha; Dhimsa; Gotipua; Sambalpuri; Ghumura; Jhumair; Santhali; Paika; Raibenshe; Gambhira; Jatra; Bardo Chham; Cheraw|bamboo dance; Hojagiri; Nongkrem; Wangala; Chang Lo; Singhi Chham; Hikat; Jawara; Matki; Gaur Maria; Karma; Pandavani; Cheraw; Dumhal; Kud; Nati; Chholiya|chhapeli",
+    deep: "Pung cholom; Lai Haraoba; Gotipua (Odisha); Dalkhai; Ruk Mar; Bagurumba; Jhumur; Ojapali; Deodhani; Khamba Thoibi; Mukna; Kongthoklei; Rangma; Zeliang; Sohrai; Paiki; Domkach; Jat-Jatin; Bidesia; Jhijhiya; Natua; Kajri; Charkula; Raai; Saira; Rai; Teratali; Gair; Kachchhi Ghodi; Chari; Bhand Pather; Shad Suk Mynsiem; Behdienkhlam; Lezim|lezim dance; Dhangari Gaja; Fugdi; Dekhni; Goff",
+    gem: "Shad Suk Mynsiem",
+  }),
+  p("it-festival", T, "Name an Indian festival", {
+    ground: "Diwali|deepavali; Holi; Eid|eid ul fitr; Christmas; Navratri; Dussehra|dasara|vijayadashami",
+    decoy: "Raksha Bandhan|rakhi",
+    orbit: "Ganesh Chaturthi; Durga Puja; Onam; Pongal; Makar Sankranti|sankranti; Lohri; Baisakhi|vaisakhi; Janmashtami; Karva Chauth; Chhath|chhath puja; Bihu; Ugadi; Gudi Padwa; Maha Shivaratri|shivratri; Guru Nanak Jayanti|gurpurab; Mahavir Jayanti; Buddha Purnima; Bakrid|eid ul adha; Muharram; Ram Navami; Teej; Bhai Dooj; Dhanteras; Vishu; Hornbill Festival|hornbill",
+    moonshot: "Losar; Hemis festival; Thrissur Pooram|pooram; Thaipusam; Attukal Pongala; Karthigai Deepam; Bonalu; Bathukamma; Rath Yatra; Nuakhai; Raja Parba; Poila Baishakh; Jamai Sasthi; Kali Puja; Jagaddhatri Puja; Saraswati Puja|vasant panchami; Gangaur; Pushkar fair; Kumbh Mela|kumbh; Hareli; Nag Panchami; Sohrai; Sarhul; Karam; Wangala; Ali Ai Ligang; Losoong; Chapchar Kut; Sekrenyi; Moatsu; Lui Ngai Ni; Ningol Chakouba; Cheiraoba; Yaoshang",
+    deep: "Hojagiri festival; Kharchi Puja; Ker Puja; Behdienkhlam; Nongkrem; Shad Suk Mynsiem; Myoko; Dree; Solung; Mopin; Reh; Boori Boot; Tamladu; Si-Donyi; Nyokum; Saga Dawa; Pang Lhabsol; Tendong Lho Rum Faat; Sindhu Darshan; Sual; Kaang; Lavi fair; Minjar; Phulaich; Halda; Bhagoria; Madai; Bastar Dussehra; Theemithi; Aadi Perukku; Kanum Pongal; Mattu Pongal; Bhogi; Uttarayan; Tarnetar fair; Bhuta Kola; Karaga; Kambala; Tula Sankramana",
+    gem: "Kambala",
+  }),
+  p("it-language", T, "Name a language listed in India's Eighth Schedule", {
+    ground: "Hindi; Bengali|bangla; Tamil; Telugu; Marathi; Gujarati; Kannada; Malayalam",
+    decoy: "English",
+    orbit: "Punjabi; Urdu; Odia|oriya; Assamese|asamiya; Sanskrit; Kashmiri; Konkani; Nepali; Sindhi; Manipuri|meitei|meiteilon",
+    moonshot: "Maithili; Santali; Bodo; Dogri",
+    deep: "",
+    gem: "Dogri",
+  }),
+  p("it-isro", T, "Name an ISRO mission, satellite or rocket", {
+    ground: "Chandrayaan|chandrayaan 1; Chandrayaan-3|chandrayaan 3; Mangalyaan|mars orbiter mission|mom; Aditya-L1|aditya l1|aditya; Gaganyaan",
+    decoy: "Chandrayaan-2|chandrayaan 2",
+    orbit: "PSLV; GSLV; LVM3|gslv mk iii|gslv mk3; Aryabhata; Vikram lander|vikram; Pragyan rover|pragyan; AstroSat; NavIC|irnss; Cartosat; RISAT; INSAT; GSAT; SSLV; XPoSat; SpaDeX|spadex; NISAR",
+    moonshot: "Bhaskara; Rohini; Apple|ariane passenger payload experiment; SLV|slv 3; ASLV; Kalpana-1|metsat; Oceansat; Resourcesat; EOS-01|eos; Scatsat; HySIS; Microsat; EMISAT; Megha-Tropiques; SARAL; Edusat|gsat 3; Space Capsule Recovery Experiment|sre; RLV-TD|pushpak|rlv; Scramjet; Crew Escape System|tv d1|test vehicle; Bharatiya Antariksh Station|bas",
+    deep: "Stretched Rohini Satellite Series|srosss; Rohini Technology Payload; IRS-1A; INSAT-1A; Kalamsat; JUGNU; Anusat; Studsat; Pratham; Swayam; PISAT; Kalpana Chawla Sat; YouthSat; Jugnu; Vyommitra; POEM|pslv orbital experimental module; Nike-Apache|nike apache",
+    gem: "RH-75|rohini rh 75|rh 75",
+  }),
+  p("it-company", T, "Name an Indian company or brand", {
+    ground: "Tata|tata group; Reliance|reliance industries|jio; Infosys; Amul; Airtel|bharti airtel; Wipro",
+    decoy: "Flipkart",
+    orbit: "TCS|tata consultancy services; HDFC Bank|hdfc; ICICI Bank|icici; State Bank of India|sbi; Mahindra|mahindra and mahindra; Bajaj; Adani|adani group; Larsen & Toubro|l&t|larsen and toubro; ITC; Hindustan Unilever|hul; Asian Paints; Maruti Suzuki|maruti; Paytm; Zomato|eternal; Swiggy; Ola; Byju's|byjus; Zerodha; Patanjali; Dabur; Parle|parle g; Britannia; Haldiram's|haldirams; Titan; Tanishq; Godrej; HCL|hcltech; Tech Mahindra; Infosys",
+    moonshot: "Nykaa; Meesho; Zepto; Lenskart; boAt|boat; Myntra; MakeMyTrip; OYO|oyo rooms; PhonePe; CRED; Razorpay; Freshworks; Zoho; Dream11; Groww; PolicyBazaar; Lupin; Sun Pharma; Cipla; Dr. Reddy's|dr reddys; Biocon; Bisleri; Nirma; Vicco; Boroline; Fevicol|pidilite; MRF; Hero MotoCorp|hero; TVS; Royal Enfield; Havells; Bata India|bata; Raymond; Fabindia; Lakme; Himalaya; Emami; Marico|parachute; Rasna; Kissan; MTR; Bournvita",
+    deep: "Hamdard|rooh afza; Mysore Sandal|mysore sandal soap; Cinthol; Liril; Lifebuoy; Pond's; Hajmola; Pan Parag; Rajnigandha; Frooti|parle agro; Campa Cola|campa; Gold Spot; Limca; Thums Up; Maaza; Duke's; Rasna; Amrutanjan; Iodex; Zandu; Kesh King; Bajaj Almond Drops; Nutrine; Ravalgaon; Mafco; Nilkamal; Usha; Bajaj Electricals; Kelvinator; Videocon; Onida; BPL; Weston; Murphy|murphy radio; HMT; Allwyn; Kinetic; Lambretta (Scooters India)|scooters india; Premier Padmini|premier",
+    gem: "Ravalgaon",
+  }),
+  p("it-ipl", T, "Name an IPL team (past or present)", {
+    ground: "Chennai Super Kings|csk; Mumbai Indians|mi; Royal Challengers Bengaluru|rcb|royal challengers bangalore; Kolkata Knight Riders|kkr",
+    decoy: "",
+    orbit: "Sunrisers Hyderabad|srh; Rajasthan Royals|rr; Delhi Capitals|dc; Punjab Kings|pbks; Gujarat Titans|gt; Lucknow Super Giants|lsg; Delhi Daredevils|dd; Kings XI Punjab|kxip",
+    moonshot: "Deccan Chargers; Pune Warriors India|pune warriors|pwi; Rising Pune Supergiant|rising pune supergiants|rps; Gujarat Lions|gl",
+    deep: "",
+    gem: "Kochi Tuskers Kerala|kochi tuskers|ktk",
+  }),
+  p("it-olympian", T, "Name an Indian Olympic medallist", {
+    ground: "Neeraj Chopra|neeraj; PV Sindhu|sindhu|pv sindhu; Mary Kom|mc mary kom; Saina Nehwal|saina; Abhinav Bindra|bindra; Manu Bhaker",
+    decoy: "",
+    orbit: "Sushil Kumar; Mirabai Chanu|saikhom mirabai chanu; Bajrang Punia; Ravi Kumar Dahiya|ravi dahiya; Lovlina Borgohain|lovlina; Sakshi Malik; Vijender Singh; Yogeshwar Dutt; Gagan Narang; Vijay Kumar; Rajyavardhan Singh Rathore|rathore; Karnam Malleswari; Leander Paes; Dhyan Chand|major dhyan chand; PR Sreejesh|sreejesh; Harmanpreet Singh; Aman Sehrawat; Sarabjot Singh; Swapnil Kusale",
+    moonshot: "KD Jadhav|khashaba dadasaheb jadhav; Balbir Singh Sr|balbir singh; Leslie Claudius; Udham Singh Kular; Roop Singh; Manpreet Singh; Rupinder Pal Singh; Simranjeet Singh; Hardik Singh; Mandeep Singh; Lalit Upadhyay; Vivek Sagar Prasad; Gurjant Singh; Shamsher Singh",
+    deep: "Kishan Lal; Keshav Datt; Randhir Singh Gentle; Ajit Pal Singh; Prithipal Singh; Charanjit Singh; Shankar Laxman; Vasudevan Baskaran|v baskaran; Mohammed Shahid; Zafar Iqbal; Surinder Singh Sodhi; Harcharan Singh; Ashok Kumar|ashok kumar (hockey); Michael Kindo; Jaipal Singh Munda|jaipal singh; Richard Allen; Jaswant Singh Rajput",
+    gem: "Norman Pritchard",
+  }),
+];

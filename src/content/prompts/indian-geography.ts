@@ -1,0 +1,68 @@
+import { p } from "../types";
+const T = "indian-geography";
+export default [
+  p("ig-state", T, "Name an Indian state", {
+    ground: "Maharashtra; Uttar Pradesh|up; Kerala; Tamil Nadu|tn; Rajasthan; Gujarat; Karnataka",
+    decoy: "Goa",
+    orbit: "West Bengal|bengal; Punjab; Bihar; Madhya Pradesh|mp; Andhra Pradesh|ap; Telangana; Odisha|orissa; Haryana; Assam; Himachal Pradesh|himachal|hp; Uttarakhand|uttaranchal; Jharkhand; Chhattisgarh",
+    moonshot: "Sikkim; Meghalaya; Manipur; Nagaland; Tripura; Arunachal Pradesh|arunachal",
+    deep: "Mizoram",
+    gem: "Mizoram",
+  }),
+  p("ig-capital", T, "Name an Indian state or UT capital", {
+    ground: "Mumbai|bombay; Chennai|madras; Kolkata|calcutta; Bengaluru|bangalore; Hyderabad; Jaipur; Lucknow; New Delhi|delhi",
+    decoy: "Chandigarh",
+    orbit: "Patna; Bhopal; Gandhinagar; Thiruvananthapuram|trivandrum; Bhubaneswar; Ranchi; Raipur; Dehradun; Shimla; Srinagar; Panaji|panjim; Guwahati|dispur; Amaravati; Puducherry|pondicherry",
+    moonshot: "Gangtok; Shillong; Imphal; Kohima; Agartala; Itanagar; Aizawl; Jammu; Leh; Port Blair|sri vijaya puram; Kavaratti; Daman",
+    deep: "Dharamshala|dharamsala; Gairsain|bhararisain; Nagpur; Silvassa",
+    gem: "Kavaratti",
+  }),
+  p("ig-river", T, "Name a river in India", {
+    ground: "Ganga|ganges; Yamuna; Brahmaputra; Godavari; Krishna; Narmada; Kaveri|cauvery",
+    decoy: "Saraswati|sarasvati",
+    orbit: "Indus|sindhu; Mahanadi; Tapti|tapi; Sutlej|satluj; Beas; Chenab; Jhelum; Ravi; Gomti; Ghaghara|ghaghra; Gandak; Kosi; Son; Chambal; Betwa; Tungabhadra; Hooghly|hugli; Teesta; Damodar; Periyar; Sabarmati; Alaknanda; Bhagirathi",
+    moonshot: "Mandakini; Pindar; Ramganga; Sharda|kali; Rapti; Ken; Sindh; Tons; Mahi; Luni; Banas; Penner|pennar; Bhima; Manjira; Pranhita; Indravati; Wainganga; Wardha; Sharavathi; Netravati; Bharathapuzha; Pamba; Vaigai; Tamirabarani; Palar; Subarnarekha; Baitarani; Brahmani; Barak; Manas; Subansiri; Dibang; Lohit",
+    deep: "Zuari; Mandovi; Kali Nadi; Mhadei; Aghanashini; Kabini; Hemavati; Bhavani; Amaravathi; Noyyal; Thenpennai; Ponnaiyar; Gundlakamma; Vamsadhara; Nagavali; Rushikulya; Devi; Kangsabati; Dwarakeswar; Rupnarayan; Torsa; Jaldhaka; Sankosh; Dhansiri; Kopili; Tuirial; Tlawng; Chel; Mahananda; Punpun; Falgu|phalgu; Karmanasa; Sai; Hindon; Kali Sindh; Parbati; Shipra|kshipra",
+    gem: "Phalgu|falgu",
+  }),
+  p("ig-hill-station", T, "Name a hill station in India", {
+    ground: "Shimla; Manali; Darjeeling; Ooty|udhagamandalam; Mussoorie; Nainital",
+    decoy: "Kashmir",
+    orbit: "Munnar; Kodaikanal; Gangtok; Mount Abu; Coorg|kodagu; Lonavala; Mahabaleshwar; Matheran; Dalhousie; Dharamshala|dharamsala; McLeod Ganj|mcleodganj; Shillong; Kasauli; Auli; Gulmarg; Pahalgam; Sonmarg; Lansdowne; Ranikhet; Almora; Kufri; Panchgani; Yercaud",
+    moonshot: "Coonoor; Kotagiri; Chikmagalur|chikkamagaluru; Wayanad; Ponmudi; Vagamon; Araku Valley|araku; Horsley Hills; Saputara; Pachmarhi; Chail; Kasol; Khajjiar; Mukteshwar; Chopta; Kausani; Binsar; Tawang; Kalimpong; Kurseong; Mirik; Pelling; Lachung; Haflong; Cherrapunji|sohra",
+    deep: "Lambasingi; Nandi Hills; Kemmangundi; Agumbe; Kudremukh; Yelagiri; Valparai; Meghamalai; Kolli Hills; Peermade; Nelliyampathy; Toranmal; Amboli; Bhandardara; Jawhar; Chikhaldara; Mainpat; Netarhat; Daringbadi; Ziro; Bomdila; Dirang; Mokokchung; Lunglei; Champhai; Jibhi; Narkanda; Chakrata; Dhanaulti; Munsiyari; Lohaghat; Patnitop",
+    gem: "Lambasingi",
+  }),
+  p("ig-national-park", T, "Name a national park or tiger reserve in India", {
+    ground: "Jim Corbett|corbett; Ranthambore|ranthambhore; Kaziranga; Sundarbans|sunderbans; Gir|gir forest",
+    decoy: "Kanha",
+    orbit: "Bandhavgarh; Pench; Tadoba|tadoba andhari; Periyar; Bandipur; Nagarhole|rajiv gandhi national park; Sariska; Keoladeo|bharatpur|keoladeo ghana; Manas; Hemis; Valley of Flowers; Great Himalayan National Park; Silent Valley; Satpura; Panna; Dudhwa; Rajaji; Mudumalai; Eravikulam; Simlipal|similipal",
+    moonshot: "Nanda Devi; Kudremukh; Anshi|kali tiger reserve; Bhadra; BR Hills|biligiri ranganatha; Sathyamangalam; Anamalai|indira gandhi wildlife sanctuary; Kalakkad Mundanthurai; Nagarjunsagar Srisailam|nagarjunasagar; Kawal; Amrabad; Melghat; Sanjay Gandhi National Park; Dachigam; Desert National Park; Blackbuck National Park|velavadar; Marine National Park|gulf of kutch; Bhitarkanika; Namdapha; Nameri; Orang; Dibru-Saikhowa; Pakke|pakhui; Buxa; Jaldapara; Gorumara; Neora Valley; Valmiki; Palamau|betla; Achanakmar; Indravati; Kanger Ghati",
+    deep: "Keibul Lamjao; Balpakram; Nokrek; Murlen; Phawngpui|blue mountain; Ntangki; Intanki; Khangchendzonga|kanchenjunga national park; Singalila; Mouling; Dihing Patkai; Raimona; Sirohi National Park; Mukurthi; Guindy; Mahatma Gandhi Marine National Park|wandoor; Rani Jhansi Marine National Park; Saddle Peak; Campbell Bay; Galathea; Mount Harriet; Kishtwar; Pin Valley; Inderkilla; Khirganga; Simbalbara; Kalesar; Sultanpur; Mrugavani; Kasu Brahmananda Reddy; Sri Venkateswara; Papikonda",
+    gem: "Keibul Lamjao",
+  }),
+  p("ig-lake", T, "Name a lake in India", {
+    ground: "Dal Lake|dal; Chilika|chilka; Pangong|pangong tso; Wular; Vembanad",
+    decoy: "Naini Lake|naini|naini tal",
+    orbit: "Loktak; Sambhar; Pichola|lake pichola; Fateh Sagar; Hussain Sagar; Bhimtal; Tso Moriri; Tsomgo|changu; Gurudongmar; Ashtamudi; Pulicat; Kolleru; Hemkund; Roopkund|skeleton lake; Lonar; Upper Lake|bhojtal|bada talab; Sukhna; Ulsoor|halasuru; Powai; Rewalsar; Renuka",
+    moonshot: "Nako; Chandratal|chandra taal; Suraj Tal; Prashar; Khajjiar Lake; Dodital; Deoria Tal; Satopanth; Kedartal; Sattal; Naukuchiatal; Manasbal; Gangabal; Tarsar; Marsar; Vishansar; Kishansar; Tso Kar; Shey; Sela; Madhuri|shungatser; Umiam|barapani; Ward's Lake; Khecheopalri; Senthuri; Udhagamandalam lake|ooty lake; Kodaikanal lake; Berijam; Sasthamkotta; Pookode; Anchar; Nal Sarovar; Kankaria; Sursagar; Pushkar; Ana Sagar; Rajsamand; Jaisamand; Gadisar; Ramgarh",
+    deep: "Samiti; Bhrigu; Dashair; Hamta; Mani Mahesh|manimahesh; Ghadsisar; Siliserh; Badkhal; Sat Tal|sattal; Shesh Nag|sheshnag; Rudranath; Mirik Lake|sumendu; Sangetsar; Ziro; Rudrasagar; Dumboor; Nongkhnum; Tamdil; Palak Dil; Rih Dil; Sangchen; Bhoj Wetland; Harike; Kanjli; Ropar wetland",
+    gem: "Rih Dil",
+  }),
+  p("ig-beach", T, "Name a beach in India", {
+    ground: "Juhu; Marine Drive; Marina Beach|marina; Calangute; Baga; Kovalam",
+    decoy: "Goa",
+    orbit: "Anjuna; Palolem; Varkala; Radhanagar|beach no 7; Puri; Digha; Gokarna|om beach; Kanyakumari; Mahabalipuram|mamallapuram; Elliot's Beach|besant nagar|bessie; Rushikonda; RK Beach|ramakrishna beach; Alibaug; Tarkarli; Ganpatipule; Diu; Mandvi; Vagator; Colva; Candolim; Arambol; Cherai; Kappad; Muzhappilangad",
+    moonshot: "Butterfly Beach; Agonda; Morjim; Ashwem; Cola Beach; Benaulim; Varca; Kudle; Half Moon Beach; Paradise Beach|pondicherry paradise; Promenade|rock beach; Auroville beach; Kashid; Murud; Velneshwar; Dapoli; Kihim; Shivrajpur; Gopalpur; Chandipur; Mandarmani; Tajpur; Shankarpur; Bheemunipatnam; Yarada; Suryalanka; Kaup; Malpe; Murudeshwar; Maravanthe; Panambur; Elephant Beach; Kalapathar; Laxmanpur; Bharatpur beach; Ross Island",
+    deep: "Dhanushkodi; Rameswaram; Tharangambadi|tranquebar; Silver Beach|cuddalore; Poompuhar; Kovalam (Chennai)|covelong; Muttukadu; Kozhikode beach; Payyambalam; Bekal; Thottada; Shanghumugham; Alappuzha beach; Marari; Kuzhupilly; Ottinene; Somnath beach; Chorwad; Tithal; Dumas; Ahmedpur Mandvi; Nagoa; Ghoghla; Talpona; Galgibaga|turtle beach; Kakolem|tiger beach; Keri|querim; Sinquerim; Hollant; Bogmalo; Velsao; Cavelossim; Mobor; Betul",
+    gem: "Galgibaga|turtle beach",
+  }),
+  p("ig-pass", T, "Name a mountain pass in India", {
+    ground: "Rohtang|rohtang pass; Khardung La|khardungla; Nathu La|nathula; Zoji La|zojila",
+    decoy: "Khyber Pass|khyber",
+    orbit: "Baralacha La; Chang La; Shipki La; Bomdila; Sela Pass|sela; Jelep La; Banihal; Pir Panjal; Kunzum|kunzum pass; Lipulekh; Mana Pass|mana; Niti Pass|niti; Umling La; Tanglang La; Fotu La; Namika La",
+    moonshot: "Jalori Pass|jalori; Sach Pass; Hamta Pass; Pin Parvati; Marsimik La; Photi La; Saser La; Karakoram Pass; Thang La; Taglang; Lachulung La; Nakee La; Rezang La; Bara Lacha|bara lacha la; Sinthan Top; Razdan Pass; Shinku La; Kalindi Khal; Traill's Pass; Thalghat; Bhorghat; Palghat|palakkad gap; Shencottah|sengottai gap; Aryankavu",
+    deep: "Debsa; Kugti; Indrahar; Chobia; Parang La; Lamkhaga; Borasu; Rupin Pass|rupin; Bali Pass; Auden's Col; Pindari; Ralam; Kungri Bingri; Darma; Mayali; Diphu Pass|diphu; Yonggyap; Kibithu; Bum La; Tse La; Pangsau Pass|pangsau; Imis La; Chorbat La; Mamostong; Zangpo La",
+    gem: "Pangsau Pass|pangsau",
+  }),
+];

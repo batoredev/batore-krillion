@@ -1,0 +1,68 @@
+import { p } from "../types";
+const T = "indian-history-politics";
+export default [
+  p("ihp-pm", T, "Name a Prime Minister of India", {
+    ground: "Jawaharlal Nehru|nehru|pandit nehru; Narendra Modi|modi; Indira Gandhi|indira; Manmohan Singh",
+    decoy: "Atal Bihari Vajpayee|vajpayee|atal ji",
+    orbit: "Rajiv Gandhi; Lal Bahadur Shastri|shastri; P. V. Narasimha Rao|pv narasimha rao|narasimha rao",
+    moonshot: "Morarji Desai|morarji; V. P. Singh|vp singh|vishwanath pratap singh; H. D. Deve Gowda|deve gowda|hd deve gowda; I. K. Gujral|ik gujral|inder kumar gujral",
+    deep: "Charan Singh|chaudhary charan singh; Chandra Shekhar",
+    gem: "Gulzarilal Nanda|nanda",
+  }),
+  p("ihp-president", T, "Name a President of India", {
+    ground: "A. P. J. Abdul Kalam|apj abdul kalam|abdul kalam|kalam; Droupadi Murmu|draupadi murmu|murmu; Pranab Mukherjee|pranab; Rajendra Prasad",
+    decoy: "Ram Nath Kovind|kovind",
+    orbit: "Pratibha Patil; Sarvepalli Radhakrishnan|s radhakrishnan|radhakrishnan; Zakir Husain|zakir hussain; K. R. Narayanan|kr narayanan",
+    moonshot: "V. V. Giri|vv giri; Zail Singh|giani zail singh; R. Venkataraman|venkataraman; Shankar Dayal Sharma; Fakhruddin Ali Ahmed",
+    deep: "Neelam Sanjiva Reddy|sanjiva reddy; Mohammad Hidayatullah|hidayatullah; B. D. Jatti|bd jatti",
+    gem: "B. D. Jatti|bd jatti|basappa danappa jatti",
+  }),
+  p("ihp-mughal", T, "Name a Mughal emperor", {
+    ground: "Akbar|akbar the great; Shah Jahan|shahjahan; Aurangzeb|alamgir; Babur|babar; Humayun; Jahangir",
+    decoy: "Bahadur Shah Zafar|bahadur shah ii|bahadur shah zafar ii",
+    orbit: "Bahadur Shah I|bahadur shah 1; Muhammad Shah|muhammad shah rangeela; Shah Alam II|shah alam",
+    moonshot: "Farrukhsiyar; Jahandar Shah; Akbar II|akbar shah ii; Alamgir II; Ahmad Shah Bahadur",
+    deep: "Rafi ud-Darajat|rafi ud darajat; Shah Jahan II|rafi ud-daulah; Shah Jahan III; Muhammad Ibrahim; Nikusiyar; Azam Shah",
+    gem: "Rafi ud-Darajat|rafi ud darajat|rafi-ud-darajat",
+  }),
+  p("ihp-freedom", T, "Name an Indian freedom fighter", {
+    ground: "Mahatma Gandhi|gandhi|gandhiji|bapu|mohandas karamchand gandhi; Bhagat Singh; Subhas Chandra Bose|netaji|subhash chandra bose; Jawaharlal Nehru|nehru; Sardar Vallabhbhai Patel|sardar patel|vallabhbhai patel",
+    decoy: "Rani Lakshmibai|rani of jhansi|jhansi ki rani|lakshmibai",
+    orbit: "Chandrashekhar Azad|chandra shekhar azad; Bal Gangadhar Tilak|tilak|lokmanya tilak; Lala Lajpat Rai|lajpat rai; Sukhdev; Rajguru; Mangal Pandey; B. R. Ambedkar|ambedkar|babasaheb; Sarojini Naidu; Maulana Abul Kalam Azad|abul kalam azad; Gopal Krishna Gokhale|gokhale; Dadabhai Naoroji|naoroji; Bipin Chandra Pal; Ram Prasad Bismil|bismil; Ashfaqulla Khan; Khudiram Bose; Veer Savarkar|savarkar|vinayak damodar savarkar; Annie Besant; Rajendra Prasad; C. Rajagopalachari|rajaji; Tantia Tope|tatya tope; Kunwar Singh|veer kunwar singh",
+    moonshot: "Birsa Munda; Alluri Sitarama Raju; Udham Singh; Madan Lal Dhingra; Batukeshwar Dutt; Jatin Das|jatindra nath das; Bagha Jatin; Surya Sen|masterda; Pritilata Waddedar; Kanaklata Barua; Matangini Hazra; Aruna Asaf Ali; Usha Mehta; Kasturba Gandhi; Khan Abdul Ghaffar Khan|frontier gandhi|bacha khan; Vinoba Bhave; Jayaprakash Narayan|jp; Ram Manohar Lohia|lohia; Rash Behari Bose; Lala Hardayal|har dayal; Chittaranjan Das|deshbandhu; Motilal Nehru; Madan Mohan Malaviya; Begum Hazrat Mahal; Nana Sahib; Kittur Chennamma; Velu Nachiyar; Veerapandiya Kattabomman|kattabomman; Rani Gaidinliu",
+    deep: "Tirot Sing; U Kiang Nangbah; Pazhassi Raja|kerala varma pazhassi raja; Puli Thevar; Maruthu Pandiyar|maruthu brothers; Tilka Manjhi; Sidhu and Kanhu|sidhu murmu; Bhikaji Cama|madam cama; Shyamji Krishna Varma; Sachindra Nath Sanyal; Chapekar brothers; Vasudev Balwant Phadke; Peer Ali Khan; Maulvi Ahmadullah Shah; Bakht Khan; Uda Devi; Jhalkari Bai; Kalpana Datta; Bina Das; Shanti Ghosh; Suniti Choudhury; Tara Rani Srivastava; Sucheta Kripalani; Durgawati Devi|durga bhabhi; Bhogeswari Phukanani; Haipou Jadonang; Komaram Bheem; Thiruppur Kumaran|tiruppur kumaran; Subramania Bharati|bharathiyar; V. O. Chidambaram Pillai|voc",
+    gem: "Tirot Sing",
+  }),
+  p("ihp-party", T, "Name an Indian political party", {
+    ground: "Bharatiya Janata Party|bjp; Indian National Congress|congress|inc; Aam Aadmi Party|aap; Communist Party of India (Marxist)|cpi(m)|cpim|cpm",
+    decoy: "Janata Party",
+    orbit: "Trinamool Congress|tmc|aitc|all india trinamool congress; Samajwadi Party|sp; Bahujan Samaj Party|bsp; Shiv Sena; Nationalist Congress Party|ncp; DMK|dravida munnetra kazhagam; AIADMK|anna dmk; Rashtriya Janata Dal|rjd; Janata Dal (United)|jdu|jd(u); Telugu Desam Party|tdp; YSR Congress|ysrcp|ysr congress party; Biju Janata Dal|bjd; Shiromani Akali Dal|akali dal|sad; Communist Party of India|cpi; Janata Dal (Secular)|jds|jd(s); Bharat Rashtra Samithi|brs|trs|telangana rashtra samithi; Jharkhand Mukti Morcha|jmm; AIMIM|majlis",
+    moonshot: "Maharashtra Navnirman Sena|mns; Rashtriya Lok Dal|rld; Lok Janshakti Party|ljp; National Conference|jknc|jammu and kashmir national conference; Peoples Democratic Party|pdp; Indian National Lok Dal|inld; Jana Sena|jana sena party; Asom Gana Parishad|agp; Sikkim Krantikari Morcha|skm; Naga People's Front|npf; Nationalist Democratic Progressive Party|ndpp; National People's Party|npp; Mizo National Front|mnf; Zoram People's Movement|zpm; Revolutionary Socialist Party|rsp; All India Forward Bloc|forward bloc; Indian Union Muslim League|iuml; Kerala Congress; Pattali Makkal Katchi|pmk; Viduthalai Chiruthaigal Katchi|vck; Tamilaga Vettri Kazhagam|tvk; Apna Dal; Suheldev Bharatiya Samaj Party|sbsp; Vikassheel Insaan Party|vip; Hindustani Awam Morcha|ham; Jan Suraaj|jan suraaj party",
+    deep: "Swatantra Party; Praja Socialist Party; Samyukta Socialist Party; Bharatiya Jana Sangh|jana sangh; Bharatiya Lok Dal; Janata Dal; Hindu Mahasabha|akhil bharatiya hindu mahasabha; Ram Rajya Parishad; Republican Party of India|rpi; Peasants and Workers Party|pwp; Forward Bloc (Marxist); Socialist Unity Centre|suci; Communist Party of India (Marxist–Leninist) Liberation|cpi ml liberation|cpiml; Gorkha Janmukti Morcha|gjm; Sikkim Democratic Front|sdf; Mizoram People's Conference; Tipra Motha; Indigenous People's Front of Tripura|ipft; Hill State People's Democratic Party; United Democratic Party (Meghalaya)|udp; Desiya Murpokku Dravida Kazhagam|dmdk; Marumalarchi Dravida Munnetra Kazhagam|mdmk; Puthiya Tamilagam; Lok Satta Party; Praja Rajyam Party; Kerala Congress (M); Goa Forward Party; Maharashtrawadi Gomantak Party|mgp",
+    gem: "Swatantra Party",
+  }),
+  p("ihp-dynasty", T, "Name an Indian dynasty or kingdom", {
+    ground: "Maurya|mauryan|mauryas; Gupta|guptas; Mughal|mughals; Chola|cholas; Maratha|marathas",
+    decoy: "Rajput|rajputs",
+    orbit: "Pandya|pandyas; Chera|cheras; Pallava|pallavas; Chalukya|chalukyas; Rashtrakuta|rashtrakutas; Vijayanagara; Satavahana|satavahanas; Kushan|kushana|kushans; Nanda|nandas; Haryanka; Shunga|sunga; Pala|palas; Sena; Kakatiya|kakatiyas; Hoysala|hoysalas; Yadava|seuna yadava; Bahmani; Lodi|lodhi; Tughlaq|tughlaq dynasty; Khilji|khalji; Slave dynasty|mamluk dynasty; Sayyid; Suri|sur empire; Ahom; Sikh Empire|sikh",
+    moonshot: "Pratihara|gurjara pratihara; Paramara; Chandela|chandelas; Kalachuri; Solanki|chaulukya; Chauhan|chahamana; Gahadavala; Eastern Ganga|ganga dynasty; Western Ganga; Kadamba|kadambas; Vakataka|vakatakas; Ikshvaku; Maitraka; Vardhana|pushyabhuti; Kanva; Shishunaga; Mahameghavahana|kharavela; Indo-Greek; Western Satraps|kshatrapa; Indo-Scythian|saka; Nizam Shahi; Adil Shahi; Qutb Shahi; Wodeyar|wadiyar; Travancore; Holkar; Scindia; Gaekwad|gaekwar; Peshwa",
+    deep: "Kamboja; Kalinga; Licchavi; Maukhari; Later Gupta; Kamarupa|varman dynasty; Mlechchha dynasty; Pala of Kamarupa; Chutia; Koch|koch dynasty; Kachari|dimasa; Manikya; Tripuri; Ningthouja; Namgyal|chogyal; Katoch; Utpala; Karkota; Lohara; Shahmir; Chak; Dogra; Kalhora; Langah; Faruqi; Imad Shahi; Barid Shahi; Gajapati; Bhoi; Eastern Chalukya|vengi chalukya; Reddy kingdom|reddi; Musunuri Nayaka; Madurai Nayak|nayak; Sethupathi; Zamorin|samoothiri; Arakkal",
+    gem: "Arakkal",
+  }),
+  p("ihp-battle", T, "Name a battle from Indian history", {
+    ground: "Battle of Panipat|panipat|first battle of panipat; Battle of Plassey|plassey|palashi; Battle of Haldighati|haldighati; Kurukshetra|mahabharata war; Kargil War|kargil",
+    decoy: "Battle of Buxar|buxar",
+    orbit: "Second Battle of Panipat; Third Battle of Panipat; Battle of Tarain|tarain|first battle of tarain|second battle of tarain; Kalinga War|kalinga; Battle of Talikota|talikota; Battle of Khanwa|khanwa; Battle of Saragarhi|saragarhi; Battle of Longewala|longewala; Battle of Rezang La|rezang la; Battle of Hydaspes|hydaspes|jhelum; Battle of Assaye|assaye; Battle of Koregaon|bhima koregaon; Siege of Delhi; Siege of Lucknow; Battle of Chillianwala|chillianwala; Battle of Pratapgarh; Battle of Sinhagad|sinhagad; Battle of Karnal|karnal",
+    moonshot: "Battle of Saraighat|saraighat; Battle of Pollilur|pollilur; Battle of Wandiwash|wandiwash; Battle of Adyar; Battle of Ambur; Battle of Seringapatam|siege of seringapatam; Battle of Kohima; Battle of Imphal; Battle of Asal Uttar|asal uttar; Battle of Basantar|basantar; Battle of Garibpur; Battle of Hilli; Battle of Laswari|laswari; Battle of Delhi (1803); Battle of Mudki|mudki; Battle of Ferozeshah|ferozeshah; Battle of Sobraon|sobraon; Battle of Aliwal|aliwal; Battle of Gujrat; Battle of Chausa|chausa; Battle of Kannauj|kannauj; Battle of Samugarh|samugarh; Battle of Dharmat; Battle of Palkhed|palkhed; Battle of Bhopal",
+    deep: "Battle of Colachel|colachel; Battle of Itakhuli; Battle of Alaboi; Battle of Pavan Khind|pavankhind|ghod khind; Battle of Umberkhind|umber khind; Battle of Salher|salher; Battle of Kolhapur; Battle of Wadgaon|wadgaon; Battle of Kharda|kharda; Battle of Rakshasa-Tangadi; Battle of Raichur|raichur; Battle of Tukaroi; Battle of Sarnal; Battle of Bhangani|bhangani; Battle of Chamkaur|chamkaur; Battle of Muktsar; Battle of Jamrud|jamrud; Battle of Nowshera; Battle of Attock; Battle of Rajmahal; Battle of Gaggar; Battle of Kalpi; Battle of Betwa; Battle of Gwalior; Battle of Badli-ki-Serai|badli ki serai; Battle of Najafgarh; Battle of Chinhat|chinhat; Battle of Dograi|dograi; Battle of Phillora|phillora; Battle of Chawinda; Battle of Shakargarh",
+    gem: "Battle of Colachel|colachel|kulachal",
+  }),
+  p("ihp-bharat-ratna", T, "Name a Bharat Ratna recipient", {
+    ground: "Sachin Tendulkar|sachin; A. P. J. Abdul Kalam|apj abdul kalam|abdul kalam|kalam; Lata Mangeshkar|lata; Atal Bihari Vajpayee|vajpayee; Mother Teresa; Jawaharlal Nehru|nehru",
+    decoy: "",
+    orbit: "Indira Gandhi; Rajiv Gandhi; B. R. Ambedkar|ambedkar; Sardar Vallabhbhai Patel|sardar patel; Nelson Mandela|mandela; Satyajit Ray; Pranab Mukherjee; Bhimsen Joshi; M. S. Subbulakshmi|ms subbulakshmi; Ravi Shankar|pandit ravi shankar; Bismillah Khan|ustad bismillah khan; C. V. Raman|cv raman; Lal Bahadur Shastri|shastri; Rajendra Prasad; Sarvepalli Radhakrishnan|radhakrishnan; Maulana Abul Kalam Azad|abul kalam azad; Madan Mohan Malaviya; Bhupen Hazarika; Karpoori Thakur; L. K. Advani|lk advani|advani; P. V. Narasimha Rao|narasimha rao; Charan Singh|chaudhary charan singh; M. S. Swaminathan|ms swaminathan",
+    moonshot: "C. Rajagopalachari|rajaji; M. Visvesvaraya|visvesvaraya|sir mv; Bhagwan Das; Govind Ballabh Pant|gb pant; Dhondo Keshav Karve|maharshi karve; Bidhan Chandra Roy|bc roy|dr bc roy; Purushottam Das Tandon; Pandurang Vaman Kane|pv kane; Zakir Husain; V. V. Giri|vv giri; K. Kamaraj|kamaraj; Vinoba Bhave; Khan Abdul Ghaffar Khan|frontier gandhi; M. G. Ramachandran|mgr; Morarji Desai; J. R. D. Tata|jrd tata; Jayaprakash Narayan|jp; Gulzarilal Nanda; Aruna Asaf Ali; Amartya Sen; Gopinath Bordoloi; C. N. R. Rao|cnr rao; Nanaji Deshmukh",
+    deep: "",
+    gem: "Pandurang Vaman Kane|pv kane",
+  }),
+];

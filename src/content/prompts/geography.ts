@@ -1,0 +1,68 @@
+import { p } from "../types";
+const T = "geography";
+export default [
+  p("geo-africa", T, "Name a country in Africa", {
+    ground: "Egypt; Nigeria; South Africa; Kenya; Morocco; Ethiopia",
+    decoy: "Madagascar",
+    orbit: "Ghana; Algeria; Tanzania; Uganda; Zimbabwe; Libya; Sudan; Tunisia; Somalia; Congo|republic of the congo; Democratic Republic of the Congo|drc|dr congo; Cameroon; Senegal; Angola; Mozambique; Zambia; Namibia; Botswana; Rwanda; Mali; Ivory Coast|cote d'ivoire",
+    moonshot: "Niger; Chad; Burkina Faso; Malawi; Sierra Leone; Liberia; Guinea; Benin; Togo; Gabon; Eritrea; South Sudan; Mauritania; Mauritius; Seychelles; Lesotho; Eswatini|swaziland; Burundi; Djibouti; Gambia; Central African Republic; Cape Verde|cabo verde",
+    deep: "Equatorial Guinea; Guinea-Bissau; Comoros; Western Sahara|sahrawi republic",
+    gem: "Sao Tome and Principe|sao tome",
+  }),
+  p("geo-europe-capital", T, "Name a capital city in Europe", {
+    ground: "London; Paris; Berlin; Rome; Madrid; Moscow",
+    decoy: "Amsterdam; Vatican City|vatican",
+    orbit: "Lisbon; Vienna; Brussels; Athens; Dublin; Prague; Warsaw; Budapest; Stockholm; Oslo; Copenhagen; Helsinki; Bern; Kyiv|kiev; Edinburgh; Bucharest; Belgrade; Sofia; Monaco; Reykjavik",
+    moonshot: "Zagreb; Ljubljana; Bratislava; Vilnius; Riga; Tallinn; Minsk; Chisinau; Sarajevo; Skopje; Tirana; Podgorica; Valletta; Luxembourg; Andorra la Vella; San Marino; Nicosia; Cardiff; Belfast; Pristina",
+    deep: "Tbilisi; Yerevan; Baku; Ankara; Tórshavn|torshavn; Gibraltar; Douglas; St Peter Port; Saint Helier|st helier; Mariehamn; Nuuk; Longyearbyen",
+    gem: "Vaduz",
+  }),
+  p("geo-river", T, "Name a river (outside India)", {
+    ground: "Nile; Amazon; Mississippi; Thames; Danube; Yangtze",
+    decoy: "Jordan; Seine",
+    orbit: "Rhine; Volga; Congo; Niger; Mekong; Tigris; Euphrates; Colorado; Missouri; Hudson; Yellow River|huang he; Zambezi; Indus; Ganges|ganga; Orinoco; Rio Grande; St Lawrence|saint lawrence; Tiber; Loire; Elbe; Ob; Yenisei; Lena; Murray",
+    moonshot: "Mackenzie; Yukon; Columbia; Ohio; Tennessee; Paraná|parana; Paraguay; Uruguay; Limpopo; Orange; Senegal; Irrawaddy; Salween; Amur; Ural; Don; Dnieper; Dniester; Vistula; Oder; Rhône|rhone; Po; Ebro; Tagus|tejo; Douro; Shannon; Severn; Darling",
+    deep: "Kolyma; Indigirka; Pechora; Kama; Syr Darya; Amu Darya; Helmand; Kabul River; Chao Phraya; Red River; Pearl River|zhujiang; Han; Tumen; Sepik; Fly; Waikato; Clutha; Magdalena; Sao Francisco; Purus; Madeira; Xingu; Tocantins; Negro|rio negro; Ubangi; Kasai; Shebelle; Juba; Atbara; Blue Nile; White Nile; Rio de la Plata",
+    gem: "Okavango",
+  }),
+  p("geo-island-country", T, "Name an island country", {
+    ground: "Japan; Sri Lanka; Australia; New Zealand; Maldives; Philippines; Indonesia",
+    decoy: "Iceland; United Kingdom|uk|britain|great britain",
+    orbit: "Madagascar; Cuba; Jamaica; Ireland; Singapore; Taiwan; Fiji; Mauritius; Seychelles; Bahamas; Malta; Cyprus; Bahrain; Haiti; Dominican Republic; Papua New Guinea; Barbados; Trinidad and Tobago",
+    moonshot: "Samoa; Tonga; Vanuatu; Solomon Islands; Kiribati; Nauru; Palau; Marshall Islands; Micronesia; Comoros; Cape Verde|cabo verde; Sao Tome and Principe; Timor-Leste|east timor; Brunei; Grenada; Saint Lucia; Antigua and Barbuda; Dominica",
+    deep: "Saint Kitts and Nevis|st kitts and nevis; Saint Vincent and the Grenadines|st vincent and the grenadines",
+    gem: "Tuvalu",
+  }),
+  p("geo-8000", T, "Name a mountain peak over 8,000 metres", {
+    ground: "Mount Everest|everest|sagarmatha|chomolungma",
+    decoy: "K2|godwin austen",
+    orbit: "Kangchenjunga|kanchenjunga; Lhotse; Makalu; Annapurna",
+    moonshot: "Cho Oyu; Dhaulagiri; Manaslu; Nanga Parbat",
+    deep: "Gasherbrum I|hidden peak; Broad Peak; Shishapangma|shisha pangma",
+    gem: "Gasherbrum II|k4",
+  }),
+  p("geo-landlocked", T, "Name a landlocked country", {
+    ground: "Nepal; Bhutan; Switzerland; Afghanistan; Mongolia",
+    decoy: "Vatican City|vatican",
+    orbit: "Austria; Hungary; Czech Republic|czechia; Slovakia; Kazakhstan; Uzbekistan; Bolivia; Paraguay; Ethiopia; Uganda; Rwanda; Zimbabwe; Zambia; Botswana; Laos; Belarus; Luxembourg; Liechtenstein; Andorra; San Marino",
+    moonshot: "Serbia; North Macedonia|macedonia; Moldova; Armenia; Azerbaijan; Kyrgyzstan; Mali; Niger; Chad; Burkina Faso; Central African Republic; Malawi",
+    deep: "Tajikistan; Turkmenistan; South Sudan; Eswatini|swaziland; Burundi; Kosovo",
+    gem: "Lesotho",
+  }),
+  p("geo-desert", T, "Name a desert", {
+    ground: "Sahara; Thar|great indian desert; Gobi; Kalahari; Arabian Desert|arabian",
+    decoy: "Antarctica|antarctic desert",
+    orbit: "Atacama; Mojave; Namib; Sonoran; Great Victoria Desert|great victoria; Great Sandy Desert|great sandy; Gibson; Simpson; Chihuahuan; Patagonian|patagonia; Taklamakan; Rub' al Khali|empty quarter|rub al khali; Syrian Desert; Karakum; Kyzylkum; Death Valley; Great Basin; Arctic desert|arctic",
+    moonshot: "Negev; Sinai; Dasht-e Kavir|great salt desert; Dasht-e Lut|lut; Colorado Desert; Painted Desert; Strzelecki; Tanami; Nubian; Libyan Desert; Danakil; Ogaden; Karoo; Thal; Cholistan; Kharan; Registan; Ordos; Badain Jaran; Kavir; Judean Desert; Monte",
+    deep: "Tengger; Kumtag; Gurbantünggüt|gurbantunggut; Ryn; Accona; Tabernas; Bardenas Reales; Oltenian Sahara; Błędów|bledow; Owyhee; Black Rock; Red Desert; Sechura; Little Sandy; Pinnacles; Sturt Stony; Tirari; Big Desert",
+    gem: "Carcross",
+  }),
+  p("geo-us-state", T, "Name a US state", {
+    ground: "California; Texas; Florida; New York; Hawaii; Alaska",
+    decoy: "Washington",
+    orbit: "Nevada; Arizona; Colorado; Illinois; Georgia; Ohio; Michigan; Virginia; New Jersey; Massachusetts; Pennsylvania; Louisiana; Oregon; Utah; Tennessee; North Carolina; Kentucky; Indiana; Minnesota; Missouri; Alabama; Wisconsin",
+    moonshot: "South Carolina; Oklahoma; Kansas; Iowa; Arkansas; Mississippi; New Mexico; Maryland; Connecticut; Maine; Vermont; New Hampshire; Rhode Island; Idaho; Montana; Wyoming; Nebraska; West Virginia",
+    deep: "North Dakota; South Dakota",
+    gem: "Delaware",
+  }),
+];

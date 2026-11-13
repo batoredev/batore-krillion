@@ -1,0 +1,28 @@
+{
+  "name": "kribatov",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit",
+    "create-admin": "tsx scripts/create-admin.ts",
+    "reset-password": "tsx scripts/reset-password.ts",
+    "validate-content": "tsx scripts/validate-content.ts",
+    "test": "tsx scripts/test-engine.ts"
+  },
+  "dependencies": {
+    "next": "^15.5.29",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "server-only": "^0.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.3"
+  }
+}

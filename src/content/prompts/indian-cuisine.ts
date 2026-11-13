@@ -1,0 +1,68 @@
+import { p } from "../types";
+const T = "indian-cuisine";
+export default [
+  p("ic-sweet", T, "Name an Indian sweet (mithai)", {
+    ground: "Gulab jamun; Rasgulla|rasagola|rosogolla; Jalebi; Ladoo|laddu|laddoo; Kaju katli|kaju barfi; Barfi|burfi",
+    decoy: "Kheer",
+    orbit: "Rasmalai|ras malai; Sandesh; Mysore pak; Peda|pedha; Halwa|sooji halwa; Gajar ka halwa|gajar halwa; Soan papdi|son papdi; Motichoor ladoo|motichoor; Besan ladoo; Kalakand; Modak; Ghevar; Imarti|jangiri; Malpua; Shrikhand; Payasam; Phirni; Rabri|rabdi; Kulfi; Cham cham; Balushahi; Petha; Gujiya|karanji; Mishti doi",
+    moonshot: "Puran poli; Basundi; Sheer khurma; Double ka meetha; Qubani ka meetha; Chhena poda; Chhena jhili; Mihidana; Sitabhog; Langcha; Pantua; Nolen gur sandesh; Patishapta; Dharwad peda; Kunda; Chikki; Adhirasam; Ariselu; Pootharekulu; Kakinada kaja|kaja; Bal mithai; Singori; Mohanthal; Ghari; Sutarfeni; Anarsa; Khaja; Thekua; Malai chop; Rasbhari",
+    deep: "Ada pradhaman; Unniyappam; Palada; Elaneer payasam; Kozhukattai; Tirunelveli halwa; Srivilliputhur palkova|palkova; Rava kesari|kesari; Badusha; Pal poli; Obbattu|holige; Chiroti; Mangalore buns; Kesar peda; Mathura peda; Agra petha; Doda barfi; Pinni; Panjiri; Patisa; Bebinca|bebinka; Dodol; Kharvas; Narkel naru; Joynagarer moa|moa; Ledikeni; Kheer kadam; Pithe; Til pitha; Chhena gaja; Rasabali; Khira sagara; Arisa pitha; Kalaadi",
+    gem: "Ledikeni",
+  }),
+  p("ic-bread", T, "Name an Indian bread", {
+    ground: "Roti|chapati|phulka; Naan; Paratha|parantha; Puri|poori; Kulcha",
+    decoy: "Garlic naan",
+    orbit: "Bhatura; Rumali roti|roomali roti; Tandoori roti; Missi roti; Makki di roti|makki ki roti; Bajra roti; Jowar roti|jolada rotti; Thepla; Aloo paratha; Lachha paratha|laccha paratha; Pav; Luchi; Appam; Dosa; Parotta|kerala parotta|malabar parotta; Kachori; Bhakri",
+    moonshot: "Sheermal; Bakarkhani; Taftan; Khamiri roti; Akki roti; Ragi roti; Neer dosa; Puran poli; Thalipeeth; Rotla; Phulka; Koki; Bedmi puri; Radhaballavi; Dhakai paratha; Sel roti; Tingmo; Khambir; Babru; Siddu; Girda; Lavasa; Kulcha (Amritsari)|amritsari kulcha; Litti; Baati",
+    deep: "Ulli roti; Kuboos; Pathiri; Ari pathiri; Neypathiri; Mandige; Holige; Pathir; Mukund; Chilra; Bhature; Tchot; Lavas; Sheer roti; Dhaba roti; Tikkad; Panki; Dhebra; Bhakhri; Poee; Pao; Kakra pitha; Bedvi; Hare pyaaz ki roti",
+    gem: "Mandige",
+  }),
+  p("ic-south", T, "Name a South Indian dish", {
+    ground: "Dosa|masala dosa; Idli|idly; Vada|medu vada; Sambar|sambhar; Uttapam|uttapa; Upma",
+    decoy: "Biryani",
+    orbit: "Rasam; Pongal|ven pongal; Appam; Puttu; Avial; Payasam; Pesarattu; Rava dosa; Set dosa; Neer dosa; Bisi bele bath; Curd rice|thayir sadam; Lemon rice|chitranna; Tamarind rice|puliyogare|puliyodarai; Coconut chutney; Chettinad chicken; Kerala parotta|parotta; Idiyappam|string hoppers; Kozhukattai; Paniyaram|kuzhi paniyaram; Thoran; Olan; Kootu; Poriyal",
+    moonshot: "Pulihora; Gongura pachadi|gongura; Pesarattu upma; Ragi mudde; Akki rotti; Kesari bath; Khara bath; Mangalore buns; Goli baje|mangalore bajji; Neer dosa; Kori rotti; Ghee roast|chicken ghee roast; Appam with stew|stew; Karimeen pollichathu; Fish moilee|meen moilee; Erissery; Pulissery; Kaalan; Inji puli; Kothu parotta; Chettinad pepper chicken; Kuzhambu|vatha kuzhambu; Mor kuzhambu; Paal payasam; Adai|adai dosa; Ragi dosa; Pongal (sweet)|sakkarai pongal",
+    deep: "Kanji; Kappa|tapioca|kappa and meen curry; Pidi; Ela ada; Unnakaya; Pazham pori; Kallappam; Pathiri; Erachi pathiri; Thalassery biryani; Pandi curry; Kodava pork; Bamboo shoot curry; Kane rava fry; Kundapura chicken; Sannas; Patrode; Kotte kadubu; Mudde; Uppittu; Avalakki; Kozhi varutha; Mutton sukka; Thalipeeth; Pulusu; Royyala vepudu; Natu kodi pulusu; Ulavacharu; Bobbatlu; Punugulu; Sarva pindi|sarvapindi; Jonna rotte; Kambu koozh|koozh; Kuzhi appam",
+    gem: "Kambu koozh|koozh",
+  }),
+  p("ic-street", T, "Name an Indian street food", {
+    ground: "Pani puri|golgappa|puchka|gol gappa; Vada pav; Samosa; Pav bhaji; Chaat; Bhel puri|bhel",
+    decoy: "Momos|momo",
+    orbit: "Sev puri; Dahi puri; Aloo tikki; Papdi chaat; Dahi bhalla|dahi vada; Kathi roll|kati roll; Chole bhature; Kachori; Pakora|pakoda|bhajji; Dabeli; Ragda pattice; Misal pav; Frankie; Jhalmuri; Ghugni; Chhole kulche; Raj kachori; Jalebi; Kulhad chai|kulhad wali chai; Kulfi; Bun maska; Egg roll; Chicken 65; Kebab|seekh kebab; Tandoori chicken; Bhutta|corn on the cob",
+    moonshot: "Litti chokha; Aloo chaat; Kanji vada; Moong dal chilla|chilla; Poha jalebi; Bhutte ka kees; Sabudana vada; Kanda bhaji; Bombay sandwich; Akuri pav; Keema pav; Baida roti; Shawarma; Telebhaja; Fuchka; Mughlai paratha; Churmur; Dahi papdi; Kothu parotta; Sundal; Murukku sandwich; Mirchi bajji; Punugulu; Ghugni chaat; Tunday kebab|galouti kebab; Nihari",
+    deep: "Thukpa; Aloo kabli; Ram laddu; Daulat ki chaat; Malaiyo; Tamatar chaat; Basket chaat; Kachalu chaat; Khaman; Locho; Khichu; Dal pakwan; Pyaaz kachori; Mirchi vada; Kalmi vada; Ghugra; Bhakarwadi; Chakli; Dahi kachori; Dal kachori; Mutter kulcha; Sev usal; Mumbai masala toast; Ande ka funda; Kheema ghotala; Chicken tikka roll; Bread pakora; Matar chaat; Muri ghonto; Dahi vada (Odisha)|dahibara aloodum; Gupchup; Chhena poda; Sattu paratha",
+    gem: "Daulat ki chaat",
+  }),
+  p("ic-curry", T, "Name an Indian curry or gravy dish", {
+    ground: "Butter chicken|murgh makhani; Paneer butter masala|paneer makhani; Dal makhani; Chole|chana masala; Palak paneer; Rajma",
+    decoy: "Chicken tikka masala",
+    orbit: "Kadai paneer|kadhai paneer; Shahi paneer; Matar paneer; Malai kofta; Rogan josh; Korma|chicken korma; Vindaloo; Kadhi|kadhi pakora; Aloo gobi; Baingan bharta; Dal tadka; Sambar; Chicken curry; Mutton curry; Fish curry; Egg curry; Keema matar|keema; Saag|sarson ka saag; Dum aloo; Navratan korma; Chicken chettinad; Xacuti; Laal maas; Nihari",
+    moonshot: "Gatte ki sabzi; Ker sangri; Methi malai matar; Paneer lababdar; Achari paneer; Kolhapuri chicken|tambda rassa; Pandhra rassa; Undhiyu; Sev tamatar; Dhansak; Patra ni machhi; Salli boti; Shorshe ilish|sorshe ilish; Chingri malai curry; Kosha mangsho; Dalma; Chicken cafreal|cafreal; Goan fish curry; Kerala fish curry|meen curry; Chemmeen curry; Avial; Mirchi ka salan; Haleem; Paya; Yakhni; Gushtaba; Dum pukht",
+    deep: "Kaali dal; Kadala curry; Mor kuzhambu; Ennai kathirikai; Chepala pulusu; Gongura mutton; Nalli nihari; Rista; Tabak maaz; Modur pulao; Chaman; Khatta meetha kaddu; Aloo posto; Shukto; Doi maach; Chorchori; Machher jhol; Santula; Chhena tarkari; Pork vindaloo; Sorpotel; Ambot tik; Bharli vangi; Kombdi vade; Saoji chicken; Varhadi mutton; Pitla; Zunka; Bamboo shoot pork; Eromba; Chamthong|kangshoi; Smoked pork with axone|axone",
+    gem: "Eromba",
+  }),
+  p("ic-spice-mix", T, "Name an Indian pickle, chutney or masala blend", {
+    ground: "Garam masala; Mango pickle|aam ka achar; Mint chutney|pudina chutney; Coconut chutney; Chaat masala; Tamarind chutney|imli chutney",
+    decoy: "Ketchup",
+    orbit: "Sambar powder; Rasam powder; Pav bhaji masala; Chole masala|chana masala powder; Tandoori masala; Biryani masala; Kitchen King; Lime pickle|nimbu ka achar; Mixed pickle; Gunpowder|podi|milagai podi; Tomato chutney; Green chutney|hari chutney; Panch phoron|panch phoran; Goda masala; Kashmiri chilli powder; Meat masala; Chicken masala; Avakaya; Gongura pickle",
+    moonshot: "Malvani masala; Kolhapuri masala; Kanda lasun masala; Chettinad masala; Bisi bele bath powder; Vangi bath powder; Puliyogare gojju; Curry leaf podi|karuveppilai podi; Peanut chutney|shenga chutney; Thecha|mirchi thecha; Lasun chutney|garlic chutney; Methia keri; Chundo; Murabba; Gor keri; Kasundi; Aam kasundi; Bhoot jolokia pickle; Raja mircha pickle; Tok jhal mishti chutney|tomato khejur chutney; Ginger pickle|inji puli; Kadumanga; Narthangai pickle",
+    deep: "Kalonji pickle; Lingdi pickle; Bamboo shoot pickle; Kosambari; Sabzi masala; Dabeli masala; Sambhar masala (Gujarati)|gujarati sambharo; Chhundo; Keri no chundo; Vadu mangai; Mavadu; Uppinakayi; Avakaya (Telangana)|telangana avakai; Ullikaram; Kandi podi; Nalla karam; Bafat masala; Recheado masala; Xacuti masala; Kashmiri ver|ver masala; Lal mirch ka achar; Hing ka achar; Kachri ki chutney; Bhang ki chutney; Til ki chutney; Ou tenga chutney; Tamarind kokum saar",
+    gem: "Kashmiri ver|ver masala|veri masala",
+  }),
+  p("ic-drink", T, "Name an Indian drink", {
+    ground: "Chai|masala chai; Lassi; Nimbu pani|shikanji|lemonade; Coconut water|nariyal pani; Filter coffee",
+    decoy: "Thums Up|thumbs up",
+    orbit: "Buttermilk|chaas|mattha; Aam panna; Jaljeera; Thandai; Badam milk; Rose milk; Sugarcane juice|ganne ka ras; Falooda; Kahwa|kehwa; Cutting chai; Sol kadhi; Kokum sharbat; Rooh Afza; Masala soda|banta|goli soda; Haldi doodh|turmeric milk|golden milk; Jigarthanda",
+    moonshot: "Sattu sharbat; Bel sharbat|bael sharbat; Panakam; Sambaram; Nannari sharbat; Noon chai|pink chai; Butter tea|po cha; Irani chai; Sulaimani; Kanji; Neera; Toddy|kallu; Feni; Mahua; Handia; Chhang; Rice beer; Tender coconut",
+    deep: "Lugdi; Apong; Zutho; Judima; Kiad; Sekmai; Sura; Sharbat-e-Gul; Gulab sharbat; Phalsa sharbat; Khus sharbat; Kesar badam doodh; Kokum kadhi; Shikanji (Delhi)|banta lemonade; Mattha (Rajasthani); Kanji vada water; Nimbu soda; Masala chaas; Sambharam; Moru; Karupatti coffee; Chukku kaapi; Kattan chaya",
+    gem: "Chukku kaapi|chukku coffee",
+  }),
+  p("ic-gujarati", T, "Name a Gujarati or Rajasthani dish", {
+    ground: "Dhokla; Khandvi; Thepla; Dal baati churma|dal baati; Fafda; Khakhra",
+    decoy: "Pav bhaji",
+    orbit: "Undhiyu; Handvo; Khaman; Gathiya; Jalebi fafda; Sev tamatar; Muthiya; Patra; Dabeli; Kachori; Gatte ki sabzi; Ker sangri; Laal maas; Ghevar; Mohanthal; Basundi; Shrikhand; Doodhpak; Pyaaz kachori; Mirchi vada; Bajre ki roti; Kadhi",
+    moonshot: "Locho; Sev usal; Khichu; Dal dhokli; Ringan no olo; Lilva kachori; Sutarfeni; Ghari; Sukhdi|gol papdi; Halwasan; Puran poli|vedmi; Kansar; Bajra rotla|rotlo; Khatta dhokla; Panki; Chorafali; Mawa kachori; Safed maas; Jungli maas; Gulab jamun ki sabzi; Papad ki sabzi; Bajre ka khichda|khichdo; Rabdi (bajra)|bajre ki rabdi; Mirchi bada",
+    deep: "Ponk; Ponkh vada; Bhakri pizza; Kathiyawadi thali; Ghughra; Dahi tikhari; Bharela ringan; Sev khamani; Nylon khaman; Tam tam; Dudhi muthiya; Khatiyu; Lapsi; Churma ladoo; Kalakand (Alwar)|alwar ka mawa; Mawa kachori; Malpua (Pushkar); Gonde ki sabzi; Kair kumatiya; Panchkuta; Govind gatte; Raab; Khoba roti; Baati (bafla)|bafla",
+    gem: "Ponk|hurda",
+  }),
+];

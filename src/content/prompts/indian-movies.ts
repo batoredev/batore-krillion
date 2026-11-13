@@ -1,0 +1,68 @@
+import { p } from "../types";
+const T = "indian-movies";
+export default [
+  p("im-srk", T, "Name a Shah Rukh Khan film", {
+    ground: "Dilwale Dulhania Le Jayenge|ddlj; Kuch Kuch Hota Hai|kkhh; Pathaan|pathan; Jawan; Kabhi Khushi Kabhie Gham|k3g|kabhi khushi kabhi gham; Chak De! India|chak de india",
+    decoy: "My Name Is Khan|mnik; Swades",
+    orbit: "Devdas; Kal Ho Naa Ho|khnh; Om Shanti Om|oso; Don; Don 2; Main Hoon Na; Veer-Zaara|veer zaara; Dil To Pagal Hai; Rab Ne Bana Di Jodi|rnbdj; Chennai Express; Dilwale; Raees; Dunki; Baazigar; Darr; Dil Se; Mohabbatein; Kabhi Alvida Naa Kehna|kank; Jab Tak Hai Jaan|jthj; Happy New Year; Fan; Zero; Ra.One|raone; Dear Zindagi; Jab Harry Met Sejal",
+    moonshot: "Deewana; Kabhi Haan Kabhi Naa; Karan Arjun; Anjaam; Koyla; Yes Boss; Pardes; Duplicate; Badshah; Phir Bhi Dil Hai Hindustani; Josh; Asoka; Chalte Chalte; Paheli; Billu; Ram Jaane; Trimurti; Guddu; Gudgudee; Dil Aashna Hai; Raju Ban Gaya Gentleman; Chamatkar; King Uncle; Maya Memsaab",
+    deep: "In Which Annie Gives It Those Ones; Dushman Duniya Ka; English Babu Desi Mem; Zamaana Deewana; Oh Darling Yeh Hai India; Army; Shakti: The Power|shakti the power; Hey Ram; Gaja Gamini; One 2 Ka 4; Bhoothnath; Luck by Chance; Krazzy 4; Ae Dil Hai Mushkil",
+    gem: "In Which Annie Gives It Those Ones",
+  }),
+  p("im-aamir", T, "Name an Aamir Khan film", {
+    ground: "3 Idiots|three idiots; Lagaan; Dangal; PK; Taare Zameen Par|tzp; Dil Chahta Hai|dch",
+    decoy: "Ghajini",
+    orbit: "Rang De Basanti|rdb; Qayamat Se Qayamat Tak|qsqt; Dil; Raja Hindustani; Sarfarosh; Jo Jeeta Wohi Sikandar|jjws; Andaz Apna Apna|aaa; Dhoom 3; Talaash; Secret Superstar; Thugs of Hindostan; Laal Singh Chaddha; Fanaa; Mangal Pandey|the rising; Rangeela; Ishq; Hum Hain Rahi Pyar Ke; Sitaare Zameen Par; Ghulam; Mann",
+    moonshot: "Dil Hai Ki Manta Nahin; Raakh; Holi; Yaadon Ki Baaraat; Love Love Love; Awwal Number; Tum Mere Ho; Jawani Zindabad; Deewana Mujhsa Nahin; Afsana Pyar Ka; Isi Ka Naam Zindagi; Daulat Ki Jung; Parampara; Baazi; Akele Hum Akele Tum; Aatank Hi Aatank; Earth|1947 earth; Mela; Dhobi Ghat; Delhi Belly; Peepli Live",
+    deep: "Pyaar Ka Mausam",
+    gem: "Raakh",
+  }),
+  p("im-actress", T, "Name a Bollywood actress", {
+    ground: "Deepika Padukone|deepika; Alia Bhatt|alia; Priyanka Chopra|priyanka; Katrina Kaif|katrina; Aishwarya Rai|aishwarya rai bachchan|aishwarya; Madhuri Dixit|madhuri; Kareena Kapoor|kareena|bebo",
+    decoy: "Rekha; Sridevi",
+    orbit: "Anushka Sharma|anushka; Kajol; Rani Mukerji|rani mukherjee; Shraddha Kapoor|shraddha; Kangana Ranaut|kangana; Vidya Balan|vidya; Taapsee Pannu|taapsee; Kiara Advani|kiara; Kriti Sanon|kriti; Sonam Kapoor; Juhi Chawla; Preity Zinta|preity; Sushmita Sen; Karisma Kapoor; Shilpa Shetty; Raveena Tandon; Tabu; Hema Malini; Madhubala; Nargis; Meena Kumari; Waheeda Rehman; Jaya Bachchan|jaya bhaduri; Sara Ali Khan; Janhvi Kapoor; Ananya Panday; Bhumi Pednekar; Parineeti Chopra; Jacqueline Fernandez; Sonakshi Sinha; Disha Patani; Rashmika Mandanna",
+    moonshot: "Smita Patil; Shabana Azmi; Nutan; Mumtaz; Sharmila Tagore; Zeenat Aman; Parveen Babi; Dimple Kapadia; Jaya Prada; Mandakini; Meenakshi Seshadri; Neelam; Urmila Matondkar; Manisha Koirala; Mahima Chaudhry; Ameesha Patel; Bipasha Basu; Lara Dutta; Kalki Koechlin; Konkona Sen Sharma; Radhika Apte; Richa Chadha; Yami Gautam; Mrunal Thakur; Fatima Sana Shaikh; Sanya Malhotra; Triptii Dimri; Wamiqa Gabbi; Huma Qureshi; Swara Bhasker",
+    deep: "Nadira; Fearless Nadia; Devika Rani; Suraiya; Geeta Bali; Vyjayanthimala; Saira Banu; Asha Parekh; Babita; Sadhana; Tanuja; Raakhee; Rati Agnihotri; Padmini Kolhapure; Deepti Naval; Poonam Dhillon; Amrita Singh; Kimi Katkar; Sonali Bendre; Tisca Chopra; Nandita Das; Seema Biswas; Sarika; Neena Gupta; Supriya Pathak; Ratna Pathak Shah",
+    gem: "Fearless Nadia",
+  }),
+  p("im-director", T, "Name an Indian film director", {
+    ground: "Karan Johar; Sanjay Leela Bhansali|bhansali; Rajkumar Hirani|raju hirani; S. S. Rajamouli|rajamouli|ss rajamouli; Rohit Shetty; Yash Chopra",
+    decoy: "Anurag Kashyap",
+    orbit: "Satyajit Ray; Mani Ratnam; Imtiaz Ali; Zoya Akhtar; Farhan Akhtar; Aditya Chopra; Rakeysh Omprakash Mehra; Vishal Bhardwaj; Shankar|s shankar; Atlee; Prashanth Neel; Lokesh Kanagaraj; Sandeep Reddy Vanga|sandeep vanga; Kabir Khan; Raj Kumar Santoshi; Subhash Ghai; David Dhawan; Priyadarshan; Ram Gopal Varma|rgv; Neeraj Pandey; Nitesh Tiwari; Siddharth Anand; Ayan Mukerji; Shoojit Sircar; Amar Kaushik",
+    moonshot: "Guru Dutt; Raj Kapoor; Bimal Roy; Hrishikesh Mukherjee; Basu Chatterjee; Gulzar; Shyam Benegal; Govind Nihalani; Mrinal Sen; Ritwik Ghatak; Adoor Gopalakrishnan; K. Balachander|k balachander; Bharathiraja; Balu Mahendra; Vetrimaaran; Pa. Ranjith|pa ranjith; Gautham Vasudev Menon; Selvaraghavan; Trivikram Srinivas; Sukumar; Puri Jagannadh; Koratala Siva; Jeethu Joseph; Lijo Jose Pellissery; Dileesh Pothan; Aashiq Abu; Rishab Shetty; Hemant Rao; Tigmanshu Dhulia; Dibakar Banerjee; Sriram Raghavan; Shakun Batra; Vikramaditya Motwane; Anand L. Rai|anand l rai; Ashutosh Gowariker",
+    deep: "Dadasaheb Phalke; V. Shantaram|v shantaram; Mehboob Khan; K. Asif|k asif; Kamal Amrohi; Manmohan Desai; Prakash Mehra; Ramesh Sippy; Yash Johar; Kundan Shah; Saeed Akhtar Mirza; Mani Kaul; Kumar Shahani; Ketan Mehta; Sai Paranjpye; Aparna Sen; Rituparno Ghosh; Buddhadeb Dasgupta; Girish Kasaravalli; G. Aravindan|aravindan; John Abraham (director); K. Viswanath|k viswanath; Bapu; Singeetam Srinivasa Rao; Mahendran; Rajeev Ravi; Anand Gandhi; Chaitanya Tamhane; Payal Kapadia; Kiran Rao; Konkona Sen Sharma; Nagraj Manjule; Umesh Kulkarni",
+    gem: "Mani Kaul",
+  }),
+  p("im-rajini", T, "Name a Rajinikanth film", {
+    ground: "Sivaji|sivaji the boss; Enthiran|robot; Baasha|basha; Kabali; Jailer; Padayappa",
+    decoy: "Muthu",
+    orbit: "Chandramukhi; 2.0|2 point 0; Petta; Darbar; Annaatthe; Kaala; Lingaa; Kochadaiiyaan; Vettaiyan; Coolie; Thalapathi|thalapathy; Annamalai; Arunachalam; Baba; Mannan; Ejamaan; Veera; Uzhaippali; Lal Salaam",
+    moonshot: "Billa; Murattu Kaalai; Thillu Mullu; Mullum Malarum; Apoorva Raagangal; Moondru Mudichu; 16 Vayathinile|pathinaaru vayathinile; Aval Appadithan; Netrikann; Pokkiri Raja; Moondru Mugam; Thambikku Entha Ooru; Velaikkaran; Guru Sishyan; Mappillai; Raja Chinna Roja; Panakkaran; Dharmathin Thalaivan; Rajadhi Raja; Siva; Kuselan",
+    deep: "Bhuvana Oru Kelvi Kuri; Priya; Johnny; Nallavanuku Nallavan; Thanikattu Raja; Ranuva Veeran; Garjanai; Kai Kodukkum Kai; Thai Veedu; Paayum Puli; Naan Mahaan Alla; Padikkadavan; Mr. Bharath|mr bharath; Maaveeran; Dharmadurai; Pandian; Valli; Andha Kanoon; Hum; Bloodstone; Chaalbaaz; Geraftaar; Phool Bane Angaarey",
+    gem: "Bloodstone",
+  }),
+  p("im-telugu", T, "Name a Telugu film", {
+    ground: "Baahubali|bahubali|baahubali the beginning; Baahubali 2|baahubali 2 the conclusion; RRR; Pushpa|pushpa the rise; Pushpa 2|pushpa 2 the rule; Arjun Reddy",
+    decoy: "Salaar",
+    orbit: "Magadheera; Eega|makkhi; Kalki 2898 AD|kalki; Ala Vaikunthapurramuloo|ala vaikunthapuramulo; Pokiri; Athadu; Srimanthudu; Bharat Ane Nenu; Rangasthalam; Jersey; Mahanati; Sita Ramam; Hanu-Man|hanuman; Devara; Saaho; Arya; Gabbar Singh; Dookudu; Okkadu; Khaidi No. 150; Sarileru Neekevvaru; Waltair Veerayya; Guntur Kaaram; Akhanda; Geetha Govindam; Fidaa; Uppena",
+    moonshot: "Mayabazar; Shankarabharanam; Sagara Sangamam; Swathi Muthyam; Siva; Gharana Mogudu; Indra; Tagore; Simhadri; Yamadonga; Aadavari Matalaku Ardhalu Verule; Bommarillu; Happy Days; Vedam; Pelli Choopulu; Kshanam; Goodachari; Agent Sai Srinivasa Athreya; C/o Kancharapalem|care of kancharapalem; Jathi Ratnalu; Mathu Vadalara; Ee Nagaraniki Emaindi; Major; Dasara; Balagam; Baby; Hi Nanna; Tillu Square; Lucky Baskhar",
+    deep: "Pathala Bhairavi; Missamma; Gundamma Katha; Lava Kusa; Daana Veera Soora Karna; Mutyala Muggu; Sita Kalyanam; Swayamkrushi; Aakali Rajyam; Rudraveena; Aditya 369; Anveshana; Gaayam; Money; Kshana Kshanam; Antahpuram; Gamyam; Prasthanam; Anukokunda Oka Roju; Ala Modalaindi; Awe|awe!; Mallesham; Uma Maheswara Ugra Roopasya; Nenu Local; Kotha Bangaru Lokam",
+    gem: "C/o Kancharapalem|care of kancharapalem|kancharapalem",
+  }),
+  p("im-malayalam-actor", T, "Name a Malayalam film actor or actress", {
+    ground: "Mohanlal|lalettan; Mammootty|mammukka; Fahadh Faasil|fahadh|fafa; Dulquer Salmaan|dulquer|dq; Prithviraj Sukumaran|prithviraj",
+    decoy: "Nivin Pauly; Nayanthara",
+    orbit: "Tovino Thomas|tovino; Jayaram; Dileep; Suresh Gopi; Kunchacko Boban|chackochan; Nazriya Nazim|nazriya; Manju Warrier; Parvathy Thiruvothu|parvathy; Sai Pallavi; Asif Ali; Soubin Shahir; Basil Joseph; Indrajith Sukumaran|indrajith; Jayasurya; Shobana; Urvashi; Kavya Madhavan; Mamta Mohandas; Anna Ben; Aishwarya Lekshmi; Kalyani Priyadarshan; Naslen|naslen gafoor; Mamitha Baiju",
+    moonshot: "Prem Nazir; Sathyan; Madhu; Jayan; Sukumaran; Sreenivasan; Jagathy Sreekumar|jagathy; Innocent; Nedumudi Venu; Thilakan; Murali; Mukesh; Siddique; Jagadish; Salim Kumar; Suraj Venjaramoodu; Vinayakan; Joju George; Shine Tom Chacko; Sharafudheen; Roshan Mathew; Shane Nigam; Grace Antony; Rajisha Vijayan; Nimisha Sajayan; Darshana Rajendran; Revathi; Lissy; Seema; Sheela; Sharada; KPAC Lalitha",
+    deep: "Kottarakkara Sreedharan Nair; Bahadoor; Adoor Bhasi; Thikkurissy Sukumaran Nair; Sankaradi; Kuthiravattam Pappu; Mala Aravindan; Oduvil Unnikrishnan; Cochin Haneefa; Rajan P. Dev; N. F. Varghese; Captain Raju; T. G. Ravi; Balan K. Nair; Jose Prakash; Sukumari; Philomina; Kaviyoor Ponnamma; Bindu Panicker; Indrans; Alencier Ley Lopez; Chemban Vinod Jose; Dileesh Pothan; Lukman Avaran",
+    gem: "Bahadoor",
+  }),
+  p("im-singer", T, "Name an Indian playback singer", {
+    ground: "Lata Mangeshkar|lata; Kishore Kumar|kishore da; Mohammed Rafi|rafi; Arijit Singh|arijit; Asha Bhosle|asha; Shreya Ghoshal|shreya; Sonu Nigam",
+    decoy: "A. R. Rahman|ar rahman|rahman",
+    orbit: "Udit Narayan; Kumar Sanu; Alka Yagnik; Mukesh; Manna Dey; S. P. Balasubrahmanyam|spb|sp balasubrahmanyam; K. J. Yesudas|yesudas; K. S. Chithra|chithra; Sunidhi Chauhan; Shaan; KK; Atif Aslam; Neha Kakkar; Jubin Nautiyal; Armaan Malik; Sukhwinder Singh; Kailash Kher; Mohit Chauhan; Shankar Mahadevan; Hariharan; Kavita Krishnamurthy; Sadhana Sargam; Sid Sriram; Darshan Raval; Vishal Dadlani; Badshah; Diljit Dosanjh",
+    moonshot: "Hemant Kumar|hemanta mukherjee; Talat Mahmood; Geeta Dutt; Shamshad Begum; Noor Jehan; K. L. Saigal|saigal; Suraiya; Usha Mangeshkar; Mahendra Kapoor; Suresh Wadkar; Shabbir Kumar; Anuradha Paudwal; Vinod Rathod; Abhijeet Bhattacharya|abhijeet; Javed Ali; Benny Dayal; Shalmali Kholgade; Neeti Mohan; Palak Muchhal; Monali Thakur; Papon; Amit Trivedi; Lucky Ali; Rahat Fateh Ali Khan; Shilpa Rao; Vani Jairam; S. Janaki|janaki; P. Susheela|susheela; Ilaiyaraaja; Karthik; Vijay Yesudas; Anirudh Ravichander|anirudh",
+    deep: "Zohrabai Ambalewali; Amirbai Karnataki; Rajkumari Dubey; Khursheed Bano; G. M. Durrani; Pankaj Mullick; Jagmohan Sursagar; C. H. Atma; Mubarak Begum; Sulochana Kadam; Kamal Barot; Suman Kalyanpur; Hemlata; Preeti Sagar; Bhupinder Singh; Shailendra Singh; Amit Kumar; Mohammed Aziz; Kavita Seth; Rekha Bhardwaj; Sona Mohapatra; Harshdeep Kaur; Kaushiki Chakraborty; Pankaj Udhas; Jagjit Singh; Chitra Singh; T. M. Soundararajan|tms; Ghantasala; P. B. Sreenivas",
+    gem: "Mubarak Begum",
+  }),
+];

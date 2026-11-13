@@ -1,0 +1,68 @@
+import { p } from "../types";
+const T = "global-cuisine";
+export default [
+  p("gc-pasta", T, "Name a shape or type of pasta", {
+    ground: "Spaghetti; Penne; Macaroni; Lasagna|lasagne; Fettuccine|fettucine; Ravioli",
+    decoy: "Linguine|linguini; Farfalle|bow tie",
+    orbit: "Fusilli; Rigatoni; Tagliatelle; Tortellini; Pappardelle; Orzo; Gnocchi; Cannelloni; Conchiglie|shells; Vermicelli; Angel hair|capellini; Rotini; Ziti; Manicotti; Bucatini",
+    moonshot: "Orecchiette; Cavatappi; Ditalini; Paccheri; Campanelle; Gemelli; Radiatori; Rotelle|wagon wheels; Tortelloni; Agnolotti; Mafaldine|reginette; Strozzapreti; Trofie; Garganelli; Casarecce; Stelline; Anelli; Cavatelli",
+    deep: "Bigoli; Pici; Lumache; Mezzi rigatoni; Cappelletti; Fregola; Sagnarelli; Corzetti; Busiate; Malloreddus; Lorighittas; Testaroli; Maltagliati; Scialatielli; Calamarata; Candele; Tripoline; Fileja; Culurgiones",
+    gem: "Su filindeu|filindeu",
+  }),
+  p("gc-cheese", T, "Name a type of cheese", {
+    ground: "Cheddar; Mozzarella; Parmesan|parmigiano reggiano|parmigiano; Swiss; Brie; Feta",
+    decoy: "Paneer; Gouda",
+    orbit: "Camembert; Blue cheese; Gorgonzola; Roquefort; Stilton; Ricotta; Mascarpone; Cottage cheese; Cream cheese; Provolone; Gruyere; Emmental|emmentaler; Halloumi; Edam; Manchego; Monterey Jack|jack; Colby; Pecorino|pecorino romano; Burrata; Goat cheese|chevre; American cheese; Havarti; Muenster|munster",
+    moonshot: "Asiago; Fontina; Taleggio; Raclette; Comte; Jarlsberg; Wensleydale; Red Leicester; Double Gloucester; Lancashire; Caerphilly; Boursin; Pepper Jack; Queso fresco; Cotija; Oaxaca; Labneh; Quark; Bocconcini; Scamorza; Reblochon; Neufchatel; Limburger; Port Salut; Grana Padano; Leerdammer; Kashkaval",
+    deep: "Epoisses; Munster-Gerome; Vacherin; Morbier; Saint-Nectaire; Tomme; Pont-l'Eveque; Brillat-Savarin; Mimolette; Cantal; Ossau-Iraty; Idiazabal; Mahon; Tetilla; Cabrales; Queso Manchego curado; Casu marzu; Stracchino; Robiola; Castelmagno; Bra; Montasio; Graviera; Kefalotyri; Myzithra; Sirene; Bryndza; Oscypek; Gjetost|brunost; Kalari|kalari cheese; Bandel; Chhurpi",
+    gem: "Kalimpong cheese",
+  }),
+  p("gc-japanese", T, "Name a Japanese dish", {
+    ground: "Sushi; Ramen; Tempura; Sashimi; Miso soup|miso",
+    decoy: "Teriyaki; Wasabi",
+    orbit: "Udon; Soba; Yakitori; Tonkatsu; Gyoza; Onigiri; Bento; Katsu curry|japanese curry; Okonomiyaki; Takoyaki; Edamame; Mochi; Donburi; Katsudon; Gyudon; Oyakodon; Sukiyaki; Shabu-shabu|shabu shabu; Tamagoyaki; Yakisoba; Nigiri; Maki; Temaki|hand roll; Matcha",
+    moonshot: "Chawanmushi; Karaage; Nikujaga; Natto; Unagi|unadon; Omurice; Tsukemono; Agedashi tofu; Dorayaki; Taiyaki; Dango; Daifuku; Wagashi; Kaiseki; Oden; Monjayaki; Tsukemen; Zaru soba; Hiyashi chuka; Korokke; Kushikatsu; Inari|inarizushi; Chirashi|chirashizushi; Onsen tamago; Tonjiru",
+    deep: "Hoto; Kiritanpo; Okayu; Ochazuke; Shiokara; Basashi; Fugu; Ankimo; Shirako; Mentaiko; Tsukudani; Kinpira; Hijiki; Sunomono; Nanbanzuke; Champuru|goya champuru; Rafute; Jibuni; Yudofu; Sobagaki; Warabimochi; Kuzumochi; Nattō maki; Senbei",
+    gem: "Hitsumabushi",
+  }),
+  p("gc-mexican", T, "Name a Mexican dish", {
+    ground: "Taco|tacos; Burrito; Nachos; Quesadilla; Enchilada|enchiladas; Guacamole",
+    decoy: "Fajitas; Salsa",
+    orbit: "Tamale|tamales; Chimichanga; Churros; Tostada; Pozole; Mole; Chilaquiles; Elote; Huevos rancheros; Tortilla soup|sopa de tortilla; Carnitas; Barbacoa; Al pastor|tacos al pastor; Ceviche; Flautas|taquitos; Sopes; Gorditas; Refried beans|frijoles refritos; Pico de gallo; Queso fundido; Tres leches",
+    moonshot: "Chiles en nogada; Chile relleno|chiles rellenos; Cochinita pibil; Birria; Menudo; Tlayuda; Huarache; Pambazo; Torta; Esquites; Mole poblano; Sopa de lima; Molletes; Enfrijoladas; Entomatadas; Arroz con leche; Capirotada; Horchata; Champurrado; Atole; Panuchos; Salbutes",
+    deep: "Huitlacoche; Escamoles; Chapulines; Machaca; Discada; Aguachile; Zarandeado|pescado zarandeado; Carne asada; Mixiote; Tacos de canasta; Tacos árabes|tacos arabes; Papadzules; Relleno negro; Caldo de siete mares; Pejelagarto; Tepache; Tejate; Pozol; Tamal oaxaqueño; Chileatole; Mole amarillo; Mole negro; Pipián|pipian; Chalupas",
+    gem: "Tacos de ojo",
+  }),
+  p("gc-bread", T, "Name a type of bread from anywhere in the world", {
+    ground: "Baguette; Naan; Croissant; Sourdough; Bagel; Pita",
+    decoy: "Garlic bread; Toast",
+    orbit: "Ciabatta; Focaccia; Brioche; Rye bread|rye; Pumpernickel; Tortilla; Roti|chapati; Paratha; Challah; Cornbread; Soda bread; English muffin; Pretzel; Flatbread; Lavash; Multigrain; Whole wheat|wholemeal; Banana bread; Brown bread; Pav; Bun",
+    moonshot: "Injera; Arepa; Matzo; Fougasse; Pandesal; Bammy; Pide; Simit; Khachapuri; Chapata; Bolillo; Concha; Pan de muerto; Tsoureki; Kulich; Stollen; Panettone; Pain de mie; Damper; Bannock; Johnnycake; Barmbrack; Crumpet; Bialy; Kaiser roll; Pao de queijo; Baozi|bao; Mantou",
+    deep: "Barbari; Sangak; Taftoon; Lahmajoun|lahmacun; Markook; Khubz; Ka'ak; Tabouna; Kesra; Matnakash; Tandyr nan; Lepinja; Pogača; Chorek; Borodinsky; Knäckebröd|knackebrod; Rugbrød|rugbrod; Lefse; Flatbrød; Piadina; Carta di musica|pane carasau; Pane di Altamura; Coppia ferrarese; Michetta; Bara brith; Stottie cake; Cottage loaf; Puri; Kulcha; Bhatura; Luchi; Bakarkhani; Girda",
+    gem: "Sheermal",
+  }),
+  p("gc-spice", T, "Name a spice or herb", {
+    ground: "Turmeric; Cumin; Black pepper|pepper; Cinnamon; Ginger; Garlic; Chilli|chili|red chilli",
+    decoy: "Saffron; Cardamom",
+    orbit: "Cloves|clove; Nutmeg; Coriander|cilantro|dhania; Mint; Basil; Oregano; Thyme; Rosemary; Paprika; Bay leaf|tej patta; Fennel|saunf; Mustard seeds|mustard|rai; Fenugreek|methi; Parsley; Dill; Sage; Star anise; Asafoetida|hing; Curry leaves|curry leaf; Cayenne; Sesame|til; Vanilla",
+    moonshot: "Mace|javitri; Ajwain|carom; Kalonji|nigella; Allspice; Tarragon; Chives; Marjoram; Lemongrass; Galangal; Sumac; Za'atar|zaatar; Caraway; Anise|aniseed; Juniper; Kaffir lime leaves|makrut lime; Long pepper|pippali; Amchur|dry mango powder; Black cardamom|badi elaichi; Kasuri methi; Sichuan pepper|szechuan pepper; White pepper; Celery seed",
+    deep: "Grains of paradise; Mahlab; Asafoetida resin; Annatto|achiote; Epazote; Lovage; Sorrel; Savory; Chervil; Borage; Fenugreek leaves; Shiso|perilla; Sansho; Kokum; Marathi moggu; Kabab chini|cubeb; Radhuni; Anardana; Stone flower; Nagkesar; Kala jeera|black cumin; Timur; Long pepper root|pipramul; Wasabi root",
+    gem: "Dagad phool|black stone flower|kalpasi",
+  }),
+  p("gc-french", T, "Name a French dish", {
+    ground: "Croissant; Crepe|crepes; Ratatouille; Quiche; French onion soup|onion soup; Macaron|macarons",
+    decoy: "French fries|fries; French toast",
+    orbit: "Coq au vin; Beef bourguignon|boeuf bourguignon; Escargots|escargot; Creme brulee; Souffle; Bouillabaisse; Croque monsieur; Croque madame; Cassoulet; Tarte Tatin; Eclair; Profiteroles; Mille-feuille; Pain au chocolat; Confit de canard|duck confit; Steak frites; Salade nicoise; Foie gras; Baguette; Madeleine|madeleines",
+    moonshot: "Blanquette de veau; Pot-au-feu; Gratin dauphinois; Tartiflette; Raclette; Fondue savoyarde; Choucroute garnie; Coquilles Saint-Jacques; Moules marinieres|moules frites; Vichyssoise; Galette; Clafoutis; Canele; Paris-Brest; Opera cake; Far breton; Kouign-amann; Pissaladiere; Socca; Brandade; Rillettes; Terrine; Pate en croute",
+    deep: "Garbure; Potee; Baeckeoffe; Flammekueche|tarte flambee; Quenelles; Andouillette; Boudin noir; Tripes a la mode de Caen; Navarin; Daube provencale; Pieds paques; Gougeres; Calisson; Croquembouche; Saint-Honore; Religieuse; Kugelhopf|kouglof; Bugnes; Pithivier; Oeufs en meurette; Lievre a la royale; Poule au pot; Hachis Parmentier",
+    gem: "Aligot",
+  }),
+  p("gc-chinese", T, "Name a Chinese dish", {
+    ground: "Fried rice; Chow mein; Dumplings; Spring rolls; Kung Pao chicken|kung pao; Sweet and sour pork|sweet and sour",
+    decoy: "Hakka noodles; Manchurian|gobi manchurian",
+    orbit: "Peking duck; Dim sum; Mapo tofu; Wonton soup|wonton|wontons; Hot pot; Char siu; Xiaolongbao|soup dumplings; Bao|baozi; Chow fun; Lo mein; Hot and sour soup; Egg fried rice; Dan dan noodles; Szechuan chicken|chilli chicken; Spare ribs; Congee|jook; Siu mai|shumai; Har gow; General Tso's chicken|general tso; Orange chicken; Egg tart; Mooncake",
+    moonshot: "Gong bao; Twice-cooked pork; Dongpo pork; Lanzhou beef noodles|lanzhou noodles; Biang biang noodles; Zhajiangmian; Jianbing; Youtiao; Cheung fun|rice noodle roll; Lo mai gai; Zongzi; Tangyuan; Yangzhou fried rice; Fish-fragrant aubergine|yuxiang eggplant; Cantonese roast duck; Beggar's chicken; Hainanese chicken rice; Scallion pancake; Shengjian bao; Red braised pork|hong shao rou; Ma la tang|malatang; Chongqing chicken|la zi ji",
+    deep: "Fotiaoqiang|buddha jumps over the wall; Lion's head meatballs; Stinky tofu; Century egg|pidan; Saliva chicken|kou shui ji; Fuqi feipian; Liangpi; Roujiamo; Guotie; Douhua; Chuan'r|chuanr; Luosifen; Guilin rice noodles; Hairy crab; Drunken chicken; Westlake fish; Longjing shrimp; Sanbeiji|three cup chicken; Jiaozi; Wowotou; Tanghulu",
+    gem: "Crossing the bridge noodles|guoqiao mixian",
+  }),
+];
