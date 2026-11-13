@@ -10,10 +10,12 @@ import indianMovies from "./prompts/indian-movies";
 import indianCuisine from "./prompts/indian-cuisine";
 import indianHistoryPolitics from "./prompts/indian-history-politics";
 import indianTrivia from "./prompts/indian-trivia";
+import batch2 from "./prompts/batch2";
 
 export const ALL_PROMPTS: Prompt[] = [
   ...automobiles, ...globalCuisine, ...geography, ...history, ...currentAffairs, ...generalTrivia,
   ...indianGeography, ...indianMovies, ...indianCuisine, ...indianHistoryPolitics, ...indianTrivia,
+  ...batch2,
 ];
 
 const byId = new Map(ALL_PROMPTS.map((p) => [p.id, p]));

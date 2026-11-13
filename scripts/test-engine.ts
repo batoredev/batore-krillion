@@ -1,7 +1,8 @@
 // Quick checks for the game engine: matching, tiers, set selection and dates.
 import assert from "node:assert/strict";
 import { matchAnswer, normalize } from "../src/game/match";
-import { promptById } from "../src/content";
+import { promptById, promptsByTopic } from "../src/content";
+import { TOPICS } from "../src/content/types";
 import { dailySet, endlessSet, packSet, setFromKey } from "../src/game/sets";
 import { dateForDaily, todayDailyNumber, LAUNCH_DATE } from "../src/game/time";
 import { MAX_SCORE, bandFor } from "../src/game/tiers";
@@ -64,5 +65,13 @@ test("bands cover every score", () => {
   assert.equal(bandFor(0).title, "Launchpad");
   assert.equal(bandFor(251).title, "Lunar");
   assert.equal(bandFor(700).title, "Kribatov");
+});
+test("adding content never changes past dailies", () => {
+  for (let n = 1; n <= 30; n++) for (const p of dailySet(n).prompts) assert.ok(p.since <= n, `daily ${n} used ${p.id} (since ${p.since})`);
+  // Daily #1 was played before batch 2 existed: it must only use the original 88 prompts.
+  assert.ok(dailySet(1).prompts.every((p) => p.since === 1));
+});
+test("every topic has at least 30 prompts", () => {
+  for (const t of TOPICS) assert.ok(promptsByTopic(t.id).length >= 30, t.name);
 });
 console.log(`\n${passed} tests passed`);

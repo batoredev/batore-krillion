@@ -37,18 +37,22 @@ function shuffle<T>(arr: T[], rand: () => number): T[] {
   return a;
 }
 
-/** 7 prompts from 7 different topics, chosen deterministically from a seed. */
-function mixedSet(seed: string): Prompt[] {
+/**
+ * 7 prompts from 7 different topics, chosen deterministically from a seed.
+ * `asOfDaily` limits the pool to prompts that existed then, so adding content never changes past dailies.
+ */
+function mixedSet(seed: string, asOfDaily = Infinity): Prompt[] {
   const rand = rng(seed);
-  const topics = shuffle(TOPICS.map((t) => t.id).filter((t) => promptsByTopic(t).length > 0), rand);
+  const poolFor = (t: TopicId) => promptsByTopic(t).filter((p) => p.since <= asOfDaily);
+  const topics = shuffle(TOPICS.map((t) => t.id).filter((t) => poolFor(t).length > 0), rand);
   const picked: Prompt[] = [];
   for (const t of topics) {
     if (picked.length === ROUNDS_PER_SET) break;
-    const pool = promptsByTopic(t);
+    const pool = poolFor(t);
     picked.push(pool[Math.floor(rand() * pool.length)]);
   }
   // Fewer topics than rounds: top up from everything else.
-  const rest = shuffle(ALL_PROMPTS.filter((p) => !picked.includes(p)), rand);
+  const rest = shuffle(ALL_PROMPTS.filter((p) => p.since <= asOfDaily && !picked.includes(p)), rand);
   while (picked.length < ROUNDS_PER_SET && rest.length) picked.push(rest.shift()!);
   return picked;
 }
@@ -57,7 +61,7 @@ export function dailySet(n: number): GameSet {
   return {
     key: `daily:${n}`, mode: "daily", dailyNumber: n,
     title: `Daily #${n}`, subtitle: prettyDate(dateForDaily(n)),
-    prompts: mixedSet(`daily:${n}`),
+    prompts: mixedSet(`daily:${n}`, n),
   };
 }
 

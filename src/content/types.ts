@@ -11,8 +11,9 @@ export const TOPICS = [
   { id: "indian-geography", name: "Indian Geography", icon: "🗺️" },
   { id: "indian-movies", name: "Indian Movies", icon: "🎬" },
   { id: "indian-cuisine", name: "Indian Cuisine", icon: "🍛" },
-  { id: "indian-history-politics", name: "Indian History & Politics", icon: "🏛" },
+  { id: "indian-history-politics", name: "Indian History & Politics", icon: "⚖️" },
   { id: "indian-trivia", name: "Indian Trivia", icon: "🇮🇳" },
+  { id: "general-movies", name: "General Movies", icon: "🎥" },
 ] as const;
 export type TopicId = (typeof TOPICS)[number]["id"];
 export const topicById = (id: string) => TOPICS.find((t) => t.id === id);
@@ -25,6 +26,8 @@ export interface Prompt {
   topic: TopicId;
   text: string;
   tiers: Record<TierKey, Answer[]>;
+  /** First daily number this prompt may appear in. Keeps past dailies stable when content is added. */
+  since: number;
 }
 
 /**
@@ -50,5 +53,8 @@ export function p(id: string, topic: TopicId, text: string, tiers: Record<TierKe
       return true;
     });
   }
-  return { id, topic, text, tiers: out };
+  return { id, topic, text, tiers: out, since: 1 };
 }
+
+/** Mark a batch of prompts as available from a given daily number onwards. */
+export const fromDaily = (since: number, prompts: Prompt[]): Prompt[] => prompts.map((x) => ({ ...x, since }));

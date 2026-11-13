@@ -26,7 +26,7 @@ A daily trivia game about rarity. Each set has 7 prompts ("Name an Indian sweet"
   - **Daily**
   - **Endless:** unlimited random mixed sets.
   - **Archive:** every past daily.
-  - **Topic packs:** 11 topics × 10 sets.
+  - **Topic packs:** 12 topics × 10 sets.
 
 ## Party mode: Hot Comet (multiplayer)
 
@@ -92,6 +92,21 @@ Other scripts:
 - `npm run validate-content`: checks every prompt. Add `-- --warnings` to list answers close enough to be confused by typo matching.
 - `npm run typecheck`
 
+## Content
+
+**360 prompts across 12 topics (30 each), about 23,500 accepted answers.**
+
+The topics are Automobiles, Global Cuisine, Geography, History, Current Affairs, General Trivia, Indian Geography, Indian Movies, Indian Cuisine, Indian History & Politics, Indian Trivia and General Movies.
+
+- `src/content/prompts/*.ts` holds the original 88 prompts, in play from Daily #1.
+- `src/content/prompts/batch2/*.ts` holds 272 more, including the whole General Movies topic. They're in play from Daily #2 onwards.
+
+Every prompt carries a `since` daily number, and a daily only draws from prompts that existed on its day. Adding content therefore never changes a past daily in the archive. Wrap a new batch in `fromDaily(<first daily number>, [...])`, as `batch2/index.ts` does.
+
+Review regularly:
+- **Current Affairs:** office-holders and memberships change.
+- **Indian History & Politics:** the "current" Chief Minister and Vice President entries.
+
 ## Adding or editing prompts
 
 Prompts live in `src/content/prompts/<topic>.ts`:
@@ -110,7 +125,7 @@ p("ic-sweet", T, "Name an Indian sweet (mithai)", {
 - Answers are separated by `;`, and aliases by `|`. The first name is the one players see.
 - If an answer appears in two tiers, the higher tier wins.
 - Run `npm run validate-content` after editing.
-- Adding prompts reshuffles which prompts appear in past dailies. Do it before launch, or accept that old archive sets will change.
+- Put new prompts in a new batch file wrapped in `fromDaily(...)` so past dailies stay unchanged. Topic packs are reshuffled when a topic grows; dailies are not.
 
 Topics are listed in `src/content/types.ts`. To add a topic, add it there, create its file, and register it in `src/content/index.ts`.
 
