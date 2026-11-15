@@ -1,23 +1,24 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
-import type { GameSet } from "@/game/sets";
+import type { ClientSet } from "@/game/client-set";
 import { BANDS, bandFor, MAX_SCORE, MISS, TIERS, TIER_KEYS, type TierKey } from "@/game/tiers";
 import type { Result } from "@/lib/store/types";
 import type { Stats } from "@/lib/results";
+import type { Reveal } from "@/lib/play";
 import { RocketIcon } from "./Logo";
 
-export interface SubmitResponse { result: Result; percentile: { pct: number; players: number } | null; stats: Stats }
+export interface SubmitResponse { result: Result; percentile: { pct: number; players: number } | null; stats: Stats; reveal: Reveal }
 
 const tierHeight = (t: TierKey | null) => (t ? (TIER_KEYS.indexOf(t) + 1) / TIER_KEYS.length : 0);
 
-export function shareText(set: GameSet, result: Result): string {
+export function shareText(set: ClientSet, result: Result): string {
   const squares = result.rounds.map((r) => (r.tier ? TIERS[r.tier].emoji : MISS.emoji)).join("");
   return `KRIBATOV · ${set.title}\n${result.score}/${MAX_SCORE} km · ${bandFor(result.score).title}\n${squares}`;
 }
 
-export function Results({ set, response, nextHref }: { set: GameSet; response: SubmitResponse; nextHref?: string }) {
-  const { result, percentile, stats } = response;
+export function Results({ set, response, nextHref }: { set: ClientSet; response: SubmitResponse; nextHref?: string }) {
+  const { result, percentile, stats, reveal } = response;
   const band = bandFor(result.score);
   const [copied, setCopied] = useState(false);
   const text = shareText(set, result);
@@ -77,7 +78,7 @@ export function Results({ set, response, nextHref }: { set: GameSet; response: S
         <h3 className="h2">Every answer</h3>
         <p className="muted small">Tap a round to see what else was out there.</p>
         <div className="stack" style={{ gap: 8 }}>
-          {set.prompts.map((p, i) => <RoundItem key={p.id} n={i + 1} prompt={p} round={result.rounds[i]} />)}
+          {set.prompts.map((p, i) => <RoundItem key={p.id} n={i + 1} prompt={p} tiers={reveal?.[i]?.tiers} round={result.rounds[i]} />)}
         </div>
       </section>
 
@@ -93,7 +94,7 @@ export function Results({ set, response, nextHref }: { set: GameSet; response: S
   );
 }
 
-function RoundItem({ n, prompt, round }: { n: number; prompt: GameSet["prompts"][number]; round: Result["rounds"][number] }) {
+function RoundItem({ n, prompt, tiers, round }: { n: number; prompt: ClientSet["prompts"][number]; tiers?: Record<TierKey, string[]>; round: Result["rounds"][number] }) {
   const [open, setOpen] = useState(false);
   const tier = round.tier ? TIERS[round.tier] : null;
   return (
@@ -111,7 +112,7 @@ function RoundItem({ n, prompt, round }: { n: number; prompt: GameSet["prompts"]
       {open && (
         <div className="round-body">
           {[...TIER_KEYS].reverse().map((t) => {
-            const list = prompt.tiers[t];
+            const list = tiers?.[t] ?? [];
             if (!list.length) return null;
             const shown = list.slice(0, t === "gem" ? 1 : 8);
             return (
@@ -120,7 +121,7 @@ function RoundItem({ n, prompt, round }: { n: number; prompt: GameSet["prompts"]
                   {TIERS[t].emoji} {TIERS[t].name} · {TIERS[t].points} <span className="faint">({list.length})</span>
                 </div>
                 <div className="tier-list">
-                  {shown.map((a) => <span key={a.name} style={a.name === round.answer ? { color: "var(--text)", borderColor: TIERS[t].color } : undefined}>{a.name}</span>)}
+                  {shown.map((a) => <span key={a} style={a === round.answer ? { color: "var(--text)", borderColor: TIERS[t].color } : undefined}>{a}</span>)}
                   {list.length > shown.length && <span>+{list.length - shown.length} more</span>}
                 </div>
               </div>

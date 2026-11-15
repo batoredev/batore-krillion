@@ -1,16 +1,25 @@
 "use client";
 import { useCallback, useEffect, useRef, useState } from "react";
-import type { GameSet } from "@/game/sets";
-import { matchAnswer, type MatchResult } from "@/game/match";
-import { MAX_SCORE, MISS, SECONDS_PER_PROMPT, TIERS, TIER_KEYS } from "@/game/tiers";
+import type { ClientSet } from "@/game/client-set";
+import { MAX_SCORE, MISS, SECONDS_PER_PROMPT, TIERS, TIER_KEYS, type TierKey } from "@/game/tiers";
 import { topicById } from "@/content/types";
 import { AltitudeRail } from "./AltitudeRail";
 import { Results, type SubmitResponse } from "./Results";
 
-interface Round { promptId: string; guess: string | null; match: MatchResult | null }
+interface Match { tier: TierKey; answer: string; points: number; exact: boolean }
+interface Round { promptId: string; guess: string | null; match: Match | null; proof: string | null }
+type CheckResponse = ({ ok: true; proof: string } & Match) | { ok: false; reason: "not-on-list" | "time-up" | "bad-token" };
+
+/** Asks the server for this round's timed token (answers are checked on the server, never in the browser). */
+async function fetchRoundToken(setKey: string, round: number): Promise<string | null> {
+  try {
+    const res = await fetch("/api/play/round", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ setKey, round }) });
+    return res.ok ? (await res.json()).token : null;
+  } catch { return null; }
+}
 type Phase = "intro" | "countdown" | "playing" | "reveal" | "submitting" | "done" | "error";
 
-export function Game({ set, alreadyPlayed, nextHref }: { set: GameSet; alreadyPlayed: boolean; nextHref?: string }) {
+export function Game({ set, alreadyPlayed, nextHref }: { set: ClientSet; alreadyPlayed: boolean; nextHref?: string }) {
   const [phase, setPhase] = useState<Phase>("intro");
   const [idx, setIdx] = useState(0);
   const [rounds, setRounds] = useState<Round[]>([]);
@@ -21,8 +30,12 @@ export function Game({ set, alreadyPlayed, nextHref }: { set: GameSet; alreadyPl
   const [shake, setShake] = useState(false);
   const [response, setResponse] = useState<SubmitResponse | null>(null);
   const [error, setError] = useState("");
+  const [checking, setChecking] = useState(false);
   const deadline = useRef(0);
   const inputRef = useRef<HTMLInputElement>(null);
+  const tokenFor = useRef<{ round: number; token: Promise<string | null> } | null>(null);
+  const phaseRef = useRef<Phase>("intro");
+  phaseRef.current = phase;
 
   const prompt = set.prompts[idx];
   const score = rounds.reduce((n, r) => n + (r.match?.points ?? 0), 0);
@@ -33,9 +46,10 @@ export function Game({ set, alreadyPlayed, nextHref }: { set: GameSet; alreadyPl
     setPhase("reveal");
   }, [idx]);
 
-  // 3-2-1 before each prompt
+  // 3-2-1 before each prompt (the round's token is fetched during the countdown)
   useEffect(() => {
     if (phase !== "countdown") return;
+    if (count === 3 && tokenFor.current?.round !== idx) tokenFor.current = { round: idx, token: fetchRoundToken(set.key, idx) };
     if (count === 0) {
       deadline.current = Date.now() + SECONDS_PER_PROMPT * 1000;
       setLeft(SECONDS_PER_PROMPT);
@@ -55,28 +69,43 @@ export function Game({ set, alreadyPlayed, nextHref }: { set: GameSet; alreadyPl
       setLeft(Math.max(0, Math.ceil(ms / 1000)));
       if (ms <= 0) {
         clearInterval(t);
-        finishRound({ promptId: prompt.id, guess: null, match: null });
+        finishRound({ promptId: prompt.id, guess: null, match: null, proof: null });
       }
     }, 100);
     return () => clearInterval(t);
   }, [phase, prompt, finishRound]);
 
-  const start = () => { setIdx(0); setRounds([]); setCount(3); setPhase("countdown"); };
+  const start = () => { tokenFor.current = null; setIdx(0); setRounds([]); setCount(3); setPhase("countdown"); };
 
-  const submitGuess = (e: React.FormEvent) => {
+  const submitGuess = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (phase !== "playing") return;
+    if (phase !== "playing" || checking) return;
     const g = guess.trim();
     if (!g) return;
-    const m = matchAnswer(prompt, g);
-    if (!m) {
-      setFeedback({ text: `“${g}” isn't on the list. Try again.`, bad: true });
-      setShake(true);
-      setTimeout(() => setShake(false), 350);
-      setGuess("");
+    const round = idx;
+    setChecking(true);
+    let out: CheckResponse;
+    try {
+      let token = await tokenFor.current?.token;
+      if (!token) { tokenFor.current = { round, token: fetchRoundToken(set.key, round) }; token = await tokenFor.current.token; }
+      const res = await fetch("/api/play/check", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ token, guess: g }) });
+      out = res.ok ? await res.json() : { ok: false, reason: "bad-token" };
+    } catch {
+      out = { ok: false, reason: "bad-token" };
+    }
+    setChecking(false);
+    if (phaseRef.current !== "playing" || round !== idx) return; // the clock ran out meanwhile
+    if (out.ok) {
+      finishRound({ promptId: prompt.id, guess: g, match: { tier: out.tier, answer: out.answer, points: out.points, exact: out.exact }, proof: out.proof });
       return;
     }
-    finishRound({ promptId: prompt.id, guess: g, match: m });
+    const text = out.reason === "not-on-list" ? `“${g}” isn't on the list. Try again.`
+      : out.reason === "time-up" ? "Time's up for this one." : "Connection problem. Try again.";
+    setFeedback({ text, bad: true });
+    setShake(true);
+    setTimeout(() => setShake(false), 350);
+    setGuess("");
+    inputRef.current?.focus();
   };
 
   const next = async () => {
@@ -93,7 +122,7 @@ export function Game({ set, alreadyPlayed, nextHref }: { set: GameSet; alreadyPl
       const res = await fetch("/api/results", {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({ setKey: set.key, rounds: rounds.map((r) => ({ promptId: r.promptId, guess: r.guess })) }),
+        body: JSON.stringify({ setKey: set.key, rounds: rounds.map((r) => ({ promptId: r.promptId, proof: r.proof })) }),
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "Could not save your result");
@@ -156,7 +185,7 @@ export function Game({ set, alreadyPlayed, nextHref }: { set: GameSet; alreadyPl
                     <label className="sr-only" htmlFor="answer">Your answer</label>
                     <input id="answer" ref={inputRef} className="input" value={guess} onChange={(e) => setGuess(e.target.value)}
                       autoComplete="off" autoCorrect="off" autoCapitalize="off" spellCheck={false} maxLength={80} placeholder="Type an answer…" enterKeyHint="go" />
-                    <button className="btn btn-primary" type="submit">GO</button>
+                    <button className="btn btn-primary" type="submit" disabled={checking}>{checking ? "…" : "GO"}</button>
                   </form>
                   <div className="row">
                     <Timer left={left} />

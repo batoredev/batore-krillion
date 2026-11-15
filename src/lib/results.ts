@@ -1,13 +1,15 @@
 import "server-only";
 import { getStore, type Result, type RoundRecord, type User } from "./store";
 import { newId } from "./passwords";
+import { guessFromProof, revealSet } from "./play";
 import { setFromKey, PACK_SETS } from "@/game/sets";
 import { matchAnswer } from "@/game/match";
 import { STREAK_BADGES } from "@/game/tiers";
 import { dateForDaily, istDate, istDayIndex, todayDailyNumber } from "@/game/time";
 import { TOPICS } from "@/content/types";
 
-export interface SubmittedRound { promptId: string; guess: string | null }
+/** proof comes from /api/play/check; rounds without a valid proof score nothing. */
+export interface SubmittedRound { promptId: string; proof: string | null }
 
 /** Scores a finished set on the server (never trusts client points) and stores it. */
 export async function submitResult(user: User, setKey: string, rounds: SubmittedRound[]) {
@@ -15,13 +17,15 @@ export async function submitResult(user: User, setKey: string, rounds: Submitted
   if (!set) throw new Error("Unknown set");
   if (!Array.isArray(rounds) || rounds.length !== set.prompts.length) throw new Error("Wrong number of rounds");
 
-  const scored: RoundRecord[] = set.prompts.map((prompt, i) => {
+  const scored: RoundRecord[] = [];
+  for (let i = 0; i < set.prompts.length; i++) {
+    const prompt = set.prompts[i];
     const r = rounds[i];
     if (!r || r.promptId !== prompt.id) throw new Error("Rounds don't match the set");
-    const guess = typeof r.guess === "string" ? r.guess.slice(0, 80) : null;
+    const guess = await guessFromProof(r.proof, user, setKey, i);
     const m = guess ? matchAnswer(prompt, guess) : null;
-    return { promptId: prompt.id, guess: m ? guess : null, answer: m?.answer ?? null, tier: m?.tier ?? null, points: m?.points ?? 0 };
-  });
+    scored.push({ promptId: prompt.id, guess: m ? guess : null, answer: m?.answer ?? null, tier: m?.tier ?? null, points: m?.points ?? 0 });
+  }
 
   const store = getStore();
   const mine = await store.listResultsForUser(user.id);
@@ -37,7 +41,7 @@ export async function submitResult(user: User, setKey: string, rounds: Submitted
   };
   await store.addResult(result);
   const percentile = await percentileFor(setKey, result.score, user.id);
-  return { result, percentile, stats: await statsFor(user.id) };
+  return { result, percentile, stats: await statsFor(user.id), reveal: revealSet(setKey) };
 }
 
 /** Share of other players' first attempts at this set that scored lower. Null if nobody else has played. */
