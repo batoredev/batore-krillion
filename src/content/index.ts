@@ -26,6 +26,7 @@ import gIndianCuisine from "./generated/indian-cuisine.json";
 import gIndianHistoryPolitics from "./generated/indian-history-politics.json";
 import gIndianTrivia from "./generated/indian-trivia.json";
 import gGeneralMovies from "./generated/general-movies.json";
+import { EXPANSIONS } from "./prompts/expansions";
 
 export const ALL_PROMPTS: Prompt[] = [
   ...automobiles, ...globalCuisine, ...geography, ...history, ...currentAffairs, ...generalTrivia,
@@ -38,6 +39,20 @@ const byId = new Map(ALL_PROMPTS.map((p) => [p.id, p]));
 type GeneratedRow = [name: string, tier: number, aliases?: string[]];
 const GENERATED = [gAutomobiles, gGlobalCuisine, gGeography, gHistory, gCurrentAffairs, gGeneralTrivia, gIndianGeography,
   gIndianMovies, gIndianCuisine, gIndianHistoryPolitics, gIndianTrivia, gGeneralMovies] as unknown as Record<string, GeneratedRow[]>[];
+
+// Hand-researched expansions first (they outrank the automated lists), in the same row format.
+const EXPANSION_ROWS: Record<string, GeneratedRow[]> = {};
+for (const [pid, tiers] of Object.entries(EXPANSIONS)) {
+  const rows: GeneratedRow[] = [];
+  for (const [tier, list] of Object.entries(tiers)) {
+    for (const item of (list ?? "").split(";").map((x) => x.trim()).filter(Boolean)) {
+      const [name, ...aliases] = item.split("|").map((y) => y.trim()).filter(Boolean);
+      rows.push([name, TIER_KEYS.indexOf(tier as (typeof TIER_KEYS)[number]), aliases]);
+    }
+  }
+  EXPANSION_ROWS[pid] = rows;
+}
+GENERATED.unshift(EXPANSION_ROWS);
 
 // Merge researched answers in. Hand-curated answers (and the gem) always win; duplicates are skipped.
 for (const g of GENERATED) {
