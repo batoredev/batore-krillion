@@ -3,10 +3,12 @@
 import { DurableObject } from "cloudflare:workers";
 import * as E from "../src/party/engine";
 import { applyAction, type ClientMessage, type ServerMessage } from "../src/party/apply";
+import { applyAdditions, type AdditionLike } from "../src/content/additions";
 
 export interface PartyEnv {
   PARTY_ROOM: DurableObjectNamespace<PartyRoom>;
   PARTY_LOBBY: DurableObjectNamespace<PartyLobby>;
+  SUPABASE_URL?: string;
   SUPABASE_SERVICE_ROLE_KEY?: string;
   KRIBATOV_PARTY_SECRET?: string;
 }
@@ -21,6 +23,21 @@ interface Who { userId: string; name: string }
 export interface RoomSummary {
   code: string; host: string; players: number; maxPlayers: number; status: string;
   topic: string; lives: number; isPublic: boolean; anyoneConnected: boolean; createdAt: number; updatedAt: number;
+}
+
+let additionsLoadedAt = 0;
+/** Loads admin-added answers from Supabase (at most every 30s) so Hot Comet accepts them too. */
+async function refreshAdditions(env: PartyEnv) {
+  if (Date.now() - additionsLoadedAt < 30_000 || !env.SUPABASE_URL || !env.SUPABASE_SERVICE_ROLE_KEY) return;
+  additionsLoadedAt = Date.now();
+  try {
+    const res = await fetch(`${env.SUPABASE_URL}/rest/v1/answer_additions?select=id,prompt_id,answer,aliases,tier`, {
+      headers: { apikey: env.SUPABASE_SERVICE_ROLE_KEY, Authorization: `Bearer ${env.SUPABASE_SERVICE_ROLE_KEY}` },
+    });
+    if (!res.ok) return;
+    const rows = (await res.json()) as { id: string; prompt_id: string; answer: string; aliases: string[]; tier: AdditionLike["tier"] }[];
+    applyAdditions(rows.map((r) => ({ id: r.id, promptId: r.prompt_id, answer: r.answer, aliases: r.aliases ?? [], tier: r.tier })));
+  } catch { /* keep the lists we have */ }
 }
 
 export class PartyRoom extends DurableObject<PartyEnv> {
@@ -73,6 +90,7 @@ export class PartyRoom extends DurableObject<PartyEnv> {
     if (!who) return;
     let msg: ClientMessage;
     try { msg = JSON.parse(typeof raw === "string" ? raw : new TextDecoder().decode(raw)); } catch { return; }
+    if (msg.type === "answer" || msg.type === "start") await refreshAdditions(this.env);
     const before = this.room.version;
     const out = applyAction(this.room, who.userId, msg, Date.now(), rng);
     if (typeof msg.id === "number") ws.send(JSON.stringify({ type: "result", id: msg.id, out } satisfies ServerMessage));

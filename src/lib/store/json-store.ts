@@ -1,9 +1,9 @@
 import { promises as fs } from "fs";
 import path from "path";
-import type { Friendship, Result, Session, Store, User } from "./types";
+import type { AnswerAddition, Friendship, MissedGuess, Result, Session, Store, User } from "./types";
 
-interface Data { users: User[]; sessions: Session[]; results: Result[]; friendships: Friendship[] }
-const empty = (): Data => ({ users: [], sessions: [], results: [], friendships: [] });
+interface Data { users: User[]; sessions: Session[]; results: Result[]; friendships: Friendship[]; missed: MissedGuess[]; additions: AnswerAddition[] }
+const empty = (): Data => ({ users: [], sessions: [], results: [], friendships: [], missed: [], additions: [] });
 
 /**
  * Single-file JSON store for development and small self-hosted deployments.
@@ -95,4 +95,15 @@ export class JsonStore implements Store {
     });
   }
   async listFriendIds(userId: string) { return (await this.load()).friendships.filter((f) => f.userId === userId).map((f) => f.friendId); }
+
+  async addMissedGuess(m: MissedGuess) {
+    await this.mutate((d) => { d.missed.push(m); if (d.missed.length > 20000) d.missed.splice(0, d.missed.length - 20000); });
+  }
+  async listMissedGuesses(limit: number) { return (await this.load()).missed.slice(-limit).reverse(); }
+  async deleteMissedGuesses(promptId: string, key: string) {
+    await this.mutate((d) => { d.missed = d.missed.filter((m) => !(m.promptId === promptId && m.key === key)); });
+  }
+  async listAnswerAdditions() { return [...(await this.load()).additions]; }
+  async addAnswerAddition(a: AnswerAddition) { await this.mutate((d) => { d.additions.push(a); }); }
+  async deleteAnswerAddition(id: string) { await this.mutate((d) => { d.additions = d.additions.filter((a) => a.id !== id); }); }
 }

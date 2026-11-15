@@ -44,6 +44,16 @@ export interface Result {
 
 export interface Friendship { userId: string; friendId: string; createdAt: string }
 
+/** A guess that was not accepted, kept so an admin can review it. */
+export interface MissedGuess { id: string; promptId: string; guess: string; key: string; userId: string; createdAt: string }
+
+/** An answer an admin added on top of the built-in lists. Applies immediately, no redeploy. */
+export interface AnswerAddition {
+  id: string; promptId: string; answer: string; aliases: string[];
+  tier: "ground" | "decoy" | "orbit" | "moonshot" | "deep";
+  addedBy: string; createdAt: string;
+}
+
 /**
  * Everything the app needs from storage. The JSON-file implementation is used today;
  * a Supabase implementation of this same interface replaces it later (see supabase/schema.sql).
@@ -67,4 +77,12 @@ export interface Store {
   addFriendship(userId: string, friendId: string): Promise<void>;
   removeFriendship(userId: string, friendId: string): Promise<void>;
   listFriendIds(userId: string): Promise<string[]>;
+
+  addMissedGuess(m: MissedGuess): Promise<void>;
+  listMissedGuesses(limit: number): Promise<MissedGuess[]>;
+  deleteMissedGuesses(promptId: string, key: string): Promise<void>;
+
+  listAnswerAdditions(): Promise<AnswerAddition[]>;
+  addAnswerAddition(a: AnswerAddition): Promise<void>;
+  deleteAnswerAddition(id: string): Promise<void>;
 }

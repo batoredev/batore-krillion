@@ -2,6 +2,7 @@ import "server-only";
 import { getStore, type Result, type RoundRecord, type User } from "./store";
 import { newId } from "./passwords";
 import { guessFromProof, revealSet } from "./play";
+import { ensureAdditions } from "./answers";
 import { setFromKey, PACK_SETS } from "@/game/sets";
 import { matchAnswer } from "@/game/match";
 import { STREAK_BADGES } from "@/game/tiers";
@@ -17,6 +18,7 @@ export async function submitResult(user: User, setKey: string, rounds: Submitted
   if (!set) throw new Error("Unknown set");
   if (!Array.isArray(rounds) || rounds.length !== set.prompts.length) throw new Error("Wrong number of rounds");
 
+  await ensureAdditions();
   const scored: RoundRecord[] = [];
   for (let i = 0; i < set.prompts.length; i++) {
     const prompt = set.prompts[i];
@@ -41,7 +43,7 @@ export async function submitResult(user: User, setKey: string, rounds: Submitted
   };
   await store.addResult(result);
   const percentile = await percentileFor(setKey, result.score, user.id);
-  return { result, percentile, stats: await statsFor(user.id), reveal: revealSet(setKey) };
+  return { result, percentile, stats: await statsFor(user.id), reveal: await revealSet(setKey) };
 }
 
 /** Share of other players' first attempts at this set that scored lower. Null if nobody else has played. */

@@ -1,5 +1,5 @@
 import { createClient, type SupabaseClient } from "@supabase/supabase-js";
-import type { Friendship, Result, Session, Store, User } from "./types";
+import type { AnswerAddition, Friendship, MissedGuess, Result, Session, Store, User } from "./types";
 
 // Supabase (Postgres) implementation of the Store. Tables come from supabase/schema.sql.
 // Uses the service-role key, so it must only ever run on the server.
@@ -110,6 +110,27 @@ export class SupabaseStore implements Store {
   async listFriendIds(userId: string) {
     return (await this.all("friendships", (q) => q.eq("user_id", userId))).map((r) => String((r as Row).friend_id));
   }
+
+  async addMissedGuess(m: MissedGuess) {
+    check(await this.db.from("missed_guesses").insert({ id: m.id, prompt_id: m.promptId, guess: m.guess, key: m.key, user_id: m.userId, created_at: m.createdAt }));
+  }
+  async listMissedGuesses(limit: number) {
+    const rows = check(await this.db.from("missed_guesses").select("*").order("created_at", { ascending: false }).limit(limit)) as Row[];
+    return rows.map((r) => ({ id: String(r.id), promptId: String(r.prompt_id), guess: String(r.guess), key: String(r.key), userId: String(r.user_id), createdAt: iso(r.created_at)! }));
+  }
+  async deleteMissedGuesses(promptId: string, key: string) {
+    check(await this.db.from("missed_guesses").delete().eq("prompt_id", promptId).eq("key", key));
+  }
+  async listAnswerAdditions() {
+    return (await this.all("answer_additions")).map((r) => ({
+      id: String(r.id), promptId: String(r.prompt_id), answer: String(r.answer), aliases: (r.aliases as string[]) ?? [],
+      tier: r.tier as AnswerAddition["tier"], addedBy: String(r.added_by), createdAt: iso(r.created_at)!,
+    }));
+  }
+  async addAnswerAddition(a: AnswerAddition) {
+    check(await this.db.from("answer_additions").insert({ id: a.id, prompt_id: a.promptId, answer: a.answer, aliases: a.aliases, tier: a.tier, added_by: a.addedBy, created_at: a.createdAt }));
+  }
+  async deleteAnswerAddition(id: string) { check(await this.db.from("answer_additions").delete().eq("id", id)); }
 }
 
 export type { Friendship };

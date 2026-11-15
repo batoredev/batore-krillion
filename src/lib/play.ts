@@ -10,6 +10,7 @@ import { setFromKey } from "@/game/sets";
 import { matchAnswer } from "@/game/match";
 import { SECONDS_PER_PROMPT, TIER_KEYS, type TierKey } from "@/game/tiers";
 import { signData, ticketSecret, verifyData } from "@/party/ticket";
+import { ensureAdditions, recordMiss } from "./answers";
 
 /** Countdown (3 × 0.7s) + the 25-second clock + network allowance. */
 export const ROUND_WINDOW_MS = 2_100 + SECONDS_PER_PROMPT * 1000 + 4_000;
@@ -49,8 +50,12 @@ export async function checkGuess(user: User, token: string, guess: string): Prom
   const prompt = set?.prompts[t.r];
   if (!prompt) return { ok: false, reason: "bad-token" };
   const g = String(guess ?? "").slice(0, 80);
+  await ensureAdditions();
   const m = matchAnswer(prompt, g);
-  if (!m) return { ok: false, reason: "not-on-list" };
+  if (!m) {
+    await recordMiss(user, prompt.id, g);
+    return { ok: false, reason: "not-on-list" };
+  }
   const proof = await signData<Proof>({ k: "proof", u: user.id, s: t.s, r: t.r, g, at: Date.now() }, secret(), PROOF_TTL_MS);
   return { ok: true, tier: m.tier, answer: m.answer, points: m.points, exact: m.exact, proof };
 }
@@ -64,7 +69,8 @@ export async function guessFromProof(proof: string | null | undefined, user: Use
 }
 
 /** Answer lists for the results screen, sent only after a set is finished. */
-export function revealSet(setKey: string) {
+export async function revealSet(setKey: string) {
+  await ensureAdditions();
   const set = setFromKey(setKey);
   if (!set) return [];
   return set.prompts.map((p) => ({
@@ -72,4 +78,4 @@ export function revealSet(setKey: string) {
     tiers: Object.fromEntries(TIER_KEYS.map((t) => [t, p.tiers[t].map((a) => a.name)])) as Record<TierKey, string[]>,
   }));
 }
-export type Reveal = ReturnType<typeof revealSet>;
+export type Reveal = Awaited<ReturnType<typeof revealSet>>;

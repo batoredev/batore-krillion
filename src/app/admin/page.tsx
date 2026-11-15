@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { requireAdmin } from "@/lib/auth";
 import { getStore } from "@/lib/store";
 import { AdminPanel, type AdminRow } from "./AdminPanel";
@@ -17,7 +18,7 @@ export default async function Admin() {
   return (
     <div className="page stack">
       <span className="eyebrow">Mission control</span>
-      <h1 className="title">Players</h1>
+      <div className="row"><h1 className="title">Players</h1><span className="spacer" /><Link className="btn" href="/admin/answers">📝 Missing answers</Link></div>
       <p className="muted">Only accounts created here can log in. Passwords are shown once, when you create or reset them — copy them then.</p>
       <AdminPanel rows={rows} selfId={admin.id} />
     </div>
