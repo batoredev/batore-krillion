@@ -47,8 +47,12 @@ Up to 10 players, at `/party`.
 - **Results:** the standings show finishing place, answers given, rarest tier and rarity points.
 
 How it's built:
-- `src/party/engine.ts` holds the rules as a pure state machine. Time and randomness are passed in, so it's fully testable (`scripts/test-party.ts`).
-- `src/party/hub.ts` holds rooms **in memory** in the Node server, runs the fuse timers and streams state to browsers over Server-Sent Events (`/api/party/[code]/events`). Actions go to `POST /api/party/[code]/action`.
+- `src/party/engine.ts` holds the rules as a pure state machine. Time and randomness are passed in, so it's fully testable (`scripts/test-party.ts`). `src/party/apply.ts` turns player actions into engine calls.
+- There are two transports, chosen by `KRIBATOV_PARTY_TRANSPORT`:
+  - **`do` (Cloudflare):** each room is a **Durable Object** (`worker/party-do.ts`). It saves its state in Durable Object storage, runs the hidden fuse with Durable Object alarms, and talks to players over WebSockets (`/party-ws/CODE`). A `PartyLobby` Durable Object keeps the list of public rooms.
+    - **Joining:** players get a 60-second signed ticket from `/api/party/[code]/ticket`, signed with a key derived from `SUPABASE_SERVICE_ROLE_KEY` or with `KRIBATOV_PARTY_SECRET`.
+    - **Entry point:** `worker/index.ts` wraps the OpenNext app and exports the Durable Objects.
+  - **`memory` (default, a single Node server):** `src/party/hub.ts` keeps rooms in memory and streams state over Server-Sent Events.
 
 ## Accounts
 
@@ -178,7 +182,9 @@ The app runs on Cloudflare Workers through the OpenNext adapter (`wrangler.jsonc
 - **Build command:** `npx opennextjs-cloudflare build`
 - **Deploy command:** `npx opennextjs-cloudflare deploy`
 - **Worker name:** `kribatov` (it must match `name` in `wrangler.jsonc`)
-- **Settings in `wrangler.jsonc`:** `SUPABASE_URL` and `KRIBATOV_DISABLE_PARTY=1`, which are not secret.
+- **Settings in `wrangler.jsonc`:**
+  - `SUPABASE_URL` and `KRIBATOV_PARTY_TRANSPORT=do`, which are not secret.
+  - The Durable Object bindings `PARTY_ROOM` and `PARTY_LOBBY`, which use SQLite storage and work on the free plan.
 - **Secrets to add in the dashboard** (as type **Secret**, not text):
   - `SUPABASE_SERVICE_ROLE_KEY`: the Supabase secret or service_role key.
   - `KRIBATOV_BOOTSTRAP_ADMIN`: `username:password`, used once to create the first admin. Logging in with those details creates the admin, but only while the database has no users. Delete this secret afterwards.
@@ -188,17 +194,9 @@ The app runs on Cloudflare Workers through the OpenNext adapter (`wrangler.jsonc
   ```
   This needs a `.dev.vars` file containing `SUPABASE_SERVICE_ROLE_KEY=...`.
 
-For party mode on Cloudflare: Cloudflare Workers don't keep one long-lived process, so the in-memory `src/party/hub.ts` must be replaced. Two options:
-
-- **Cloudflare Durable Objects:** one object per room. It runs `engine.ts` unchanged, uses a Durable Object alarm for the fuse, and connects players with WebSockets.
-- **Supabase Realtime:** broadcast channels per room, with one authority applying actions and running the timer.
-
-Either way, the rules in `engine.ts` don't change.
-
 ## Known limitations
 
 - Answer lists are sent to the browser for the current set, so a technical player could read them. Scores are always recalculated on the server, but the answers themselves aren't secret. Moving matching to the server fixes this.
 - The JSON store is meant for a single server process. Use Supabase for anything bigger.
-- Party rooms live in server memory: a restart ends running games. One server process only, until the hub is moved to Durable Objects or Supabase.
 - Party results aren't saved to player stats yet.
 - Not built yet: password reset by email.

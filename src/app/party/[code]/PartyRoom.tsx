@@ -8,7 +8,7 @@ import { TIERS } from "@/game/tiers";
 type Topic = { id: string; name: string; icon: string };
 type Outcome = { ok: boolean; reason?: string; answer?: string; tier?: keyof typeof TIERS; error?: string };
 
-export function PartyRoom({ code, me, topics }: { code: string; me: string; topics: Topic[] }) {
+export function PartyRoom({ code, me, topics, transport }: { code: string; me: string; topics: Topic[]; transport: "memory" | "do" }) {
   const router = useRouter();
   const [room, setRoom] = useState<PublicRoom | null>(null);
   const [gone, setGone] = useState(false);
@@ -23,12 +23,58 @@ export function PartyRoom({ code, me, topics }: { code: string; me: string; topi
   const lastTyping = useRef(0);
   const inputRef = useRef<HTMLInputElement>(null);
 
+  // Connection: Server-Sent Events + POST on a single Node server, a WebSocket to the room's Durable Object on Cloudflare.
+  const conn = useRef<{ send: (payload: unknown) => Promise<Outcome> } | null>(null);
   useEffect(() => {
-    const es = new EventSource(`/api/party/${code}/events`);
-    es.addEventListener("state", (e) => { setRoom(JSON.parse((e as MessageEvent).data)); setReceived(Date.now()); });
-    es.addEventListener("gone", () => { setGone(true); es.close(); });
-    return () => es.close();
-  }, [code]);
+    const onState = (r: PublicRoom) => { setRoom(r); setReceived(Date.now()); };
+    if (transport === "memory") {
+      const es = new EventSource(`/api/party/${code}/events`);
+      es.addEventListener("state", (e) => onState(JSON.parse((e as MessageEvent).data)));
+      es.addEventListener("gone", () => { setGone(true); es.close(); });
+      conn.current = {
+        send: async (payload) => {
+          const res = await fetch(`/api/party/${code}/action`, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(payload) });
+          return res.json().catch(() => ({ ok: false, error: "Network error" }));
+        },
+      };
+      return () => es.close();
+    }
+    let ws: WebSocket | null = null;
+    let closed = false;
+    let retry: ReturnType<typeof setTimeout> | undefined;
+    let nextId = 1;
+    const pending = new Map<number, (o: Outcome) => void>();
+    const connect = async () => {
+      try {
+        const r = await fetch(`/api/party/${code}/ticket`);
+        if (!r.ok) throw new Error("ticket");
+        const { url } = await r.json();
+        ws = new WebSocket(`${location.protocol === "https:" ? "wss:" : "ws:"}//${location.host}${url}`);
+      } catch { if (!closed) retry = setTimeout(connect, 2000); return; }
+      ws.onmessage = (e) => {
+        const m = JSON.parse(e.data);
+        if (m.type === "state") onState(m.room);
+        else if (m.type === "result") { pending.get(m.id)?.(m.out); pending.delete(m.id); }
+        else if (m.type === "gone") { closed = true; setGone(true); }
+      };
+      ws.onclose = () => {
+        for (const res of pending.values()) res({ ok: false, error: "Reconnecting…" });
+        pending.clear();
+        if (!closed) retry = setTimeout(connect, 1500);
+      };
+    };
+    connect();
+    conn.current = {
+      send: (payload) => new Promise<Outcome>((resolve) => {
+        if (!ws || ws.readyState !== WebSocket.OPEN) return resolve({ ok: false, error: "Reconnecting…" });
+        const id = nextId++;
+        pending.set(id, resolve);
+        ws.send(JSON.stringify({ ...(payload as object), id }));
+        setTimeout(() => { if (pending.has(id)) { pending.delete(id); resolve({ ok: false, error: "Timed out" }); } }, 8000);
+      }),
+    };
+    return () => { closed = true; clearTimeout(retry); ws?.close(); };
+  }, [code, transport]);
 
   useEffect(() => { const t = setInterval(() => setNow(Date.now()), 250); return () => clearInterval(t); }, []);
 
@@ -48,10 +94,8 @@ export function PartyRoom({ code, me, topics }: { code: string; me: string; topi
   const myTurn = room?.status === "playing" && room.holderId === me && !room.paused;
   useEffect(() => { if (myTurn) { setText(""); setFeedback(null); inputRef.current?.focus(); } }, [myTurn, room?.prompt?.id]);
 
-  const send = useCallback(async (payload: unknown): Promise<Outcome> => {
-    const res = await fetch(`/api/party/${code}/action`, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(payload) });
-    return res.json().catch(() => ({ ok: false, error: "Network error" }));
-  }, [code]);
+  const send = useCallback((payload: unknown): Promise<Outcome> =>
+    conn.current ? conn.current.send(payload) : Promise.resolve({ ok: false, error: "Connecting…" }), []);
 
   const onType = (v: string) => {
     setText(v);

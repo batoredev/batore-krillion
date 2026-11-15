@@ -2,16 +2,24 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   // Cloudflare Workers config, used by OpenNext (npm run cf:deploy) and by Cloudflare's Git builds.
   "name": "kribatov",
-  "main": ".open-next/worker.js",
+  // Custom entry: the OpenNext app plus Hot Comet's Durable Objects (see worker/index.ts).
+  "main": "worker/index.ts",
   "compatibility_date": "2025-09-01",
   "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
   "assets": { "directory": ".open-next/assets", "binding": "ASSETS" },
   "observability": { "enabled": true },
+  "durable_objects": {
+    "bindings": [
+      { "name": "PARTY_ROOM", "class_name": "PartyRoom" },
+      { "name": "PARTY_LOBBY", "class_name": "PartyLobby" }
+    ]
+  },
+  // SQLite-backed Durable Objects work on the Workers Free plan.
+  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["PartyRoom", "PartyLobby"] }],
   // Non-secret settings. The secret key (SUPABASE_SERVICE_ROLE_KEY) is NOT here:
   // add it in the Cloudflare dashboard as an encrypted Secret.
   "vars": {
     "SUPABASE_URL": "https://snocscycluadxhnrbvcb.supabase.co",
-    // Hot Comet needs Durable Objects on Cloudflare; until that's built it is switched off here.
-    "KRIBATOV_DISABLE_PARTY": "1"
+    "KRIBATOV_PARTY_TRANSPORT": "do"
   }
 }

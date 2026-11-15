@@ -14,12 +14,14 @@ export class JsonStore implements Store {
   private data: Data | null = null;
   private loading: Promise<Data> | null = null;
   private writeChain: Promise<void> = Promise.resolve();
-  constructor(private file: string) {}
+  /** file = null keeps everything in memory only (used for local Cloudflare testing). */
+  constructor(private file: string | null) {}
 
   private async load(): Promise<Data> {
     if (this.data) return this.data;
     if (!this.loading) {
       this.loading = (async () => {
+        if (!this.file) { this.data = empty(); return this.data; }
         try {
           const raw = await fs.readFile(this.file, "utf8");
           this.data = { ...empty(), ...JSON.parse(raw) };
@@ -37,11 +39,13 @@ export class JsonStore implements Store {
     const d = await this.load();
     fn(d);
     const snapshot = JSON.stringify(d);
+    if (!this.file) return;
+    const file = this.file;
     this.writeChain = this.writeChain.then(async () => {
-      await fs.mkdir(path.dirname(this.file), { recursive: true });
-      const tmp = `${this.file}.${process.pid}.tmp`;
+      await fs.mkdir(path.dirname(file), { recursive: true });
+      const tmp = `${file}.${process.pid}.tmp`;
       await fs.writeFile(tmp, snapshot);
-      await fs.rename(tmp, this.file);
+      await fs.rename(tmp, file);
     });
     return this.writeChain;
   }

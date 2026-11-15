@@ -15,6 +15,9 @@ export function getStore(): Store {
   if (!g.__kribatovStore) {
     if (storeKind() === "supabase") {
       g.__kribatovStore = new SupabaseStore(process.env.SUPABASE_URL!, process.env.SUPABASE_SERVICE_ROLE_KEY!);
+    } else if (process.env.KRIBATOV_MEMORY_STORE === "1") {
+      // Throwaway in-memory data, for local tests only (lost on restart).
+      g.__kribatovStore = new JsonStore(null);
     } else {
       if (typeof navigator !== "undefined" && navigator.userAgent === "Cloudflare-Workers") {
         throw new Error("On Cloudflare, set SUPABASE_URL and the SUPABASE_SERVICE_ROLE_KEY secret: there is no disk for the JSON store.");

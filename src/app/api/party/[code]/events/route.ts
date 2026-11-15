@@ -1,6 +1,7 @@
 import { getCurrentUser } from "@/lib/auth";
 import { subscribe } from "@/party/hub";
 import { partyEnabled } from "@/party/enabled";
+import { partyTransport } from "@/party/transport";
 
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
@@ -8,6 +9,7 @@ export const runtime = "nodejs";
 // Server-Sent Events stream of the room's public state.
 export async function GET(req: Request, ctx: { params: Promise<{ code: string }> }) {
   if (!partyEnabled()) return new Response("Party mode is off on this server", { status: 503 });
+  if (partyTransport() !== "memory") return new Response("Use the room WebSocket", { status: 400 });
   const user = await getCurrentUser();
   if (!user) return new Response("Not logged in", { status: 401 });
   const { code } = await ctx.params;
