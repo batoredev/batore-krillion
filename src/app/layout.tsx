@@ -4,6 +4,7 @@ import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { Logo } from "@/components/Logo";
 import { Nav, TabBar } from "@/components/Nav";
+import { LogoutButton } from "@/components/LogoutButton";
 import { getCurrentUser } from "@/lib/auth";
 import { partyEnabled } from "@/party/enabled";
 
@@ -27,9 +28,10 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             <Link href="/" aria-label="Kribatov home"><Logo /></Link>
             {user && <Nav isAdmin={user.role === "admin"} party={partyEnabled()} />}
             {user && (
-              <Link href="/account" className="userchip" title="Your account">
-                <span className="pill">🧑‍🚀 {user.displayName}</span>
-              </Link>
+              <div className="userchip">
+                <Link href="/account" title="Your account"><span className="pill">🧑‍🚀 {user.displayName}</span></Link>
+                <LogoutButton />
+              </div>
             )}
           </div>
         </header>

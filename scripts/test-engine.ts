@@ -28,7 +28,7 @@ test("aliases count", () => {
   assert.equal(matchAnswer(capitals, "Bangalore")?.answer, "Bengaluru");
   assert.equal(matchAnswer(states, "orissa")?.answer, "Odisha");
 });
-test("small typos are forgiven, short words must be exact", () => {
+test("small typos are forgiven, very short words must be exact", () => {
   assert.equal(matchAnswer(states, "Maharastra")?.answer, "Maharashtra");
   assert.equal(matchAnswer(states, "Gao"), null); // 3 letters: no typo allowance
 });
@@ -74,4 +74,33 @@ test("adding content never changes past dailies", () => {
 test("every topic has at least 30 prompts", () => {
   for (const t of TOPICS) assert.ok(promptsByTopic(t.id).length >= 30, t.name);
 });
+{
+const should: [string, string, string][] = [
+  ["ic-sweet","rasagulla","Rasgulla"],["ic-sweet","gulabjamun","Gulab jamun"],["ic-sweet","jalebis","Jalebi"],["ic-sweet","kaju katlee","Kaju katli"],["ic-sweet","rasmalai","Rasmalai"],["ic-sweet","ladu","Ladoo"],
+  ["ic-curry","panir butter masala","Paneer butter masala"],["ic-curry","palak panir","Palak paneer"],["ic-curry","channa masala","Chole"],["ic-curry","rajmah","Rajma"],
+  ["ic-street","golgappe","Pani puri"],["ic-street","vadapav","Vada pav"],["ic-street","samosas","Samosa"],["ic-street","pavbhaji","Pav bhaji"],["ic-street","bhelpuri","Bhel puri"],["ic-street","momo","Momos"],
+  ["ig-state","maharastra","Maharashtra"],["ig-state","tamilnadu","Tamil Nadu"],["ig-state","chattisgarh","Chhattisgarh"],["ig-state","orrisa","Odisha"],["ig-state","arunachal","Arunachal Pradesh"],["ig-state","telengana","Telangana"],
+  ["ig-capital","bangalore","Bengaluru"],["ig-capital","thiruvananthapuram","Thiruvananthapuram"],["ig-capital","trivandram","Thiruvananthapuram"],["ig-capital","bhubaneshwar","Bhubaneswar"],
+  ["it-cricketer","kohli","Virat Kohli"],["it-cricketer","dhoni","MS Dhoni"],["it-cricketer","sachin","Sachin Tendulkar"],["it-cricketer","tendulkar","Sachin Tendulkar"],["it-cricketer","bumra","Jasprit Bumrah"],["it-cricketer","virat kholi","Virat Kohli"],["it-cricketer","rahul dravid","Rahul Dravid"],
+  ["im-aamir","three idiots","3 Idiots"],["im-aamir","3 idiot","3 Idiots"],["im-aamir","lagan","Lagaan"],["im-aamir","taare zamin par","Taare Zameen Par"],["im-srk","kuch kuch hota hai","Kuch Kuch Hota Hai"],["im-srk","dilwale dulhania le jayenge","Dilwale Dulhania Le Jayenge"],["im-srk","pathan","Pathaan"],
+  ["hist-british-monarch","henry 8","Henry VIII"],["hist-british-monarch","elizabeth the second","Queen Elizabeth II"],["geo-8000","everest","Mount Everest"],["geo-8000","kanchenjunga","Kangchenjunga"],
+  ["it-deity","shiv","Shiva"],["it-deity","ganpati","Ganesha"],["it-deity","laxmi","Lakshmi"],["it-deity","hanumanji","Hanuman"],["it-deity","krishn","Krishna"],
+  ["gt-dog","labrador retriever","Labrador"],["gt-dog","german shepard","German Shepherd"],["gt-dog","golden retriver","Golden Retriever"],["gt-dog","chihuahua","Chihuahua"],["gt-dog","dachshunds","Dachshund"],
+  ["gm-nolan","the dark night","The Dark Knight"],["gm-nolan","intersteller","Interstellar"],["gm-mcu","endgame","Avengers: Endgame"],["gm-mcu","avengers endgame","Avengers: Endgame"],
+  ["auto-brand","mercedes","Mercedes-Benz"],["auto-brand","volkswagon","Volkswagen"],["auto-brand","lamborgini","Lamborghini"],["auto-brand","porshe","Porsche"],
+  ["ig-national-park","corbett","Jim Corbett"],["ig-national-park","kaziranga national park","Kaziranga"],["ihp-pm","nehru","Jawaharlal Nehru"],["ihp-pm","modi","Narendra Modi"],["ihp-pm","vajpayee","Atal Bihari Vajpayee"],
+  ["gc-pasta","spagetti","Spaghetti"],["gc-pasta","fettucini","Fettuccine"],["gc-cheese","parmesan cheese","Parmesan"],["gc-japanese","ramen noodles","Ramen"],
+];
+const shouldNot: [string, string][] = [
+  ["ig-state","paris"],["ig-state","india"],["ig-state","delhi"],["ig-capital","goa"],["ic-sweet","biryani"],["ic-sweet","samosa"],["ic-street","ice cream sundae"],
+  ["it-cricketer","messi"],["it-cricketer","singh"],["it-cricketer","sharma"],["it-cricketer","kumar"],["im-srk","sholay"],["im-aamir","dangal 2"],["gt-dog","cat"],["gt-dog","lion"],
+  ["auto-brand","nike"],["gc-pasta","rice"],["gm-nolan","titanic"],["ihp-pm","gandhi"],["it-deity","jesus"],["geo-8000","kilimanjaro"],["hist-british-monarch","henry 9"],
+];
+  test(`forgiving matching accepts ${should.length} real-world spellings`, () => {
+    for (const [pid, g, want] of should) assert.equal(matchAnswer(promptById(pid)!, g)?.answer, want, `"${g}" should be ${want}`);
+  });
+  test(`matching rejects ${shouldNot.length} wrong answers`, () => {
+    for (const [pid, g] of shouldNot) assert.equal(matchAnswer(promptById(pid)!, g), null, `"${g}" should be rejected for ${pid}`);
+  });
+}
 console.log(`\n${passed} tests passed`);
