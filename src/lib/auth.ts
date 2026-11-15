@@ -2,7 +2,7 @@ import "server-only";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { getStore, type User } from "./store";
-import { newToken, sha256, verifyPassword } from "./passwords";
+import { hashPassword, newId, newToken, sha256, USERNAME_RE, verifyPassword } from "./passwords";
 
 export const SESSION_COOKIE = "kb_session";
 const SESSION_DAYS = 30;
@@ -25,11 +25,33 @@ function noteFailure(key: string) {
   else f.count++;
 }
 
+/**
+ * First-admin setup for hosts where you can't run `npm run create-admin` (e.g. Cloudflare).
+ * Set KRIBATOV_BOOTSTRAP_ADMIN="username:password" and log in with exactly those details.
+ * It only works while the database has NO users at all, then does nothing. Remove it after use.
+ */
+async function bootstrapAdmin(username: string, password: string): Promise<User | null> {
+  const spec = process.env.KRIBATOV_BOOTSTRAP_ADMIN;
+  if (!spec || !spec.includes(":")) return null;
+  const i = spec.indexOf(":");
+  const [u, p] = [spec.slice(0, i).trim().toLowerCase(), spec.slice(i + 1)];
+  if (!USERNAME_RE.test(u) || p.length < 6 || username.trim().toLowerCase() !== u || password !== p) return null;
+  const store = getStore();
+  if ((await store.listUsers()).length > 0) return null;
+  const user: User = {
+    id: newId(), username: u, displayName: u, passwordHash: await hashPassword(p), role: "admin",
+    disabled: false, createdAt: new Date().toISOString(), lastLoginAt: null,
+  };
+  await store.createUser(user);
+  return user;
+}
+
 export async function login(username: string, password: string, ipKey: string): Promise<{ ok: true; user: User } | { ok: false; error: string }> {
   const key = `${username.toLowerCase()}|${ipKey}`;
   if (loginLocked(key)) return { ok: false, error: "Too many attempts. Try again in 15 minutes." };
   const store = getStore();
-  const user = await store.getUserByUsername(username.trim());
+  let user = await store.getUserByUsername(username.trim());
+  if (!user) user = await bootstrapAdmin(username, password);
   const valid = user ? await verifyPassword(password, user.passwordHash) : false;
   if (!user || !valid) { noteFailure(key); return { ok: false, error: "Wrong username or password." }; }
   if (user.disabled) return { ok: false, error: "This account has been disabled. Contact the admin." };

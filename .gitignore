@@ -6,3 +6,8 @@ data/*.json
 .env*.local
 *.tsbuildinfo
 next-env.d.ts
+
+# Cloudflare / OpenNext
+.open-next/
+.wrangler/
+.dev.vars

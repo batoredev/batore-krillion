@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { requireUser } from "@/lib/auth";
+import { partyEnabled } from "@/party/enabled";
 import { statsFor } from "@/lib/results";
 import { todayDailyNumber, dateForDaily, prettyDate } from "@/game/time";
 import { MAX_SCORE, SECONDS_PER_PROMPT, ROUNDS_PER_SET, TIERS, TIER_KEYS, bandFor } from "@/game/tiers";
@@ -35,7 +36,7 @@ export default async function Home() {
       </section>
 
       <section className="grid">
-        <Link href="/party" className="card mode-card"><span className="icon">☄️</span><h3 className="h2">Hot Comet</h3><p className="muted small">Multiplayer party mode. Name an answer, pass the comet before it blows.</p></Link>
+        {partyEnabled() && <Link href="/party" className="card mode-card"><span className="icon">☄️</span><h3 className="h2">Hot Comet</h3><p className="muted small">Multiplayer party mode. Name an answer, pass the comet before it blows.</p></Link>}
         <Link href="/play/endless" className="card mode-card"><span className="icon">∞</span><h3 className="h2">Endless</h3><p className="muted small">Fresh mixed-topic sets, as many as you like.</p></Link>
         <Link href="/packs" className="card mode-card"><span className="icon">🧭</span><h3 className="h2">Topic packs</h3><p className="muted small">11 topics from Indian movies to world history. {stats.packs.reduce((a, p) => a + p.completed, 0)} sets cleared.</p></Link>
         <Link href="/archive" className="card mode-card"><span className="icon">🗓️</span><h3 className="h2">Archive</h3><p className="muted small">Every past daily, free to replay.</p></Link>

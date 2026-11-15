@@ -14,9 +14,10 @@ const LINKS = [
 
 const isActive = (path: string, href: string) => (href === "/" ? path === "/" || path.startsWith("/play") : path.startsWith(href));
 
-export function Nav({ isAdmin }: { isAdmin: boolean }) {
+export function Nav({ isAdmin, party }: { isAdmin: boolean; party: boolean }) {
   const path = usePathname();
-  const links = isAdmin ? [...LINKS, { href: "/admin", label: "Admin", icon: "🛠️" }] : LINKS;
+  const base = party ? LINKS : LINKS.filter((l) => l.href !== "/party");
+  const links = isAdmin ? [...base, { href: "/admin", label: "Admin", icon: "🛠️" }] : base;
   return (
     <nav className="nav" aria-label="Main">
       {links.map((l) => (
@@ -26,10 +27,10 @@ export function Nav({ isAdmin }: { isAdmin: boolean }) {
   );
 }
 
-export function TabBar() {
+export function TabBar({ party }: { party: boolean }) {
   const path = usePathname();
   if (path.startsWith("/play/")) return null; // keep the game screen clear on phones
-  const tabs = LINKS.filter((l) => l.href !== "/archive" && l.href !== "/friends");
+  const tabs = LINKS.filter((l) => l.href !== "/archive" && l.href !== "/friends" && (party || l.href !== "/party"));
   return (
     <nav className="tabbar" aria-label="Main">
       {tabs.map((l) => (

@@ -173,6 +173,21 @@ Accounts stay as Kribatov's own username/password, not Supabase Auth. The secret
 
 ## Cloudflare (hosting)
 
+The app runs on Cloudflare Workers through the OpenNext adapter (`wrangler.jsonc`, `open-next.config.ts`).
+
+- **Build command:** `npx opennextjs-cloudflare build`
+- **Deploy command:** `npx opennextjs-cloudflare deploy`
+- **Worker name:** `kribatov` (it must match `name` in `wrangler.jsonc`)
+- **Settings in `wrangler.jsonc`:** `SUPABASE_URL` and `KRIBATOV_DISABLE_PARTY=1`, which are not secret.
+- **Secrets to add in the dashboard** (as type **Secret**, not text):
+  - `SUPABASE_SERVICE_ROLE_KEY`: the Supabase secret or service_role key.
+  - `KRIBATOV_BOOTSTRAP_ADMIN`: `username:password`, used once to create the first admin. Logging in with those details creates the admin, but only while the database has no users. Delete this secret afterwards.
+- **Local preview in the Workers runtime:**
+  ```bash
+  npm run cf:preview
+  ```
+  This needs a `.dev.vars` file containing `SUPABASE_SERVICE_ROLE_KEY=...`.
+
 For party mode on Cloudflare: Cloudflare Workers don't keep one long-lived process, so the in-memory `src/party/hub.ts` must be replaced. Two options:
 
 - **Cloudflare Durable Objects:** one object per room. It runs `engine.ts` unchanged, uses a Durable Object alarm for the fuse, and connects players with WebSockets.

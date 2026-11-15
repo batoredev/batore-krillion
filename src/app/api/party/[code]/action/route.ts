@@ -1,3 +1,4 @@
+import { partyEnabled } from "@/party/enabled";
 import { body, fail, json, withUser } from "@/lib/http";
 import { act } from "@/party/hub";
 import * as E from "@/party/engine";
@@ -11,6 +12,7 @@ type Action =
   | { type: "leave" };
 
 export async function POST(req: Request, ctx: { params: Promise<{ code: string }> }) {
+  if (!partyEnabled()) return fail("Party mode is off on this server", 503);
   return withUser(async (user) => {
     const { code } = await ctx.params;
     const a = await body<Action>(req);

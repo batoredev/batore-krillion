@@ -16,6 +16,9 @@ export function getStore(): Store {
     if (storeKind() === "supabase") {
       g.__kribatovStore = new SupabaseStore(process.env.SUPABASE_URL!, process.env.SUPABASE_SERVICE_ROLE_KEY!);
     } else {
+      if (typeof navigator !== "undefined" && navigator.userAgent === "Cloudflare-Workers") {
+        throw new Error("On Cloudflare, set SUPABASE_URL and the SUPABASE_SERVICE_ROLE_KEY secret: there is no disk for the JSON store.");
+      }
       const dir = process.env.KRIBATOV_DATA_DIR || path.join(process.cwd(), "data");
       g.__kribatovStore = new JsonStore(path.join(dir, "db.json"));
     }

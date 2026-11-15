@@ -1,11 +1,21 @@
 import { requireUser } from "@/lib/auth";
 import { PartyLobby } from "./PartyLobby";
 import { TOPICS } from "@/content/types";
+import { partyEnabled } from "@/party/enabled";
 
 export const dynamic = "force-dynamic";
 
 export default async function PartyPage() {
   await requireUser();
+  if (!partyEnabled()) {
+    return (
+      <div className="page stack">
+        <span className="eyebrow">Multiplayer</span>
+        <h1 className="title">☄️ Hot Comet</h1>
+        <p className="notice">Party mode is coming soon on this server.</p>
+      </div>
+    );
+  }
   return (
     <div className="page stack">
       <span className="eyebrow">Multiplayer</span>
