@@ -1,0 +1,1927 @@
+{
+ "automobile manufacturer": {
+  "id": "Q786820",
+  "desc": "company that makes automobiles",
+  "links": 18
+ },
+ "India": {
+  "id": "Q668",
+  "desc": "country in South Asia",
+  "links": 404
+ },
+ "motorcycle manufacturer": {
+  "id": "Q15081030",
+  "desc": "type of manufacturer",
+  "links": 0
+ },
+ "Formula One team": {
+  "id": "Q10497835",
+  "desc": "motorsport team which competes in Formula One",
+  "links": 4
+ },
+ "Formula One constructor": {
+  "id": "Q21748148",
+  "desc": "entity officially designated as the designer of a Formula One car",
+  "links": 2
+ },
+ "internal combustion engine": {
+  "id": "Q12757",
+  "desc": "engine in which the combustion of a fuel occurs with an oxidizer in a combustion chamber",
+  "links": 123
+ },
+ "sports car": {
+  "id": "Q274586",
+  "desc": "performance-oriented car class, generally small or light-weight with good handling",
+  "links": 46
+ },
+ "Japan": {
+  "id": "Q17",
+  "desc": "island country in East Asia",
+  "links": 419
+ },
+ "Germany": {
+  "id": "Q183",
+  "desc": "country in Central Europe",
+  "links": 405
+ },
+ "Italy": {
+  "id": "Q38",
+  "desc": "country in southern Europe",
+  "links": 409
+ },
+ "electric car": {
+  "id": "Q193692",
+  "desc": "automobile propelled by an electric motor using energy stored in rechargeable batteries",
+  "links": 87
+ },
+ "electric motor": {
+  "id": "Q72313",
+  "desc": "electromechanical device",
+  "links": 101
+ },
+ "Maruti Suzuki": {
+  "id": "Q963718",
+  "desc": "Japanese-Indian automobile manufacturer",
+  "links": 35
+ },
+ "motorcycle": {
+  "id": "Q34493",
+  "desc": "two- or three-wheeled motor vehicle",
+  "links": 135
+ },
+ "Mahindra & Mahindra": {
+  "id": "Q848059",
+  "desc": "Indian multinational automobile manufacturer",
+  "links": 41
+ },
+ "Bajaj Auto": {
+  "id": "Q10910065",
+  "desc": "Indian two-wheeler and three-wheeler manufacturing company",
+  "links": 35
+ },
+ "Hero MotoCorp": {
+  "id": "Q1613763",
+  "desc": "Indian motorcycle and scooter manufacturer",
+  "links": 28
+ },
+ "Toyota": {
+  "id": "Q53268",
+  "desc": "Japanese multinational automotive manufacturer",
+  "links": 149
+ },
+ "BMW": {
+  "id": "Q26678",
+  "desc": "German automobile manufacturer, and conglomerate",
+  "links": 118
+ },
+ "Ferrari": {
+  "id": "Q27586",
+  "desc": "Italian luxury sports car manufacturer",
+  "links": 98
+ },
+ "race track": {
+  "id": "Q1777138",
+  "desc": "facility built for racing of animals, vehicles, or athletes",
+  "links": 35
+ },
+ "Formula One Grand Prix": {
+  "id": "Q11924610",
+  "desc": "",
+  "links": 18
+ },
+ "auto race": {
+  "id": "Q24050099",
+  "desc": "competitive event in which participants seek to complete objectives quickest using automobiles",
+  "links": 1
+ },
+ "rally": {
+  "id": "Q19609158",
+  "desc": "civic demonstration",
+  "links": 4
+ },
+ "motorcycle racing series": {
+  "id": "Q17024704",
+  "desc": "",
+  "links": 0
+ },
+ "Hyundai Motor Company": {
+  "id": "Q55931",
+  "desc": "South Korean multinational automaker",
+  "links": 76
+ },
+ "truck manufacturer": {
+  "id": "Q108460239",
+  "desc": "branch of the automobile industry",
+  "links": 0
+ },
+ "pasta": {
+  "id": "Q178",
+  "desc": "Italian food made from flour, eggs and water and shaped in different forms, usually cooked and served with a sauce",
+  "links": 109
+ },
+ "cheese": {
+  "id": "Q10943",
+  "desc": "yellow or white, creamy or solid food made from the pressed curds of milk",
+  "links": 210
+ },
+ "Japanese cuisine": {
+  "id": "Q234138",
+  "desc": "culinary traditions of Japan",
+  "links": 78
+ },
+ "Mexican cuisine": {
+  "id": "Q207965",
+  "desc": "culinary traditions of Mexico",
+  "links": 56
+ },
+ "bread": {
+  "id": "Q7802",
+  "desc": "baked food made of flour, water and other ingredients",
+  "links": 257
+ },
+ "spice": {
+  "id": "Q42527",
+  "desc": "dried seed, fruit, root, bark, or vegetable substance primarily used for flavoring, coloring or preserving food",
+  "links": 141
+ },
+ "herb~plant": {
+  "id": "Q207123",
+  "desc": "plant part used for flavoring, food, medicine, or perfume",
+  "links": 72
+ },
+ "French cuisine": {
+  "id": "Q6661",
+  "desc": "сulinary traditions of France",
+  "links": 66
+ },
+ "Chinese cuisine": {
+  "id": "Q10876842",
+  "desc": "culinary traditions of the China",
+  "links": 76
+ },
+ "Italian cuisine": {
+  "id": "Q192786",
+  "desc": "culinary traditions of Italy",
+  "links": 79
+ },
+ "Thai cuisine": {
+  "id": "Q841984",
+  "desc": "Culinary traditions of Siam",
+  "links": 47
+ },
+ "Korean cuisine": {
+  "id": "Q647500",
+  "desc": "culinary traditions of Korea",
+  "links": 52
+ },
+ "Middle Eastern cuisine": {
+  "id": "Q1547037",
+  "desc": "type of regional cuisine",
+  "links": 33
+ },
+ "Arab cuisine": {
+  "id": "Q623970",
+  "desc": "cuisine of the Arabs",
+  "links": 43
+ },
+ "Levantine cuisine": {
+  "id": "Q765174",
+  "desc": "cuisine of the Eastern Mediterranean",
+  "links": 17
+ },
+ "Turkish cuisine": {
+  "id": "Q654493",
+  "desc": "culinary traditions of Turkey",
+  "links": 58
+ },
+ "Iranian cuisine": {
+  "id": "Q1342397",
+  "desc": "culinary traditions of Iran",
+  "links": 44
+ },
+ "dessert": {
+  "id": "Q182940",
+  "desc": "course that concludes a meal, usually sweet",
+  "links": 91
+ },
+ "fruit": {
+  "id": "Q1364",
+  "desc": "botanical term for the mature ovary or ovaries of one or more flowers. For foods commonly known as fruit, use Q3314483",
+  "links": 199
+ },
+ "food": {
+  "id": "Q2095",
+  "desc": "any substance consumed to provide nutritional support for the body; form of energy stored in chemical",
+  "links": 250
+ },
+ "vegetable": {
+  "id": "Q11004",
+  "desc": "edible plant or part of a plant",
+  "links": 211
+ },
+ "rice dish": {
+  "id": "Q21976260",
+  "desc": "dish made from rice",
+  "links": 3
+ },
+ "rice": {
+  "id": "Q5090",
+  "desc": "cereal grain and staple food",
+  "links": 230
+ },
+ "dish": {
+  "id": "Q746549",
+  "desc": "specific food preparation with cooking finished, and ready to eat, or be served",
+  "links": 57
+ },
+ "cocktail": {
+  "id": "Q134768",
+  "desc": "alcoholic mixed drink",
+  "links": 86
+ },
+ "coffee drink": {
+  "id": "Q37756327",
+  "desc": "beverage containing coffee",
+  "links": 1
+ },
+ "herbal tea": {
+  "id": "Q379932",
+  "desc": "beverage made from the infusion or decoction of herbs, spices, or other plant material in hot water",
+  "links": 52
+ },
+ "sauce": {
+  "id": "Q178359",
+  "desc": "liquid, creaming or semi-solid food served on or used in preparing other foods",
+  "links": 99
+ },
+ "condiment": {
+  "id": "Q2596997",
+  "desc": "substance or sauce added to food to enhance its flavor",
+  "links": 54
+ },
+ "restaurant chain": {
+  "id": "Q18534542",
+  "desc": "set of related restaurants in many different locations that are under shared corporate ownership or franchising agreements",
+  "links": 3
+ },
+ "soup": {
+  "id": "Q41415",
+  "desc": "primarily liquid food",
+  "links": 135
+ },
+ "sandwich": {
+  "id": "Q28803",
+  "desc": "food made with bread and other ingredients",
+  "links": 115
+ },
+ "hamburger": {
+  "id": "Q6663",
+  "desc": "American sandwich of ground beef patty",
+  "links": 118
+ },
+ "cooking technique": {
+  "id": "Q11795121",
+  "desc": "method of preparing a dish using the heat",
+  "links": 13
+ },
+ "kitchen utensil": {
+  "id": "Q3773693",
+  "desc": "small hand-held tool used for food preparation",
+  "links": 16
+ },
+ "cookware and bakeware": {
+  "id": "Q154038",
+  "desc": "types of food preparation containers for use on stovetops or in ovens; cooking pots, casseroles, saucepans, frying pans, baking tins, stockpots, etc.",
+  "links": 28
+ },
+ "home appliance": {
+  "id": "Q212920",
+  "desc": "machine for household use",
+  "links": 59
+ },
+ "nut~fruit": {
+  "id": "Q11009",
+  "desc": "in botany, type of dry indehiscent fruit",
+  "links": 132
+ },
+ "seafood": {
+  "id": "Q192935",
+  "desc": "food from the sea, e.g. fish, shrimp, crab, mussel, seaweed",
+  "links": 68
+ },
+ "edible mushroom": {
+  "id": "Q654236",
+  "desc": "edible fungi fruit bodies",
+  "links": 53
+ },
+ "Spanish cuisine": {
+  "id": "Q622512",
+  "desc": "culinary traditions of Spain",
+  "links": 52
+ },
+ "Portuguese cuisine": {
+  "id": "Q180817",
+  "desc": "culinary traditions of Portugal",
+  "links": 40
+ },
+ "river": {
+  "id": "Q4022",
+  "desc": "larger natural watercourse",
+  "links": 283
+ },
+ "desert": {
+  "id": "Q8514",
+  "desc": "barren area of land where little precipitation occurs",
+  "links": 221
+ },
+ "sea": {
+  "id": "Q165",
+  "desc": "large body of saline water",
+  "links": 281
+ },
+ "ocean": {
+  "id": "Q9430",
+  "desc": "very large body of saline water",
+  "links": 262
+ },
+ "marginal sea": {
+  "id": "Q204894",
+  "desc": "sea partially enclosed by islands, archipelagos, or peninsulas",
+  "links": 58
+ },
+ "bay~body of water": {
+  "id": "Q39594",
+  "desc": "body of water connected to an ocean or lake, formed by an indentation of the shoreline",
+  "links": 123
+ },
+ "lake": {
+  "id": "Q23397",
+  "desc": "body of relatively still water, localized in a basin",
+  "links": 217
+ },
+ "mountain range": {
+  "id": "Q46831",
+  "desc": "geographic area containing several geologically related mountains",
+  "links": 125
+ },
+ "volcano": {
+  "id": "Q8072",
+  "desc": "natural, surface vent or fissure usually in a mountainous form",
+  "links": 237
+ },
+ "waterfall": {
+  "id": "Q34038",
+  "desc": "place where water flows over a steep or vertical drop",
+  "links": 167
+ },
+ "island": {
+  "id": "Q23442",
+  "desc": "piece of sub-continental land completely surrounded by water",
+  "links": 233
+ },
+ "sovereign state": {
+  "id": "Q3624078",
+  "desc": "state that has the highest authority over a territory",
+  "links": 92
+ },
+ "People's Republic of China": {
+  "id": "Q148",
+  "desc": "country in East Asia",
+  "links": 401
+ },
+ "city": {
+  "id": "Q515",
+  "desc": "large human settlement",
+  "links": 263
+ },
+ "city of Japan": {
+  "id": "Q494721",
+  "desc": "administrative division of Japan",
+  "links": 40
+ },
+ "strait": {
+  "id": "Q37901",
+  "desc": "naturally formed, narrow waterway that connects two larger bodies of water",
+  "links": 129
+ },
+ "canal": {
+  "id": "Q12284",
+  "desc": "man-made channel for water",
+  "links": 141
+ },
+ "channel~water": {
+  "id": "Q65148029",
+  "desc": "wide strait or waterway",
+  "links": 0
+ },
+ "World Heritage Site": {
+  "id": "Q9259",
+  "desc": "place of significance listed by UNESCO",
+  "links": 181
+ },
+ "monument": {
+  "id": "Q4989906",
+  "desc": "imposing structure created to commemorate a person or event, or used for that purpose",
+  "links": 98
+ },
+ "landmark": {
+  "id": "Q4895393",
+  "desc": "recognizable natural or artificial feature used for navigation. For architectural landmarks use Q2319498",
+  "links": 34
+ },
+ "Roman emperor": {
+  "id": "Q842606",
+  "desc": "ruler of the Roman Empire during the imperial period",
+  "links": 61
+ },
+ "ancient civilization": {
+  "id": "Q28171280",
+  "desc": "civilization existing in ancient days",
+  "links": 8
+ },
+ "archaeological culture": {
+  "id": "Q465299",
+  "desc": "group of artifacts associated with a past society",
+  "links": 64
+ },
+ "World War II": {
+  "id": "Q362",
+  "desc": "1939–1945 global conflict",
+  "links": 291
+ },
+ "battle": {
+  "id": "Q178561",
+  "desc": "part of a war which is well defined in duration, area and force commitment",
+  "links": 94
+ },
+ "explorer": {
+  "id": "Q11900058",
+  "desc": "person who by means of travel searches out new information",
+  "links": 27
+ },
+ "pharaoh": {
+  "id": "Q37110",
+  "desc": "ruler of Ancient Egypt",
+  "links": 134
+ },
+ "empire": {
+  "id": "Q48349",
+  "desc": "geographically extensive group of states and peoples united and ruled either by a central authority or a central figure",
+  "links": 125
+ },
+ "caliphate": {
+  "id": "Q131401",
+  "desc": "Islamic form of government",
+  "links": 94
+ },
+ "World War I": {
+  "id": "Q361",
+  "desc": "1914–1918 global conflict",
+  "links": 266
+ },
+ "state": {
+  "id": "Q7275",
+  "desc": "organised community living under a system of government; either a sovereign state, constituent state, or federated state",
+  "links": 225
+ },
+ "human": {
+  "id": "Q5",
+  "desc": "any single member of Homo sapiens, unique extant species of the genus Homo",
+  "links": 279
+ },
+ "inventor": {
+  "id": "Q205375",
+  "desc": "person that devises a new device, method, composition, or process",
+  "links": 68
+ },
+ "philosopher": {
+  "id": "Q4964182",
+  "desc": "person with an extensive knowledge of philosophy",
+  "links": 111
+ },
+ "scientist": {
+  "id": "Q901",
+  "desc": "person who systematically observes and analyzes phenomena and tests hypotheses using scientific methods",
+  "links": 137
+ },
+ "revolution": {
+  "id": "Q10931",
+  "desc": "fundamental change in power or organizational structures that takes place in a relatively short period of time",
+  "links": 156
+ },
+ "rebellion": {
+  "id": "Q124734",
+  "desc": "violent resistance against government",
+  "links": 85
+ },
+ "ancient city": {
+  "id": "Q15661340",
+  "desc": "city in historical records",
+  "links": 1
+ },
+ "archaeological site": {
+  "id": "Q839954",
+  "desc": "place (or group of physical sites) in which evidence of past activity is preserved",
+  "links": 62
+ },
+ "queen regnant": {
+  "id": "Q19643",
+  "desc": "female monarch who rules a country in her own right",
+  "links": 35
+ },
+ "empress regnant": {
+  "id": "Q15264045",
+  "desc": "female monarch of Imperial Rank who rules an Empire in her own right",
+  "links": 7
+ },
+ "queen consort": {
+  "id": "Q719039",
+  "desc": "wife of a reigning king",
+  "links": 39
+ },
+ "treaty": {
+  "id": "Q131569",
+  "desc": "express agreement between nations under international law",
+  "links": 90
+ },
+ "war": {
+  "id": "Q198",
+  "desc": "organized and prolonged violent conflict between different nations, states, or different groups within a nation or state",
+  "links": 268
+ },
+ "epidemic": {
+  "id": "Q44512",
+  "desc": "rapid spread of infectious disease to a large number of people in a given population within a short period of time",
+  "links": 127
+ },
+ "pandemic": {
+  "id": "Q12184",
+  "desc": "epidemic of infectious disease that has spread across a large region with global health impact",
+  "links": 160
+ },
+ "social networking service": {
+  "id": "Q3220391",
+  "desc": "online platform that facilitates the building of social relations",
+  "links": 86
+ },
+ "instant messaging client": {
+  "id": "Q2462003",
+  "desc": "software for sending or receiving chat messages",
+  "links": 12
+ },
+ "messaging app": {
+  "id": "Q18922759",
+  "desc": "online messaging services used primarily via mobile platforms",
+  "links": 2
+ },
+ "cryptocurrency": {
+  "id": "Q13479982",
+  "desc": "digital currency not reliant on a central authority",
+  "links": 119
+ },
+ "specialized agency of the United Nations": {
+  "id": "Q15925165",
+  "desc": "legally and financially autonomous organizations associated with the UN",
+  "links": 9
+ },
+ "United Nations System": {
+  "id": "Q854218",
+  "desc": "group of legally and financially autonomous organizations that are associated with the UN",
+  "links": 32
+ },
+ "United Nations": {
+  "id": "Q1065",
+  "desc": "global international and intergovernmental organization",
+  "links": 337
+ },
+ "intergovernmental organization": {
+  "id": "Q245065",
+  "desc": "organization composed primarily of sovereign states",
+  "links": 41
+ },
+ "currency": {
+  "id": "Q8142",
+  "desc": "generally accepted medium of exchange for goods or services",
+  "links": 168
+ },
+ "information technology": {
+  "id": "Q11661",
+  "desc": "development, management, and use of computer-based information systems",
+  "links": 139
+ },
+ "software industry": {
+  "id": "Q880371",
+  "desc": "businesses for development, maintenance and publication of software",
+  "links": 23
+ },
+ "technology company": {
+  "id": "Q18388277",
+  "desc": "company specializing in technology",
+  "links": 23
+ },
+ "business": {
+  "id": "Q4830453",
+  "desc": "organization undertaking commercial, industrial, or professional activity",
+  "links": 142
+ },
+ "space probe": {
+  "id": "Q26529",
+  "desc": "unmanned robotic spacecraft that doesn't orbit the Earth, but, instead, explores further into outer space",
+  "links": 79
+ },
+ "space station": {
+  "id": "Q25956",
+  "desc": "spacecraft designed to remain in space for an extended period with a crew",
+  "links": 92
+ },
+ "space telescope": {
+  "id": "Q148578",
+  "desc": "instrument in outer space for observing distant space objects",
+  "links": 64
+ },
+ "Nobel Peace Prize": {
+  "id": "Q35637",
+  "desc": "one of five Nobel Prizes",
+  "links": 130
+ },
+ "airline": {
+  "id": "Q46970",
+  "desc": "company that provides air transport services for traveling passengers and freight",
+  "links": 87
+ },
+ "award": {
+  "id": "Q618779",
+  "desc": "something given to a person or a group of people to recognize their merit or excellence",
+  "links": 55
+ },
+ "chemical element": {
+  "id": "Q11344",
+  "desc": "species of atoms having the same number of protons in the atomic nucleus and the same chemical properties, but not necessarily the same mass, or the same stability (or half-lifetime if they are unstable)",
+  "links": 203
+ },
+ "dog breed": {
+  "id": "Q39367",
+  "desc": "group of closely related and visibly similar domestic dogs",
+  "links": 39
+ },
+ "musical instrument": {
+  "id": "Q34379",
+  "desc": "device created or adapted to make musical sounds",
+  "links": 150
+ },
+ "bone": {
+  "id": "Q265868",
+  "desc": "rigid organ that constitutes part of the endoskeleton of vertebrates",
+  "links": 188
+ },
+ "human skeleton": {
+  "id": "Q9621",
+  "desc": "internal framework of the human body",
+  "links": 90
+ },
+ "Greek deity": {
+  "id": "Q22989102",
+  "desc": "type or kind of deity belonging to the Greek mythological universe",
+  "links": 1
+ },
+ "natural satellite": {
+  "id": "Q2537",
+  "desc": "celestial body that orbits a planet or other smaller body in turn directly orbiting a star",
+  "links": 138
+ },
+ "Solar System": {
+  "id": "Q544",
+  "desc": "the Sun, its planets and their moons",
+  "links": 280
+ },
+ "programming language": {
+  "id": "Q9143",
+  "desc": "language for communicating instructions to a machine",
+  "links": 165
+ },
+ "constellation": {
+  "id": "Q8928",
+  "desc": "image on the celestial sphere consisting of stars according to any current of historical system or description",
+  "links": 147
+ },
+ "species": {
+  "id": "Q7432",
+  "desc": "one of the basic units of biological classification and a taxonomic rank",
+  "links": 163
+ },
+ "genus~taxonomic rank": {
+  "id": "Q34740",
+  "desc": "taxonomic rank used in the biological classification of living and fossil organisms, and viruses",
+  "links": 134
+ },
+ "family~taxonomic rank": {
+  "id": "Q35409",
+  "desc": "taxonomic rank (or a taxon at that rank) between order and genus",
+  "links": 134
+ },
+ "Cetacea": {
+  "id": "Q160",
+  "desc": "infraorder of marine mammals",
+  "links": 148
+ },
+ "Cephalopoda": {
+  "id": "Q51455217",
+  "desc": "Jerusalem: Israel Program for Scientific Translations, 1972.",
+  "links": 0
+ },
+ "Echinodermata": {
+  "id": "Q140220102",
+  "desc": "book chapter in Bivalvia Through Reptilia (1987)",
+  "links": 0
+ },
+ "Cnidaria": {
+  "id": "Q119788837",
+  "desc": "taxon",
+  "links": 1
+ },
+ "Decapoda": {
+  "id": "Q903225",
+  "desc": "Wikimedia disambiguation page",
+  "links": 3
+ },
+ "gland": {
+  "id": "Q9647",
+  "desc": "type of animal organ",
+  "links": 106
+ },
+ "color~visual": {
+  "id": "Q1075",
+  "desc": "characteristic of visual perception",
+  "links": 231
+ },
+ "polygon": {
+  "id": "Q37555",
+  "desc": "plane figure bounded by line segments",
+  "links": 117
+ },
+ "polyhedron": {
+  "id": "Q172937",
+  "desc": "solid in three dimensions with flat faces",
+  "links": 77
+ },
+ "geometric shape": {
+  "id": "Q815741",
+  "desc": "geometric information which remains when location, scale, orientation and reflection are removed from the description of a geometric object",
+  "links": 25
+ },
+ "type of sport": {
+  "id": "Q31629",
+  "desc": "specific sport. Do not use with P279 (subclass of)",
+  "links": 7
+ },
+ "board game": {
+  "id": "Q131436",
+  "desc": "game that involves counters or pieces moved or placed on a pre-marked surface or \"board\", according to a set of rules",
+  "links": 84
+ },
+ "card game": {
+  "id": "Q142714",
+  "desc": "game using playing cards as the primary device",
+  "links": 96
+ },
+ "profession": {
+  "id": "Q28640",
+  "desc": "occupation requiring specialized training",
+  "links": 117
+ },
+ "Pinophyta": {
+  "id": "Q26943989",
+  "desc": "Wikimedia disambiguation page",
+  "links": 1
+ },
+ "Fagaceae": {
+  "id": "Q145977",
+  "desc": "family of flowering plants",
+  "links": 77
+ },
+ "Moraceae": {
+  "id": "Q156579",
+  "desc": "family of plants in the order Rosales",
+  "links": 75
+ },
+ "Fabaceae": {
+  "id": "Q44448",
+  "desc": "family of plants",
+  "links": 110
+ },
+ "flower~plant": {
+  "id": "Q506",
+  "desc": "sexual reproductive structure found on flowering plants",
+  "links": 252
+ },
+ "ornamental plant": {
+  "id": "Q199182",
+  "desc": "plant that is grown for decorative purposes",
+  "links": 62
+ },
+ "order~taxonomic rank": {
+  "id": "Q36602",
+  "desc": "taxonomic rank",
+  "links": 120
+ },
+ "unit of measurement": {
+  "id": "Q47574",
+  "desc": "real scalar quantity, defined and adopted by convention, with which any other quantity of the same kind can be compared to express the ratio of the two quantities as a number (VIM)",
+  "links": 109
+ },
+ "painting": {
+  "id": "Q11629",
+  "desc": "practice of applying paint, pigment, color or other medium to a surface",
+  "links": 218
+ },
+ "novelist": {
+  "id": "Q6625963",
+  "desc": "writer of novels",
+  "links": 38
+ },
+ "poet": {
+  "id": "Q49757",
+  "desc": "person who writes poetry",
+  "links": 173
+ },
+ "playwright": {
+  "id": "Q214917",
+  "desc": "person who writes plays",
+  "links": 94
+ },
+ "writer": {
+  "id": "Q36180",
+  "desc": "person who uses written words to communicate ideas and to produce literary works",
+  "links": 176
+ },
+ "language": {
+  "id": "Q315",
+  "desc": "general system which gives humans the ability to communicate",
+  "links": 338
+ },
+ "superhero": {
+  "id": "Q188784",
+  "desc": "type of stock character usually possessing \"supernatural or superhuman powers\" and dedicated to protecting the public",
+  "links": 80
+ },
+ "chemical compound": {
+  "id": "Q11173",
+  "desc": "pure chemical substance consisting of two or more different chemical elements",
+  "links": 149
+ },
+ "disease": {
+  "id": "Q12136",
+  "desc": "abnormal biological process in an organism driven by a specific pathophysiological mechanism",
+  "links": 229
+ },
+ "hill station": {
+  "id": "Q2393184",
+  "desc": "town located at a higher elevation than the nearby plain or valley",
+  "links": 23
+ },
+ "national park": {
+  "id": "Q46169",
+  "desc": "park used for conservation purposes of animal life and plants",
+  "links": 119
+ },
+ "wildlife sanctuary": {
+  "id": "Q19311633",
+  "desc": "",
+  "links": 1
+ },
+ "beach": {
+  "id": "Q40080",
+  "desc": "area of sand or small stones near the sea or another area of water such as a lake",
+  "links": 132
+ },
+ "mountain pass": {
+  "id": "Q133056",
+  "desc": "navigable route, typically through a saddle or its vicinity, to cross a mountain range or a ridge",
+  "links": 92
+ },
+ "Hindu temple": {
+  "id": "Q842402",
+  "desc": "house of worship in Hinduism",
+  "links": 60
+ },
+ "Jain temple": {
+  "id": "Q2613100",
+  "desc": "the place of worship for Jains, the followers of Jainism",
+  "links": 16
+ },
+ "gurdwara": {
+  "id": "Q337986",
+  "desc": "place of worship in Sikhism",
+  "links": 48
+ },
+ "fort": {
+  "id": "Q1785071",
+  "desc": "military construction designed for defensive warfare",
+  "links": 25
+ },
+ "airport": {
+  "id": "Q1248784",
+  "desc": "location where aircraft take off and land with extended support facilities, mostly for commercial air transport",
+  "links": 149
+ },
+ "heritage railway": {
+  "id": "Q420962",
+  "desc": "railway used for heritage/historical/tourism purposes",
+  "links": 29
+ },
+ "train service": {
+  "id": "Q15141321",
+  "desc": "passenger or good transport by a specific train following a specific route at regular times",
+  "links": 3
+ },
+ "dam": {
+  "id": "Q12323",
+  "desc": "barrier that impounds water or underground streams",
+  "links": 139
+ },
+ "reservoir": {
+  "id": "Q131681",
+  "desc": "artificial lake impounded using a dam or lock to store water",
+  "links": 82
+ },
+ "barrage": {
+  "id": "Q304860",
+  "desc": "artillery tactic",
+  "links": 25
+ },
+ "mountain": {
+  "id": "Q8502",
+  "desc": "large natural elevation of the Earth's surface",
+  "links": 255
+ },
+ "bird sanctuary": {
+  "id": "Q2714144",
+  "desc": "wildlife refuge designated to protect bird species",
+  "links": 9
+ },
+ "Ramsar site": {
+  "id": "Q19683138",
+  "desc": "wetland site as designated by the Ramsar Convention",
+  "links": 32
+ },
+ "wetland": {
+  "id": "Q170321",
+  "desc": "land area that is permanently or seasonally saturated with water",
+  "links": 87
+ },
+ "Adivasi": {
+  "id": "Q357670",
+  "desc": "collective term for the tribes of India who are considered indigenous people of India",
+  "links": 46
+ },
+ "ethnic group": {
+  "id": "Q41710",
+  "desc": "socially defined category of people who identify with each other",
+  "links": 117
+ },
+ "cave": {
+  "id": "Q35509",
+  "desc": "natural void under the Earth's surface",
+  "links": 144
+ },
+ "rock-cut architecture": {
+  "id": "Q11587139",
+  "desc": "creation of structures, buildings, and sculptures by excavating solid rock",
+  "links": 10
+ },
+ "Ganges~river": {
+  "id": "Q5089",
+  "desc": "major river in India",
+  "links": 182
+ },
+ "glacier": {
+  "id": "Q35666",
+  "desc": "large persistent body of ice",
+  "links": 149
+ },
+ "controlled-access highway": {
+  "id": "Q46622",
+  "desc": "highway designed exclusively for high-speed vehicular traffic, with all traffic flow and ingress/egress regulated",
+  "links": 95
+ },
+ "pilgrimage site": {
+  "id": "Q15135589",
+  "desc": "location to which pilgrims venture",
+  "links": 8
+ },
+ "holy city": {
+  "id": "Q692581",
+  "desc": "a city important to the history or faith of a specific religion",
+  "links": 21
+ },
+ "human settlement": {
+  "id": "Q486972",
+  "desc": "place of any size, in which people permanently live",
+  "links": 92
+ },
+ "Arabian Sea": {
+  "id": "Q58705",
+  "desc": "marginal sea of the northern Indian Ocean",
+  "links": 138
+ },
+ "Bay of Bengal": {
+  "id": "Q38684",
+  "desc": "part of the Indian Ocean between South and South East Asia",
+  "links": 130
+ },
+ "Indian Ocean": {
+  "id": "Q1239",
+  "desc": "ocean bounded by Africa, Asia, Australia, and Antarctica",
+  "links": 251
+ },
+ "Laccadive Sea": {
+  "id": "Q544914",
+  "desc": "sea between India, Sri Lanka and the Maldives",
+  "links": 71
+ },
+ "Gulf of Mannar": {
+  "id": "Q622811",
+  "desc": "gulf of the Indian Ocean between India and Sri Lanka",
+  "links": 48
+ },
+ "Gulf of Khambhat": {
+  "id": "Q654010",
+  "desc": "gulf near gujarat",
+  "links": 58
+ },
+ "Gulf of Kutch": {
+  "id": "Q844917",
+  "desc": "gulf",
+  "links": 56
+ },
+ "handicraft": {
+  "id": "Q877729",
+  "desc": "field of work where useful and decorative objects are made completely by hand or by using only simple tools",
+  "links": 84
+ },
+ "textile": {
+  "id": "Q28823",
+  "desc": "various fiber-based materials",
+  "links": 131
+ },
+ "Shah Rukh Khan": {
+  "id": "Q9535",
+  "desc": "Indian actor, producer and television personality",
+  "links": 137
+ },
+ "film": {
+  "id": "Q11424",
+  "desc": "visual art work that simulates experiences and communicates ideas, stories, or emotions through moving images, generally synchronized with sound since the 1930s",
+  "links": 243
+ },
+ "Aamir Khan": {
+  "id": "Q9557",
+  "desc": "Indian actor",
+  "links": 104
+ },
+ "Salman Khan": {
+  "id": "Q9543",
+  "desc": "Indian actor and producer (born 1965)",
+  "links": 105
+ },
+ "Amitabh Bachchan": {
+  "id": "Q9570",
+  "desc": "Indian film actor (born 1942)",
+  "links": 126
+ },
+ "Akshay Kumar": {
+  "id": "Q233748",
+  "desc": "Actor",
+  "links": 81
+ },
+ "Hrithik Roshan": {
+  "id": "Q233619",
+  "desc": "Indian actor (born 1974)",
+  "links": 73
+ },
+ "Ranveer Singh": {
+  "id": "Q902879",
+  "desc": "Indian actor",
+  "links": 53
+ },
+ "Rajinikanth": {
+  "id": "Q60068",
+  "desc": "Indian actor (born 1950)",
+  "links": 61
+ },
+ "Satyajit Ray": {
+  "id": "Q8873",
+  "desc": "Indian filmmaker and writer (1921–1992)",
+  "links": 144
+ },
+ "film actor": {
+  "id": "Q10800557",
+  "desc": "actor who appears in films",
+  "links": 26
+ },
+ "female": {
+  "id": "Q6581072",
+  "desc": "to be used in \"sex or gender\" (P21) to indicate that the human subject is a female or \"semantic gender\" (P10339) to indicate that a word refers to a female person",
+  "links": 14
+ },
+ "Hindi~language": {
+  "id": "Q1568",
+  "desc": "Indo-Aryan language spoken in India",
+  "links": 224
+ },
+ "male": {
+  "id": "Q6581097",
+  "desc": "to be used in \"sex or gender\" (P21) to indicate that the human subject is a male or \"semantic gender\" (P10339) to indicate that a word refers to a male person",
+  "links": 16
+ },
+ "film director": {
+  "id": "Q2526255",
+  "desc": "person who controls the artistic and dramatic aspects of a film production",
+  "links": 108
+ },
+ "Telugu~language": {
+  "id": "Q8097",
+  "desc": "Dravidian language native to South India",
+  "links": 143
+ },
+ "Kannada~language": {
+  "id": "Q33673",
+  "desc": "Dravidian language native to South India",
+  "links": 135
+ },
+ "Malayalam~language": {
+  "id": "Q36236",
+  "desc": "Dravidian language of Southern India",
+  "links": 130
+ },
+ "Tamil~language": {
+  "id": "Q5885",
+  "desc": "Dravidian language native to South India and Sri Lanka",
+  "links": 181
+ },
+ "actor": {
+  "id": "Q33999",
+  "desc": "person who acts in a dramatic or comic production and works in film, television, theatre, or radio",
+  "links": 190
+ },
+ "playback singer": {
+  "id": "Q1755412",
+  "desc": "singer whose singing is pre-recorded for use in film",
+  "links": 29
+ },
+ "film score composer": {
+  "id": "Q1415090",
+  "desc": "musical profession",
+  "links": 9
+ },
+ "music director": {
+  "id": "Q1198887",
+  "desc": "director of music, for an orchestra, film, radio station, etc.",
+  "links": 22
+ },
+ "lyricist": {
+  "id": "Q822146",
+  "desc": "writer of song lyrics",
+  "links": 63
+ },
+ "web series": {
+  "id": "Q526877",
+  "desc": "video serial broadcast on the Internet",
+  "links": 39
+ },
+ "television series": {
+  "id": "Q5398426",
+  "desc": "connected set of television program episodes under the same title",
+  "links": 62
+ },
+ "Indian cuisine": {
+  "id": "Q192087",
+  "desc": "culinary traditions of India",
+  "links": 70
+ },
+ "confectionery": {
+  "id": "Q5159627",
+  "desc": "elaborate sweets or baked goods",
+  "links": 61
+ },
+ "flatbread": {
+  "id": "Q666242",
+  "desc": "type of bread",
+  "links": 55
+ },
+ "Indian bread": {
+  "id": "Q2688167",
+  "desc": "type of bread",
+  "links": 11
+ },
+ "South Indian cuisine": {
+  "id": "Q3595152",
+  "desc": "food cuisines in south Indian",
+  "links": 11
+ },
+ "Tamil cuisine": {
+  "id": "Q3007006",
+  "desc": "tamilian cuisine",
+  "links": 20
+ },
+ "Kerala cuisine": {
+  "id": "Q3595259",
+  "desc": "culinary style originated in Kerala",
+  "links": 11
+ },
+ "Karnataka cuisine": {
+  "id": "Q5192776",
+  "desc": "cuisine from the state of Karnataka",
+  "links": 4
+ },
+ "Andhra cuisine": {
+  "id": "Q122238522",
+  "desc": "culinary tradition",
+  "links": 3
+ },
+ "Udupi cuisine": {
+  "id": "Q3595274",
+  "desc": "cuisine of South India",
+  "links": 11
+ },
+ "street food": {
+  "id": "Q1316209",
+  "desc": "ready-to-eat food or drink served on a street",
+  "links": 58
+ },
+ "chaat": {
+  "id": "Q153584",
+  "desc": "savory Indian-originated snack",
+  "links": 25
+ },
+ "curry": {
+  "id": "Q164606",
+  "desc": "dish whose origins are in South Asian, Southeast Asian and British cuisines",
+  "links": 84
+ },
+ "drink": {
+  "id": "Q40050",
+  "desc": "kind of liquid which is specifically prepared for human consumption",
+  "links": 148
+ },
+ "Gujarati cuisine": {
+  "id": "Q2732159",
+  "desc": "cuisine of Gujarat, India",
+  "links": 9
+ },
+ "Rajasthani cuisine": {
+  "id": "Q3595467",
+  "desc": "marwadi, mewadi and barmeri cuisine",
+  "links": 5
+ },
+ "Bengali cuisine": {
+  "id": "Q1572982",
+  "desc": "cuisine from the region of Bengal",
+  "links": 21
+ },
+ "Punjabi cuisine": {
+  "id": "Q2090705",
+  "desc": "food from the Punjab region of India and Pakistan",
+  "links": 23
+ },
+ "Hyderabadi cuisine": {
+  "id": "Q5953998",
+  "desc": "native cooking style of the Hyderabadi Muslims",
+  "links": 9
+ },
+ "Maharashtrian cuisine": {
+  "id": "Q7601803",
+  "desc": "cuisine of the Marathi people from the state of Maharashtra in India",
+  "links": 10
+ },
+ "Goan cuisine": {
+  "id": "Q2025907",
+  "desc": "cuisine from Goa, India, influenced by Portuguese colonial rule",
+  "links": 12
+ },
+ "Kashmiri cuisine": {
+  "id": "Q2152857",
+  "desc": "traditional food dishes from India's Kashmir Valley",
+  "links": 16
+ },
+ "kebab": {
+  "id": "Q179010",
+  "desc": "variety of meat dishes originating in the Middle East",
+  "links": 100
+ },
+ "Assamese cuisine": {
+  "id": "Q3595895",
+  "desc": "northeast Indian cuisine",
+  "links": 9
+ },
+ "Manipuri cuisine": {
+  "id": "Q5192780",
+  "desc": "cuisine of Manipur, a state of northeastern India",
+  "links": 8
+ },
+ "Naga cuisine": {
+  "id": "Q3595462",
+  "desc": "Traditional food of Naga people of India",
+  "links": 8
+ },
+ "Sikkimese cuisine": {
+  "id": "Q3595466",
+  "desc": "traditional cuisine of Sikkim, a state of India",
+  "links": 14
+ },
+ "Mizo cuisine": {
+  "id": "Q60761081",
+  "desc": "traditional cuisine of the Mizo people",
+  "links": 4
+ },
+ "Tripuri cuisine": {
+  "id": "Q7843898",
+  "desc": "culinary traditions of Tripuri people",
+  "links": 4
+ },
+ "Arunachali cuisine": {
+  "id": "Q5192760",
+  "desc": "dishes of the Indian state of Arunachal Pradesh",
+  "links": 3
+ },
+ "Chettinad cuisine": {
+  "id": "Q3525354",
+  "desc": "Indian cuisine",
+  "links": 8
+ },
+ "Telangana cuisine": {
+  "id": "Q55634879",
+  "desc": "cultural food in Indian",
+  "links": 5
+ },
+ "Bihari cuisine": {
+  "id": "Q42015",
+  "desc": "culinary tradition",
+  "links": 9
+ },
+ "Awadhi cuisine": {
+  "id": "Q41928",
+  "desc": "culinary traditions of Awadh",
+  "links": 9
+ },
+ "Mughlai cuisine": {
+  "id": "Q3595853",
+  "desc": "\"Mughal\" style of cooking",
+  "links": 16
+ },
+ "Parsi cuisine": {
+  "id": "Q7139975",
+  "desc": "traditional cuisine of the Parsis of India and Pakistan",
+  "links": 6
+ },
+ "Sindhi cuisine": {
+  "id": "Q3307500",
+  "desc": "cuisine of the Sindhi people from Sindh, Pakistan",
+  "links": 13
+ },
+ "biryani~rice": {
+  "id": "Q271555",
+  "desc": "rice dish from the Indian subcontinent",
+  "links": 85
+ },
+ "dosa~pancake": {
+  "id": "Q920940",
+  "desc": "thin pancakes originating from South India",
+  "links": 49
+ },
+ "paneer": {
+  "id": "Q1139546",
+  "desc": "fresh cheese common in the Indian subcontinent",
+  "links": 51
+ },
+ "lentil": {
+  "id": "Q61505177",
+  "desc": "edible seed, grown for food",
+  "links": 2
+ },
+ "meat": {
+  "id": "Q10990",
+  "desc": "culinary name for animal flesh eaten as food",
+  "links": 212
+ },
+ "fish as food": {
+  "id": "Q600396",
+  "desc": "fish species used as food by humans",
+  "links": 54
+ },
+ "mutton~meat": {
+  "id": "Q14566073",
+  "desc": "meat of an adult sheep",
+  "links": 3
+ },
+ "independence activist": {
+  "id": "Q11571698",
+  "desc": "a person who struggles for the independence, restoration of sovereignty or decolonization of a nation, region, or group",
+  "links": 2
+ },
+ "freedom fighter": {
+  "id": "Q30242234",
+  "desc": "person who takes part in a resistance movement against an oppressive political or social establishment",
+  "links": 17
+ },
+ "Indian National Congress": {
+  "id": "Q10225",
+  "desc": "centrist-liberal political party in India",
+  "links": 98
+ },
+ "political party": {
+  "id": "Q7278",
+  "desc": "organization that seeks to influence government policy and actions and be elected to directly take part on government or legislation",
+  "links": 191
+ },
+ "dynasty": {
+  "id": "Q164950",
+  "desc": "sequence of rulers from the same family or lineage, or the period of their rule",
+  "links": 94
+ },
+ "Asia": {
+  "id": "Q48",
+  "desc": "part of terrestrial continent, mainly in the northeastern quadrant",
+  "links": 365
+ },
+ "history of India": {
+  "id": "Q133136",
+  "desc": "history of the Indian subcontinent",
+  "links": 102
+ },
+ "historical country": {
+  "id": "Q3024240",
+  "desc": "country, state or territory that once existed",
+  "links": 7
+ },
+ "Bharat Ratna": {
+  "id": "Q322132",
+  "desc": "India's highest civilian award",
+  "links": 53
+ },
+ "Governor-General of India": {
+  "id": "Q641589",
+  "desc": "viceroy of British India",
+  "links": 45
+ },
+ "President of the Indian National Congress": {
+  "id": "Q7241327",
+  "desc": "head of INC",
+  "links": 0
+ },
+ "chief minister": {
+  "id": "Q1670755",
+  "desc": "elected head of government of a sub-national entity",
+  "links": 34
+ },
+ "ministry": {
+  "id": "Q192350",
+  "desc": "type of top-level division of public administration",
+  "links": 68
+ },
+ "princely state": {
+  "id": "Q1336152",
+  "desc": "type of vassal state in British India",
+  "links": 44
+ },
+ "social reformer": {
+  "id": "Q16611574",
+  "desc": "person who advocates social reform",
+  "links": 2
+ },
+ "Lok Sabha constituency": {
+  "id": "Q47481352",
+  "desc": "electoral district for a seat in the lower house of the Parliament of India",
+  "links": 0
+ },
+ "Sultan of Delhi": {
+  "id": "Q122790558",
+  "desc": "Indian action thriller series",
+  "links": 1
+ },
+ "Peshwa~minister": {
+  "id": "Q1816155",
+  "desc": "title of the prime minister of the Maratha Empire",
+  "links": 36
+ },
+ "Maratha Empire": {
+  "id": "Q83618",
+  "desc": "1674–1818 empire in the Indian subcontinent",
+  "links": 78
+ },
+ "Sikh guru": {
+  "id": "Q2719071",
+  "desc": "gurus of Sikhism",
+  "links": 26
+ },
+ "Sikh Empire": {
+  "id": "Q83572",
+  "desc": "Empire on the Indian subcontinent (1799–1849)",
+  "links": 59
+ },
+ "Vice President of India": {
+  "id": "Q1641162",
+  "desc": "second-highest constitutional office of India",
+  "links": 32
+ },
+ "Minister of Finance": {
+  "id": "Q1416501",
+  "desc": "Indian minister",
+  "links": 15
+ },
+ "Sanskrit literature": {
+  "id": "Q1053936",
+  "desc": "body of Indic literature",
+  "links": 42
+ },
+ "literary work": {
+  "id": "Q7725634",
+  "desc": "written work read for enjoyment or edification",
+  "links": 21
+ },
+ "Sanskrit": {
+  "id": "Q11059",
+  "desc": "ancient Indo-Aryan language of South Asia",
+  "links": 223
+ },
+ "Sangam literature": {
+  "id": "Q3219940",
+  "desc": "historic period of Tamil literature, early classical Tamil literature",
+  "links": 27
+ },
+ "India national cricket team": {
+  "id": "Q1143793",
+  "desc": "men’s cricket team representing India",
+  "links": 52
+ },
+ "India women's national cricket team": {
+  "id": "Q6019705",
+  "desc": "India women cricket team",
+  "links": 24
+ },
+ "tennis player": {
+  "id": "Q10833314",
+  "desc": "sportsperson who plays tennis",
+  "links": 16
+ },
+ "badminton player": {
+  "id": "Q13141064",
+  "desc": "sportsperson specialized in badminton",
+  "links": 4
+ },
+ "chess player": {
+  "id": "Q10873124",
+  "desc": "individual who takes part in chess tournaments",
+  "links": 14
+ },
+ "India men's national field hockey team": {
+  "id": "Q931527",
+  "desc": "field hockey team representing India",
+  "links": 38
+ },
+ "India women's national field hockey team": {
+  "id": "Q1661520",
+  "desc": "women's national field hockey team representing India",
+  "links": 26
+ },
+ "field hockey player": {
+  "id": "Q10843263",
+  "desc": "sportsperson taking part in field hockey",
+  "links": 4
+ },
+ "association football player": {
+  "id": "Q937857",
+  "desc": "person who plays association football (soccer)",
+  "links": 63
+ },
+ "boxer": {
+  "id": "Q11338576",
+  "desc": "sportsperson taking part in boxing competitions",
+  "links": 16
+ },
+ "professional wrestler": {
+  "id": "Q13474373",
+  "desc": "sportspersons taking part in professional wrestling",
+  "links": 8
+ },
+ "athletics competitor": {
+  "id": "Q11513337",
+  "desc": "sportsperson that competes in athletics (track and field, running, walking)",
+  "links": 18
+ },
+ "dance": {
+  "id": "Q11639",
+  "desc": "rhythmic movement of the body",
+  "links": 233
+ },
+ "Indian classical dance": {
+  "id": "Q1990304",
+  "desc": "Performance arts rooted in religious Hindu musical theatre",
+  "links": 29
+ },
+ "folk dance": {
+  "id": "Q201022",
+  "desc": "dances that were danced to traditional folk festivals and in traditional societies and are still been danced",
+  "links": 76
+ },
+ "festival": {
+  "id": "Q132241",
+  "desc": "organized set of events or activities focused on a theme (cultural, religious or other) that recurs regularly (e.g. once a year) and lasts anywhere from several hours to weeks",
+  "links": 108
+ },
+ "public holidays in India": {
+  "id": "Q927083",
+  "desc": "Wikimedia list article",
+  "links": 18
+ },
+ "Indian Space Research Organisation": {
+  "id": "Q229058",
+  "desc": "Indian national space and aeronautics agency",
+  "links": 74
+ },
+ "Olympic gold medal": {
+  "id": "Q15243387",
+  "desc": "first-place medal awarded to Olympic Games participants",
+  "links": 1
+ },
+ "Olympic silver medal": {
+  "id": "Q15889641",
+  "desc": "second-place medal awarded to Olympic Games participants",
+  "links": 1
+ },
+ "Olympic bronze medal": {
+  "id": "Q15889643",
+  "desc": "third-place medal awarded to Olympic Games participants",
+  "links": 1
+ },
+ "Hindustani classical music": {
+  "id": "Q1770695",
+  "desc": "art music of northern regions of the Indian subcontinent",
+  "links": 29
+ },
+ "Carnatic music": {
+  "id": "Q956883",
+  "desc": "music genre originating in southern India",
+  "links": 32
+ },
+ "newspaper": {
+  "id": "Q11032",
+  "desc": "scheduled publication containing news of events, articles, features, editorials, and advertising; online, in print, or (usually) both",
+  "links": 204
+ },
+ "magazine": {
+  "id": "Q41298",
+  "desc": "publication that is typically distributed at a regular interval",
+  "links": 135
+ },
+ "television channel": {
+  "id": "Q2001305",
+  "desc": "terrestrial frequency or virtual number over which a television station or television network is distributed",
+  "links": 41
+ },
+ "bank": {
+  "id": "Q22687",
+  "desc": "financial institution that accepts deposits",
+  "links": 175
+ },
+ "university": {
+  "id": "Q3918",
+  "desc": "an institution of tertiary education and research which awards academic degrees in several academic disciplines",
+  "links": 209
+ },
+ "Hindu deity": {
+  "id": "Q979507",
+  "desc": "gods and goddesses in Hinduism",
+  "links": 38
+ },
+ "Mahabharata~epic": {
+  "id": "Q8276",
+  "desc": "ancient Sanskrit epic by Vyasa",
+  "links": 169
+ },
+ "character in the Mahabharata": {
+  "id": "Q19896979",
+  "desc": "character in the Mahabharata",
+  "links": 0
+ },
+ "Ramayana~epic": {
+  "id": "Q37293",
+  "desc": "An ancient Hindu epic composed by Valmiki which narrates the life story of Lord Rama.",
+  "links": 138
+ },
+ "stadium": {
+  "id": "Q483110",
+  "desc": "place or venue for (mostly) outdoor sports, concerts, or other events",
+  "links": 98
+ },
+ "cricket": {
+  "id": "Q5375",
+  "desc": "team sport played with a bat and ball",
+  "links": 164
+ },
+ "regiment~military": {
+  "id": "Q52371",
+  "desc": "military unit size designation",
+  "links": 76
+ },
+ "Indian Army": {
+  "id": "Q355771",
+  "desc": "Land service branch of Indian Military",
+  "links": 44
+ },
+ "guru~teacher": {
+  "id": "Q484260",
+  "desc": "teacher, expert, counsellor, spiritual guide or leader, often in Hindu, Jain, Buddhist or Sikh traditions",
+  "links": 81
+ },
+ "mystic": {
+  "id": "Q12328016",
+  "desc": "occupation",
+  "links": 7
+ },
+ "spiritual teacher": {
+  "id": "Q29352392",
+  "desc": "person who teaches about spirituality",
+  "links": 8
+ },
+ "Bhakti movement": {
+  "id": "Q2914617",
+  "desc": "religious movement during the Medieval period of the Indian Subcontinent",
+  "links": 28
+ },
+ "raga~melodic": {
+  "id": "Q216926",
+  "desc": "melodic mode in Indian music",
+  "links": 46
+ },
+ "traditional game": {
+  "id": "Q676977",
+  "desc": "game genre",
+  "links": 12
+ },
+ "Christopher Nolan": {
+  "id": "Q224912",
+  "desc": "Irish poet and author (1965-2009)",
+  "links": 10
+ },
+ "Steven Spielberg": {
+  "id": "Q8877",
+  "desc": "American filmmaker (born 1946)",
+  "links": 171
+ },
+ "Quentin Tarantino": {
+  "id": "Q3772",
+  "desc": "American filmmaker and actor (born 1963)",
+  "links": 124
+ },
+ "Martin Scorsese": {
+  "id": "Q41148",
+  "desc": "American filmmaker (born 1942)",
+  "links": 114
+ },
+ "Alfred Hitchcock": {
+  "id": "Q7374",
+  "desc": "British filmmaker (1899–1980)",
+  "links": 189
+ },
+ "Stanley Kubrick": {
+  "id": "Q2001",
+  "desc": "American filmmaker and photographer (1928–1999)",
+  "links": 160
+ },
+ "Tom Hanks": {
+  "id": "Q2263",
+  "desc": "American actor and film producer (born 1956)",
+  "links": 137
+ },
+ "Leonardo DiCaprio": {
+  "id": "Q38111",
+  "desc": "American actor and producer (born 1974)",
+  "links": 150
+ },
+ "Tom Cruise": {
+  "id": "Q37079",
+  "desc": "American actor and film producer (born 1962)",
+  "links": 129
+ },
+ "Marvel Cinematic Universe": {
+  "id": "Q642878",
+  "desc": "media franchise and shared universe",
+  "links": 81
+ },
+ "Pixar~animation": {
+  "id": "Q127552",
+  "desc": "American computer animation studio",
+  "links": 94
+ },
+ "Walt Disney Animation Studios": {
+  "id": "Q1047410",
+  "desc": "American animation studio",
+  "links": 57
+ },
+ "Academy Award for Best Picture": {
+  "id": "Q102427",
+  "desc": "annual award from the Academy of Motion Picture Arts and Sciences",
+  "links": 73
+ },
+ "Star Wars~franchise": {
+  "id": "Q462",
+  "desc": "epic space opera multimedia franchise created by George Lucas",
+  "links": 185
+ },
+ "horror film": {
+  "id": "Q200092",
+  "desc": "film genre",
+  "links": 79
+ },
+ "animated feature film": {
+  "id": "Q29168811",
+  "desc": "full-length animated film intended as the main item in a cinema programme, or air over TV or the Internet",
+  "links": 0
+ },
+ "anime television series": {
+  "id": "Q63952888",
+  "desc": "Japanese animated television series",
+  "links": 1
+ },
+ "anime film": {
+  "id": "Q20650540",
+  "desc": "animated film from Japan or in Japanese anime style",
+  "links": 0
+ },
+ "science fiction film": {
+  "id": "Q471839",
+  "desc": "film genre",
+  "links": 54
+ },
+ "DC Extended Universe": {
+  "id": "Q18281265",
+  "desc": "American superhero film franchise based on DC Comics",
+  "links": 50
+ },
+ "DC Universe": {
+  "id": "Q116545465",
+  "desc": "media franchise and shared universe",
+  "links": 31
+ },
+ "DC Comics": {
+  "id": "Q2924461",
+  "desc": "American comic book publisher, a subsidiary of Warner Bros. Discovery",
+  "links": 85
+ },
+ "film series": {
+  "id": "Q24856",
+  "desc": "collection of related films in succession",
+  "links": 31
+ },
+ "United States": {
+  "id": "Q30",
+  "desc": "country located primarily in North America",
+  "links": 427
+ },
+ "film production company": {
+  "id": "Q1762059",
+  "desc": "company that produces films",
+  "links": 9
+ },
+ "film genre": {
+  "id": "Q201658",
+  "desc": "classification of films based on similarities in narrative elements",
+  "links": 61
+ },
+ "film festival": {
+  "id": "Q220505",
+  "desc": "dedicated event to screen films",
+  "links": 69
+ },
+ "film award": {
+  "id": "Q4220917",
+  "desc": "recognition for cinematic achievements",
+  "links": 20
+ },
+ "South Korea": {
+  "id": "Q884",
+  "desc": "country in East Asia",
+  "links": 356
+ }
+}

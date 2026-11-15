@@ -1,7 +1,7 @@
 import { p } from "../types";
 const T = "indian-trivia";
 export default [
-  p("it-cricketer", T, "Name an Indian Test cricketer", {
+  p("it-cricketer", T, "Name a cricketer who has played for India", {
     ground: "Sachin Tendulkar|sachin; Virat Kohli|kohli; MS Dhoni|dhoni|mahendra singh dhoni; Rohit Sharma; Kapil Dev; Sunil Gavaskar|gavaskar",
     decoy: "Rahul Dravid|dravid",
     orbit: "Sourav Ganguly|ganguly|dada; Anil Kumble|kumble; VVS Laxman|laxman; Virender Sehwag|sehwag; Yuvraj Singh|yuvraj; Harbhajan Singh|harbhajan|bhajji; Zaheer Khan; Jasprit Bumrah|bumrah; Ravindra Jadeja|jadeja; Ravichandran Ashwin|ashwin; Shubman Gill; Rishabh Pant; KL Rahul; Cheteshwar Pujara|pujara; Ajinkya Rahane|rahane; Mohammed Shami|shami; Mohammad Siraj|siraj; Gautam Gambhir|gambhir; Mohammad Azharuddin|azhar|azharuddin; Javagal Srinath|srinath; Ravi Shastri; Yashasvi Jaiswal|jaiswal",
