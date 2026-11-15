@@ -143,15 +143,35 @@ supabase/      schema.sql for the move to Supabase
 scripts/       create-admin, reset-password, validate-content, test-engine
 ```
 
-## Moving to Supabase + Cloudflare
+## Supabase (database)
 
-All storage goes through the `Store` interface in `src/lib/store/types.ts`. To move:
+Storage goes through the `Store` interface (`src/lib/store/types.ts`), which has two implementations:
 
-1. Run `supabase/schema.sql` in the Supabase SQL editor.
-2. Add a `SupabaseStore` implementing `Store` with `@supabase/supabase-js` and the **service-role key**, which is only ever used on the server.
-3. Select it in `src/lib/store/index.ts` when `SUPABASE_URL` is set.
+- **JSON file** (`data/db.json`): used when no Supabase settings are present. Good for local testing.
+- **Supabase** (`src/lib/store/supabase-store.ts`): used automatically when both `SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY` are set.
 
-Accounts stay as Kribatov's own username/password, not Supabase Auth.
+To set up Supabase:
+
+1. In the Supabase dashboard, open **SQL Editor**, paste in `supabase/schema.sql` and click **Run**.
+2. Copy `.env.example` to `.env.local` and fill in the URL and the **secret (service-role) key**. Never commit `.env.local`.
+3. Check the setup:
+   ```bash
+   npm run check-supabase
+   ```
+4. Optionally, copy existing local data from `data/db.json` into Supabase:
+   ```bash
+   npm run migrate-to-supabase
+   ```
+5. Create the first admin. It now goes into Supabase:
+   ```bash
+   npm run create-admin -- yourname
+   ```
+
+`npm run test-supabase` runs a full round trip against the real project. It creates throwaway `zz_test_*` rows and deletes them afterwards.
+
+Accounts stay as Kribatov's own username/password, not Supabase Auth. The secret key is used only on the server, never in the browser.
+
+## Cloudflare (hosting)
 
 For party mode on Cloudflare: Cloudflare Workers don't keep one long-lived process, so the in-memory `src/party/hub.ts` must be replaced. Two options:
 

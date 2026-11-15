@@ -1,5 +1,6 @@
 // Usage: npm run create-admin -- <username> [password] [display name]
 // Creates an admin account. If no password is given, one is generated and printed once.
+import "./env";
 import { getStore } from "../src/lib/store";
 import { generatePassword, hashPassword, MIN_PASSWORD, newId, USERNAME_RE } from "../src/lib/passwords";
 

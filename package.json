@@ -10,9 +10,13 @@
     "create-admin": "tsx scripts/create-admin.ts",
     "reset-password": "tsx scripts/reset-password.ts",
     "validate-content": "tsx scripts/validate-content.ts",
-    "test": "tsx scripts/test-engine.ts && tsx scripts/test-party.ts"
+    "test": "tsx scripts/test-engine.ts && tsx scripts/test-party.ts",
+    "migrate-to-supabase": "tsx scripts/migrate-to-supabase.ts",
+    "check-supabase": "tsx scripts/check-supabase.ts",
+    "test-supabase": "tsx scripts/test-supabase-store.ts"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.119.0",
     "next": "^15.5.29",
     "react": "^19.3.1",
     "react-dom": "^19.3.1",

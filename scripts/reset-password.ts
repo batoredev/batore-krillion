@@ -1,4 +1,5 @@
 // Usage: npm run reset-password -- <username> [new password]
+import "./env";
 import { getStore } from "../src/lib/store";
 import { generatePassword, hashPassword, MIN_PASSWORD } from "../src/lib/passwords";
 
